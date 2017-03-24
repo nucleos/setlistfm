@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\tests\Bridge\Symfony\DependencyInjection;
+namespace Core23\SetlistFm\Tests\Bridge\Symfony\DependencyInjection;
 
 use Core23\SetlistFm\Bridge\Symfony\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
