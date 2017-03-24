@@ -24,7 +24,7 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getSetlist(string $setlistId) : array
+    public function getSetlist(string $setlistId): array
     {
         return $this->call('setlist/'.$setlistId);
     }
@@ -39,11 +39,10 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getSetlistByVersion(string $versionId) : array
+    public function getSetlistByVersion(string $versionId): array
     {
         return $this->call('setlist/version/'.$versionId);
     }
-
 
     /**
      * Get setlist information by last.fm id.
@@ -57,11 +56,10 @@ final class SetlistService extends AbstractService
      *
      * @deprecated use getSetlist instead
      */
-    public function getSetlistByLastFm(string $lastFmId) : array
+    public function getSetlistByLastFm(string $lastFmId): array
     {
         return $this->call('setlist/lastFm/'.$lastFmId);
     }
-
 
     /**
      * Get artist setlist information.
@@ -74,7 +72,7 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getArtistSetlists(string $mbid, int $page = 1) : array
+    public function getArtistSetlists(string $mbid, int $page = 1): array
     {
         return $this->call('artist/'.$mbid.'/setlists', array(
             'p' => $page,
@@ -93,13 +91,12 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getArtistTourSetlists(string $mbid, string $tour, int $page = 1) : array
+    public function getArtistTourSetlists(string $mbid, string $tour, int $page = 1): array
     {
         return $this->call('artist/'.$mbid.'/tour/'.$tour, array(
             'p' => $page,
         ));
     }
-
 
     /**
      * Get venue setlist information.
@@ -112,7 +109,7 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getVenueSetlists(string $venueId, int $page = 1) : array
+    public function getVenueSetlists(string $venueId, int $page = 1): array
     {
         return $this->call('venue/'.$venueId.'/setlists', array(
             'p' => $page,
@@ -130,7 +127,7 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function search(array $fields, int $page = 1) : array
+    public function search(array $fields, int $page = 1): array
     {
         return $this->call('search/setlists', array_merge($fields, array(
             'p' => $page,

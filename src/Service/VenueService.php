@@ -24,7 +24,7 @@ final class VenueService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getVenue(string $venueId) : array
+    public function getVenue(string $venueId): array
     {
         return $this->call('venue/'.$venueId);
     }
@@ -40,7 +40,7 @@ final class VenueService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function search(array $fields, int $page = 1) : array
+    public function search(array $fields, int $page = 1): array
     {
         return $this->call('search/venues', array_merge($fields, array(
             'p' => $page,

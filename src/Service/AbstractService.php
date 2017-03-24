@@ -10,7 +10,6 @@
 namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Connection\ConnectionInterface;
-use Core23\SetlistFm\Connection\SessionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 
@@ -59,10 +58,11 @@ abstract class AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    final protected function call($method, array $params = array(), $requestMethod = 'GET') : array
+    final protected function call($method, array $params = array(), $requestMethod = 'GET'): array
     {
         try {
             $response = $this->connection->call($method, $params, $requestMethod);
+
             return $this->cleanResponseData($response);
         } catch (ApiException $e) {
             if ($e->getCode() == 404) {
@@ -73,7 +73,7 @@ abstract class AbstractService
     }
 
     /**
-     * Clean response keys and remove @ sign
+     * Clean response keys and remove @ sign.
      *
      * @param array $array
      *
@@ -88,7 +88,7 @@ abstract class AbstractService
                 $value = $this->cleanResponseData($value);
             }
 
-            $key = str_replace('@', '', $key);
+            $key          = str_replace('@', '', $key);
             $result[$key] = $value;
         }
 

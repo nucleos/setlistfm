@@ -24,7 +24,7 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getUser(string $userId) : array
+    public function getUser(string $userId): array
     {
         return $this->call('user/'.$userId);
     }
@@ -40,10 +40,10 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getAttends(string $userId, int $page = 1) : array
+    public function getAttends(string $userId, int $page = 1): array
     {
-        return $this->call('user/'.$userId  .'/attended', array(
-            'p' => $page
+        return $this->call('user/'.$userId.'/attended', array(
+            'p' => $page,
         ));
     }
 
@@ -58,10 +58,10 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function getEdits(string $userId, int $page = 1) : array
+    public function getEdits(string $userId, int $page = 1): array
     {
-        return $this->call('user/'.$userId  .'/edited', array(
-            'p' => $page
+        return $this->call('user/'.$userId.'/edited', array(
+            'p' => $page,
         ));
     }
 }
