@@ -30,7 +30,9 @@ php composer.phar require php-http/guzzle6-adapter # if you want to use HTTPlug 
     $connection = new \Core23\SetlistFm\Connection\GuzzleConnection(API_KEY, SHARED_SECRET);
 
     $artistApi = new \Core23\SetlistFm\Service\ArtistService($connection);
-    $artists = $artistApi->search('Slipknot');
+    $artists = $artistApi->search(array(
+        'artistName' => 'Slipknot'
+    ));
 ```
 
 
