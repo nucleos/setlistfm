@@ -1,0 +1,59 @@
+{
+  "name": "core23/setlistfm-api",
+  "type": "library",
+  "description": "Setlist.fm webservice client for php",
+  "keywords": [
+    "symfony",
+    "setlist.fm",
+    "api",
+    "bridge",
+    "webservice client"
+  ],
+  "homepage": "https://core23.de",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Gripp",
+      "email": "mail@core23.de"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "psr/log": "^1.0"
+  },
+  "require-dev": {
+    "guzzlehttp/guzzle": "^5.0 || ^6.0",
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^1.1",
+    "php-http/mock-client": "^0.3",
+    "php-http/httplug-bundle": "^1.1",
+    "phpunit/phpunit": "^5.7",
+    "sllh/php-cs-fixer-styleci-bridge": "^2.0",
+    "symfony/phpunit-bridge": "^3.1",
+    "symfony/http-foundation": "^2.8 || ^3.1",
+    "symfony/http-kernel": "^2.8 || ^3.1"
+  },
+  "suggest": {
+    "php-http/buzz-adapter": "Buzz HTTP client implementation",
+    "php-http/guzzle6-adapter": "Guzzle HTTP client implementation"
+  },
+  "conflict": {
+    "symfony/http-foundation": "<2.8",
+    "symfony/http-kernel": "<2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core23\\SetlistFm\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Core23\\SetlistFm\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  }
+}
