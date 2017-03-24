@@ -43,7 +43,7 @@ final class HTTPlugConnection extends AbstractConnection
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function call(string $method, array $params = array(), string $requestMethod = 'GET'): array
     {
@@ -51,9 +51,9 @@ final class HTTPlugConnection extends AbstractConnection
             $data   = $this->buildParameter($params);
 
             if ($requestMethod == 'POST') {
-                $request = $this->messageFactory->createRequest($requestMethod, $this->uri . $method .'.json', array(), $data);
+                $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'.json', array(), $data);
             } else {
-                $request = $this->messageFactory->createRequest($requestMethod, $this->uri . $method .'.json?' . $data);
+                $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'.json?'.$data);
             }
             $response = $this->client->sendRequest($request);
 
@@ -77,7 +77,7 @@ final class HTTPlugConnection extends AbstractConnection
     private function parseResponse(ResponseInterface $response): array
     {
         $content = $response->getBody()->getContents();
-        $array = json_decode($content, true);
+        $array   = json_decode($content, true);
 
         if (json_last_error() == JSON_ERROR_NONE) {
             return $array;
