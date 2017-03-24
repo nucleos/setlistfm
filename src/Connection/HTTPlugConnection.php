@@ -48,7 +48,7 @@ final class HTTPlugConnection extends AbstractConnection
     public function call(string $method, array $params = array(), string $requestMethod = 'GET'): array
     {
         try {
-            $data   = $this->buildParameter($params);
+            $data = $this->buildParameter($params);
 
             if ($requestMethod == 'POST') {
                 $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'.json', array(), $data);
