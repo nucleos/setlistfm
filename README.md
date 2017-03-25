@@ -13,7 +13,7 @@ What is the SetlistFM PHP library?
 [![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
 [![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
 
-This library provides a wrapper for using the [Setlist.fm API] inside PHP.
+This library provides a wrapper for using the [Setlist.fm API] inside PHP and a bridge for symfony.
 
 ### Installation
 
