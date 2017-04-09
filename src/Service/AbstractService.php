@@ -88,7 +88,10 @@ abstract class AbstractService
                 $value = $this->cleanResponseData($value);
             }
 
-            $key          = str_replace('@', '', $key);
+            if (0 === strpos($key, '@')) {
+                $key = str_replace('@', '', $key);
+            }
+
             $result[$key] = $value;
         }
 

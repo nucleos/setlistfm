@@ -26,7 +26,7 @@ final class ArtistService extends AbstractService
      */
     public function getArtist(string $mbid): array
     {
-        return $this->call('artist/'.$mbid);
+        return $this->call('artist/'.$mbid)['artist'];
     }
 
     /**
@@ -42,13 +42,13 @@ final class ArtistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function search($name, $tmbid = null, $mbid = null, int $page = 1): array
+    public function search($name = null, $tmbid = null, $mbid = null, int $page = 1): array
     {
         return $this->call('search/artists', array(
             'mbid'       => $mbid,
             'tmbid'      => $tmbid,
             'artistName' => $name,
             'p'          => $page,
-        ));
+        ))['artists'];
     }
 }

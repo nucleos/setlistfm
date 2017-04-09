@@ -26,7 +26,7 @@ final class VenueService extends AbstractService
      */
     public function getVenue(string $venueId): array
     {
-        return $this->call('venue/'.$venueId);
+        return $this->call('venue/'.$venueId)['venue'];
     }
 
     /**
@@ -44,6 +44,6 @@ final class VenueService extends AbstractService
     {
         return $this->call('search/venues', array_merge($fields, array(
             'p' => $page,
-        )));
+        )))['venues'];
     }
 }

@@ -26,7 +26,7 @@ final class CityService extends AbstractService
      */
     public function getCity(string $cityId): array
     {
-        return $this->call('city/'.$cityId);
+        return $this->call('city/'.$cityId)['city'];
     }
 
     /**
@@ -42,9 +42,15 @@ final class CityService extends AbstractService
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/cities', array_merge($fields, array(
+        $result = $this->call('search/cities', array_merge($fields, array(
             'p' => $page,
-        )));
+        )))['cities'];
+
+        // Use signular key
+        $result['city'] = $result['cities'];
+        unset($result['cities']);
+
+        return $result;
     }
 
     /**

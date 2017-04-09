@@ -26,7 +26,7 @@ final class SetlistService extends AbstractService
      */
     public function getSetlist(string $setlistId): array
     {
-        return $this->call('setlist/'.$setlistId);
+        return $this->call('setlist/'.$setlistId)['setlist'];
     }
 
     /**
@@ -41,7 +41,7 @@ final class SetlistService extends AbstractService
      */
     public function getSetlistByVersion(string $versionId): array
     {
-        return $this->call('setlist/version/'.$versionId);
+        return $this->call('setlist/version/'.$versionId)['setlist'];
     }
 
     /**
@@ -58,7 +58,7 @@ final class SetlistService extends AbstractService
      */
     public function getSetlistByLastFm(string $lastFmId): array
     {
-        return $this->call('setlist/lastFm/'.$lastFmId);
+        return $this->call('setlist/lastFm/'.$lastFmId)['setlist'];
     }
 
     /**
@@ -76,7 +76,7 @@ final class SetlistService extends AbstractService
     {
         return $this->call('artist/'.$mbid.'/setlists', array(
             'p' => $page,
-        ));
+        ))['setlists'];
     }
 
     /**
@@ -95,7 +95,7 @@ final class SetlistService extends AbstractService
     {
         return $this->call('artist/'.$mbid.'/tour/'.$tour, array(
             'p' => $page,
-        ));
+        ))['setlists'];
     }
 
     /**
@@ -113,7 +113,7 @@ final class SetlistService extends AbstractService
     {
         return $this->call('venue/'.$venueId.'/setlists', array(
             'p' => $page,
-        ));
+        ))['setlists'];
     }
 
     /**
@@ -131,6 +131,6 @@ final class SetlistService extends AbstractService
     {
         return $this->call('search/setlists', array_merge($fields, array(
             'p' => $page,
-        )));
+        )))['setlists'];
     }
 }
