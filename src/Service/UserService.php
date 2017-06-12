@@ -30,7 +30,7 @@ final class UserService extends AbstractService
     }
 
     /**
-     * Get a list of attended venues for an user id.
+     * Get a list of attended venues for a user id.
      *
      * @param string $userId
      * @param int    $page
@@ -48,7 +48,7 @@ final class UserService extends AbstractService
     }
 
     /**
-     * Get a list of edited venues for an user id.
+     * Get a list of edited venues for a user id.
      *
      * @param string $userId
      * @param int    $page
