@@ -10,6 +10,7 @@
 namespace Core23\SetlistFm\Bridge\Symfony\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Core23\SetlistFm\Bridge\Symfony\DependencyInjection\Core23SetlistFmExtension;
 
 final class Core23SetlistFmBundle extends Bundle
 {
@@ -18,6 +19,6 @@ final class Core23SetlistFmBundle extends Bundle
      */
     protected function getContainerExtensionClass()
     {
-        return 'Core23\SetlistFm\Bridge\Symfony\DependencyInjection\Core23SetlistFmExtension';
+        return Core23SetlistFmExtension::class;
     }
 }
