@@ -62,7 +62,7 @@ final class HTTPlugConnection extends AbstractConnection
         } catch (ApiException $e) {
             throw $e;
         } catch (\Exception $e) {
-            throw new ApiException('Technical error occurred.', 500);
+            throw new ApiException('Technical error occurred.', 500, $e);
         }
     }
 
@@ -84,7 +84,7 @@ final class HTTPlugConnection extends AbstractConnection
         }
 
         if (static::NOT_FOUND_MESSAGE === $content) {
-            throw new NotFoundException();
+            throw new NotFoundException('Server did not find any entity for the request.');
         }
 
         throw new ApiException($content, $response->getStatusCode());
