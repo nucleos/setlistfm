@@ -9,8 +9,8 @@
 
 namespace Core23\SetlistFm\Bridge\Symfony\Bundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Core23\SetlistFm\Bridge\Symfony\DependencyInjection\Core23SetlistFmExtension;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class Core23SetlistFmBundle extends Bundle
 {
