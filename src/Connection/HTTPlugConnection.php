@@ -50,7 +50,7 @@ final class HTTPlugConnection extends AbstractConnection
         try {
             $data = $this->buildParameter($params);
 
-            if ($requestMethod == 'POST') {
+            if ($requestMethod === 'POST') {
                 $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'.json', array(), $data);
             } else {
                 $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'.json?'.$data);
@@ -79,7 +79,7 @@ final class HTTPlugConnection extends AbstractConnection
         $content = $response->getBody()->getContents();
         $array   = json_decode($content, true);
 
-        if (json_last_error() == JSON_ERROR_NONE) {
+        if (json_last_error() === JSON_ERROR_NONE) {
             return $array;
         }
 
