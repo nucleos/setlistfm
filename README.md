@@ -26,14 +26,17 @@ php composer.phar require php-http/guzzle6-adapter # if you want to use HTTPlug 
 
 ### Usage
 ```php
-    // Create Guzzle connection
-    $connection = new \Core23\SetlistFm\Connection\GuzzleConnection(API_KEY, SHARED_SECRET);
+    // Get HTTPlug client and message factory
+    $client         = \Http\Discovery\HttpClientDiscovery::find();
+    $messageFactory = \Http\Discovery\MessageFactoryDiscovery::find();
+
+    // Create connection
+    $connection = new \Core23\SetlistFm\Connection\HTTPlugConnection($client, $messageFactory);
 
     $artistApi = new \Core23\SetlistFm\Service\ArtistService($connection);
     $artists = $artistApi->search(array(
         'artistName' => 'Slipknot'
     ));
 ```
-
 
 [Setlist.fm API]: https://api.setlist.fm
