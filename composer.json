@@ -29,9 +29,9 @@
     "phpunit/phpunit": "^5.7",
     "sebastian/exporter": "^2.0",
     "sllh/php-cs-fixer-styleci-bridge": "^2.0",
-    "symfony/phpunit-bridge": "^3.1",
-    "symfony/http-foundation": "^2.8 || ^3.1",
-    "symfony/http-kernel": "^2.8 || ^3.1"
+    "symfony/phpunit-bridge": "^3.2",
+    "symfony/http-foundation": "^2.8 || ^3.2",
+    "symfony/http-kernel": "^2.8 || ^3.2"
   },
   "suggest": {
     "php-http/buzz-adapter": "Buzz HTTP client implementation",
