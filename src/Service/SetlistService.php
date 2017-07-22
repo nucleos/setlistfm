@@ -26,7 +26,7 @@ final class SetlistService extends AbstractService
      */
     public function getSetlist(string $setlistId): array
     {
-        return $this->call('setlist/'.$setlistId)['setlist'];
+        return $this->call('setlist/'.$setlistId);
     }
 
     /**
@@ -41,24 +41,7 @@ final class SetlistService extends AbstractService
      */
     public function getSetlistByVersion(string $versionId): array
     {
-        return $this->call('setlist/version/'.$versionId)['setlist'];
-    }
-
-    /**
-     * Get setlist information by last.fm id.
-     *
-     * @param string $lastFmId
-     *
-     * @return array
-     *
-     * @throws ApiException
-     * @throws NotFoundException
-     *
-     * @deprecated use getSetlist instead
-     */
-    public function getSetlistByLastFm(string $lastFmId): array
-    {
-        return $this->call('setlist/lastFm/'.$lastFmId)['setlist'];
+        return $this->call('setlist/version/'.$versionId);
     }
 
     /**
@@ -76,26 +59,7 @@ final class SetlistService extends AbstractService
     {
         return $this->call('artist/'.$mbid.'/setlists', array(
             'p' => $page,
-        ))['setlists'];
-    }
-
-    /**
-     * Get artist tour setlist information.
-     *
-     * @param string $mbid
-     * @param string $tour
-     * @param int    $page
-     *
-     * @return array
-     *
-     * @throws ApiException
-     * @throws NotFoundException
-     */
-    public function getArtistTourSetlists(string $mbid, string $tour, int $page = 1): array
-    {
-        return $this->call('artist/'.$mbid.'/tour/'.$tour, array(
-            'p' => $page,
-        ))['setlists'];
+        ))['setlist'];
     }
 
     /**
@@ -113,7 +77,7 @@ final class SetlistService extends AbstractService
     {
         return $this->call('venue/'.$venueId.'/setlists', array(
             'p' => $page,
-        ))['setlists'];
+        ))['setlist'];
     }
 
     /**
@@ -131,6 +95,6 @@ final class SetlistService extends AbstractService
     {
         return $this->call('search/setlists', array_merge($fields, array(
             'p' => $page,
-        )))['setlists'];
+        )))['setlist'];
     }
 }

@@ -18,7 +18,7 @@ abstract class AbstractService
     /**
      * @var ConnectionInterface
      */
-    protected $connection;
+    private $connection;
 
     /**
      * AbstractService constructor.
@@ -28,22 +28,6 @@ abstract class AbstractService
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
-    }
-
-    /**
-     * Formats a date to a timestamp.
-     *
-     * @param \DateTime|null $date
-     *
-     * @return int|null
-     */
-    final protected function toTimestamp(\DateTime $date = null) : ?int
-    {
-        if (null === $date) {
-            return null;
-        }
-
-        return $date->getTimestamp();
     }
 
     /**
@@ -60,41 +44,28 @@ abstract class AbstractService
      */
     final protected function call(string $method, array $params = array(), $requestMethod = 'GET'): array
     {
-        try {
-            $response = $this->connection->call($method, $params, $requestMethod);
-
-            return $this->cleanResponseData($response);
-        } catch (ApiException $e) {
-            if ($e->getCode() == 404) {
-                throw new NotFoundException('No entity was found for your request.', $e->getCode(), $e);
+        foreach ($params as $key => $value) {
+            if ($value instanceof \DateTime) {
+                $params[$key] = $this->toDateString($value);
             }
-            throw $e;
         }
+
+        return $this->connection->call($method, $params, $requestMethod);
     }
 
     /**
-     * Clean response keys and remove @ sign.
+     * Formats a date to a timestamp.
      *
-     * @param array $array
+     * @param \DateTime|null $date
      *
-     * @return array
+     * @return string|null
      */
-    private function cleanResponseData(array $array): array
+    private function toDateString(\DateTime $date = null) : ?string
     {
-        $result = array();
-
-        foreach ($array as $key => $value) {
-            if (is_array($value)) {
-                $value = $this->cleanResponseData($value);
-            }
-
-            if (0 === strpos($key, '@')) {
-                $key = str_replace('@', '', $key);
-            }
-
-            $result[$key] = $value;
+        if (null === $date) {
+            return null;
         }
 
-        return $result;
+        return $date->format('d-m-Y');
     }
 }

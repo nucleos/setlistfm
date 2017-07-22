@@ -26,7 +26,7 @@ final class ArtistService extends AbstractService
      */
     public function getArtist(string $mbid): array
     {
-        return $this->call('artist/'.$mbid)['artist'];
+        return $this->call('artist/'.$mbid);
     }
 
     /**
@@ -49,6 +49,6 @@ final class ArtistService extends AbstractService
             'tmbid'      => $tmbid,
             'artistName' => $name,
             'p'          => $page,
-        ))['artists'];
+        ))['artist'];
     }
 }

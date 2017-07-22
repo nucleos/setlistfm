@@ -37,6 +37,7 @@ final class Core23SetlistFmExtension extends Extension
      */
     private function configureApi(ContainerBuilder $container, array $config)
     {
+        $container->setParameter('core23.setlistfm.api.key', $config['api']['key']);
         $container->setParameter('core23.setlistfm.api.endpoint', $config['api']['endpoint']);
     }
 

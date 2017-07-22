@@ -14,12 +14,12 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * Default Endpoint.
      */
-    const DEFAULT_WS_ENDPOINT = 'https://api.setlist.fm/rest/0.1/';
+    const DEFAULT_WS_ENDPOINT = 'https://api.setlist.fm/rest/1.0/';
 
     /**
-     * Message for empty responses.
+     * @var string
      */
-    const NOT_FOUND_MESSAGE = 'not found';
+    protected $apiKey;
 
     /**
      * @var string
@@ -29,14 +29,16 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * AbstractConnection constructor.
      *
+     * @param string $apikey
      * @param string $uri
      */
-    public function __construct(string $uri = null)
+    public function __construct(string $apikey, string $uri = null)
     {
         if (null === $uri) {
             $uri = static::DEFAULT_WS_ENDPOINT;
         }
 
-        $this->uri = $uri;
+        $this->apiKey = $apikey;
+        $this->uri    = $uri;
     }
 }

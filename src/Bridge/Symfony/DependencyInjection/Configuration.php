@@ -39,7 +39,8 @@ final class Configuration implements ConfigurationInterface
                 ->arrayNode('api')
                     ->addDefaultsIfNotSet()
                     ->children()
-                        ->scalarNode('endpoint')->defaultValue('https://api.setlist.fm/rest/0.1/')->end()
+                        ->scalarNode('key')->isRequired()->end()
+                        ->scalarNode('endpoint')->defaultValue('https://api.setlist.fm/rest/1.0/')->end()
                     ->end()
                 ->end()
             ->end();
@@ -59,7 +60,6 @@ final class Configuration implements ConfigurationInterface
                         ->scalarNode('message_factory')->defaultValue('httplug.message_factory.default')->end()
                     ->end()
                 ->end()
-            ->end()
-        ;
+            ->end();
     }
 }

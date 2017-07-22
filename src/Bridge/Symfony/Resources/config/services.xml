@@ -4,6 +4,7 @@
     <service id="core23.setlistfm.connection" class="Core23\SetlistFm\Connection\HTTPlugConnection" public="false">
       <argument type="service" id="core23.setlistfm.http.client"/>
       <argument type="service" id="core23.setlistfm.http.message_factory"/>
+      <argument>%core23.setlistfm.api.key%</argument>
       <argument>%core23.setlistfm.api.endpoint%</argument>
     </service>
     <service id="core23.setlistfm.service.artist" class="Core23\SetlistFm\Service\ArtistService">
