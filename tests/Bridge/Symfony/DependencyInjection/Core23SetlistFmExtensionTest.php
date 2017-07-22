@@ -19,7 +19,7 @@ class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
         $this->load(array(
             'api' => array(
                 'key' => '0815',
-            )
+            ),
         ));
 
         $this->assertContainerBuilderHasParameter('core23.setlistfm.api.endpoint', 'https://api.setlist.fm/rest/1.0/');
