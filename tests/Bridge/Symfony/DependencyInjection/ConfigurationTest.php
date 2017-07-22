@@ -20,11 +20,15 @@ final class ConfigurationTest extends TestCase
         $processor = new Processor();
 
         $config = $processor->processConfiguration(new Configuration(), array(array(
+            'api' => array(
+                'key' => '0815',
+            ),
         )));
 
         $expected = array(
             'api'          => array(
-                'endpoint'      => 'https://api.setlist.fm/rest/0.1/',
+                'key'           => '0815',
+                'endpoint'      => 'https://api.setlist.fm/rest/1.0/',
             ),
             'http'         => array(
                 'client'          => 'httplug.client.default',
