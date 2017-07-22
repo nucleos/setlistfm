@@ -6,3 +6,6 @@ cs_dry_run:
 
 test:
 	./vendor/bin/phpunit
+
+phpstan:
+	./vendor/bin/phpstan analyse -c phpstan.neon -l 5 src tests
