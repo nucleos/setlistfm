@@ -37,7 +37,7 @@ abstract class AbstractService
      *
      * @return int|null
      */
-    final protected function toTimestamp(\DateTime $date = null)
+    final protected function toTimestamp(\DateTime $date = null) : ?int
     {
         if (null === $date) {
             return null;
@@ -58,7 +58,7 @@ abstract class AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    final protected function call($method, array $params = array(), $requestMethod = 'GET'): array
+    final protected function call(string $method, array $params = array(), $requestMethod = 'GET'): array
     {
         try {
             $response = $this->connection->call($method, $params, $requestMethod);
@@ -79,7 +79,7 @@ abstract class AbstractService
      *
      * @return array
      */
-    private function cleanResponseData(array $array)
+    private function cleanResponseData(array $array): array
     {
         $result = array();
 
