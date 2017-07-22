@@ -24,7 +24,7 @@ php composer.phar require guzzlehttp/guzzle # if you want to use Guzzle native
 php composer.phar require php-http/guzzle6-adapter # if you want to use HTTPlug with Guzzle
 ```
 
-### Usage
+### General usage
 ```php
     // Get HTTPlug client and message factory
     $client         = \Http\Discovery\HttpClientDiscovery::find();
@@ -39,4 +39,50 @@ php composer.phar require php-http/guzzle6-adapter # if you want to use HTTPlug 
     ));
 ```
 
+### Symfony usage
+
+#### Enabling the bundle
+
+```php
+    // app/AppKernel.php
+
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            
+            new Http\HttplugBundle\HttplugBundle(),
+            new Core23\SetlistFm\Bridge\Symfony\Bundle\Core23SetlistFmBundle(),
+
+            // ...
+        );
+    }
+```
+
+Define the API credentials in your configuration.
+
+```yml
+    # config.yml
+
+    core23_setlist_fm:
+        api:
+            key:    %setlistfm_api.key%
+```
+
+Define a [HTTPlug] client in your configuration.
+
+```yml
+    # config.yml
+    
+    httplug:
+        classes:
+            client: Http\Adapter\Guzzle6\Client
+            message_factory: Http\Message\MessageFactory\GuzzleMessageFactory
+            uri_factory: Http\Message\UriFactory\GuzzleUriFactory
+            stream_factory: Http\Message\StreamFactory\GuzzleStreamFactory
+```
+
+This lib / bundle is available under the [MIT license](LICENSE.md).
+
+[HTTPlug]: http://docs.php-http.org/en/latest/index.html
 [Setlist.fm API]: https://api.setlist.fm
