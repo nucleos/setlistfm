@@ -11,7 +11,6 @@ namespace Core23\SetlistFm\Connection;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
-use Http\Client\Common\Plugin\HeaderSetPlugin;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Psr\Http\Message\ResponseInterface;

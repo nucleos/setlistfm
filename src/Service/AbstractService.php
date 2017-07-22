@@ -60,7 +60,7 @@ abstract class AbstractService
      *
      * @return string|null
      */
-    private function toDateString(\DateTime $date = null) : ?string
+    private function toDateString(\DateTime $date = null): ?string
     {
         if (null === $date) {
             return null;
