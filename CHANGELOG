@@ -1,3 +1,27 @@
+23/07/2017 08:03  0.2.0  Support for new setlist.fm API
+8f22f21 Sorted dependencies
+870ce40 Fixed PHPStan runner
+c53c3bb Added option to sort composer packages
+283dabb Optimized travis build
+e4f605b Added PHPStan checks to travis
+a001cb9 Removed HHVM from travis setup
+74f22f3 Apply fixes from StyleCI
+ad6b6e9 Fixed tests
+14ab83e Added symfony usage docs
+149ac9e Updated travis config
+e4ad81a Apply fixes from StyleCI
+8f74c00 Switched to new stable setlist.fm API
+e35c655 Added support for PHP 7.1 type hinting
+f055964 Dropped support for PHP 7.0
+31523c4 Dropped support for outdated symfony versions
+8b577bf Fixed wrong export-ignore entry
+c71121b Use strict compare where possible
+c3a58e3 Removed Guzzle dependency
+1ea2732 Apply fixes from StyleCI
+e59e562 Use new PHP features (::class, null coalescing)
+9786fe7 Improved exception handling
+c351e8c Fixed CS
+9fedd62 Fixed cs
 14/03/2017 19:46  0.2.0  First beta release
 3ca764e Created liip/rmt config
 f4c94fa Fixed string parser
