@@ -82,6 +82,28 @@ Define a [HTTPlug] client in your configuration.
             stream_factory: Http\Message\StreamFactory\GuzzleStreamFactory
 ```
 
+It is recommended to use a cache to reduce the API usage.
+
+```yml
+    # doctrine example
+    doctrine_cache:
+        providers:
+            httplug_cache:
+                type: php_file
+                namespace: httplug_cache
+                
+    httplug:
+        plugins:
+            cache:
+                cache_pool: 'doctrine_cache.providers.httplug_cache'
+                config:
+                    default_ttl: 7200 # Two hours
+        clients:
+            default:
+                plugins:
+                    - httplug.plugin.cache
+```
+
 This lib / bundle is available under the [MIT license](LICENSE.md).
 
 [HTTPlug]: http://docs.php-http.org/en/latest/index.html
