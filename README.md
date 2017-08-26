@@ -85,17 +85,10 @@ Define a [HTTPlug] client in your configuration.
 It is recommended to use a cache to reduce the API usage.
 
 ```yml
-    # doctrine example
-    doctrine_cache:
-        providers:
-            httplug_cache:
-                type: php_file
-                namespace: httplug_cache
-                
     httplug:
         plugins:
             cache:
-                cache_pool: 'doctrine_cache.providers.httplug_cache'
+                cache_pool: 'acme.httplug_cache'
                 config:
                     default_ttl: 7200 # Two hours
         clients:
