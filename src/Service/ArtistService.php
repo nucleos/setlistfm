@@ -42,7 +42,7 @@ final class ArtistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      */
-    public function search(?string $name = null, ?string $tmbid = null, ?string $mbid = null, int $page = 1): array
+    public function search(? string $name = null, ? string $tmbid = null, ? string $mbid = null, int $page = 1) : array
     {
         return $this->call('search/artists', array(
             'mbid'       => $mbid,
