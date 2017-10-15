@@ -1,9 +1,10 @@
 {
   "name": "core23/setlistfm-api",
   "type": "library",
-  "description": "Setlist.fm webservice client for php",
+  "description": "Setlist.fm webservice client for php with symfony integration.",
   "keywords": [
     "symfony",
+    "bundle",
     "setlist.fm",
     "api",
     "bridge",
