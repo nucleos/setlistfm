@@ -30,7 +30,7 @@ final class ArtistService extends AbstractService
     }
 
     /**
-     * Search for artists. Returns artists matches sorted by relevance.
+     * Search for artists. Returns artists sorted by relevance.
      *
      * @param string|null $name
      * @param string|null $tmbid
@@ -49,6 +49,6 @@ final class ArtistService extends AbstractService
             'tmbid'      => $tmbid,
             'artistName' => $name,
             'p'          => $page,
-        ))['artist'];
+        ));
     }
 }

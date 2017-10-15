@@ -15,7 +15,7 @@ use Core23\SetlistFm\Exception\NotFoundException;
 final class CityService extends AbstractService
 {
     /**
-     * Get the city data for a path.
+     * Get the city data for an id.
      *
      * @param string $cityId
      *
@@ -30,7 +30,7 @@ final class CityService extends AbstractService
     }
 
     /**
-     * Search for cities. Returns cities matches sorted by relevance.
+     * Search for cities. Returns cities sorted by relevance.
      *
      * @param array $fields
      * @param int   $page
@@ -44,7 +44,7 @@ final class CityService extends AbstractService
     {
         return $this->call('search/cities', array_merge($fields, array(
             'p' => $page,
-        )))['cities'];
+        )));
     }
 
     /**

@@ -45,7 +45,7 @@ final class SetlistService extends AbstractService
     }
 
     /**
-     * Get artist setlist information.
+     * Get artist setlists.
      *
      * @param string $mbid
      * @param int    $page
@@ -59,11 +59,11 @@ final class SetlistService extends AbstractService
     {
         return $this->call('artist/'.$mbid.'/setlists', array(
             'p' => $page,
-        ))['setlist'];
+        ));
     }
 
     /**
-     * Get venue setlist information.
+     * Get venue setlists.
      *
      * @param string $venueId
      * @param int    $page
@@ -77,11 +77,11 @@ final class SetlistService extends AbstractService
     {
         return $this->call('venue/'.$venueId.'/setlists', array(
             'p' => $page,
-        ))['setlist'];
+        ));
     }
 
     /**
-     * Search for setlists. Returns setlists matches sorted by relevance.
+     * Search for setlists. Returns setlists sorted by relevance.
      *
      * @param array $fields
      * @param int   $page
@@ -95,6 +95,6 @@ final class SetlistService extends AbstractService
     {
         return $this->call('search/setlists', array_merge($fields, array(
             'p' => $page,
-        )))['setlist'];
+        )));
     }
 }
