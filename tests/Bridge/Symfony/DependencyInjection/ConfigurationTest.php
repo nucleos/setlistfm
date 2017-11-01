@@ -26,11 +26,11 @@ final class ConfigurationTest extends TestCase
         )));
 
         $expected = array(
-            'api'          => array(
-                'key'           => '0815',
-                'endpoint'      => 'https://api.setlist.fm/rest/1.0/',
+            'api' => array(
+                'key'      => '0815',
+                'endpoint' => 'https://api.setlist.fm/rest/1.0/',
             ),
-            'http'         => array(
+            'http' => array(
                 'client'          => 'httplug.client.default',
                 'message_factory' => 'httplug.message_factory.default',
             ),

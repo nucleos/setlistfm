@@ -55,7 +55,7 @@ final class HTTPlugConnection extends AbstractConnection
             'x-api-key' => $this->apiKey,
         );
 
-        if ($requestMethod === 'POST') {
+        if ('POST' === $requestMethod) {
             $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method, $headers, $data);
         } else {
             $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'?'.$data, $headers);
@@ -88,11 +88,11 @@ final class HTTPlugConnection extends AbstractConnection
         $content = $response->getBody()->getContents();
         $array   = json_decode($content, true);
 
-        if (json_last_error() !== JSON_ERROR_NONE) {
+        if (JSON_ERROR_NONE !== json_last_error()) {
             throw new ApiException('Server did not reply with a valid response.', $response->getStatusCode());
         }
 
-        if ($response->getStatusCode() == 404) {
+        if (404 == $response->getStatusCode()) {
             throw new NotFoundException('Server did not find any entity for the request.');
         }
 
