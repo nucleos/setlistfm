@@ -92,7 +92,7 @@ final class HTTPlugConnection extends AbstractConnection
             throw new ApiException('Server did not reply with a valid response.', $response->getStatusCode());
         }
 
-        if (404 == $response->getStatusCode()) {
+        if (404 === $response->getStatusCode()) {
             throw new NotFoundException('Server did not find any entity for the request.');
         }
 
