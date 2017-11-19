@@ -32,7 +32,7 @@
     "sllh/php-cs-fixer-styleci-bridge": "^2.0",
     "symfony/http-foundation": "^2.8 || ^3.2",
     "symfony/http-kernel": "^2.8 || ^3.2",
-    "symfony/phpunit-bridge": "^3.2"
+    "symfony/phpunit-bridge": "^3.3.12"
   },
   "suggest": {
     "cache/adapter-bundle": "Symfony cache adapter",
