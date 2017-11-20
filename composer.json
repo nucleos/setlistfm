@@ -30,6 +30,8 @@
     "phpunit/phpunit": "^5.7",
     "sebastian/exporter": "^2.0",
     "sllh/php-cs-fixer-styleci-bridge": "^2.0",
+    "symfony/dependency-injection": "^2.8.6 || ^3.2",
+    "symfony/framework-bundle": "^2.8 || ^3.2",
     "symfony/http-foundation": "^2.8 || ^3.2",
     "symfony/http-kernel": "^2.8 || ^3.2",
     "symfony/phpunit-bridge": "^3.3.12"
@@ -38,7 +40,8 @@
     "cache/adapter-bundle": "Symfony cache adapter",
     "php-http/buzz-adapter": "Buzz HTTP client implementation",
     "php-http/cache-plugin": "Cache plugin to reduce API usage",
-    "php-http/guzzle6-adapter": "Guzzle HTTP client implementation"
+    "php-http/guzzle6-adapter": "Guzzle HTTP client implementation",
+    "symfony/framework-bundle": "If you want to use symfony"
   },
   "conflict": {
     "symfony/http-foundation": "<2.8",
