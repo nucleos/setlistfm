@@ -14,7 +14,7 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * Default Endpoint.
      */
-    const DEFAULT_WS_ENDPOINT = 'https://api.setlist.fm/rest/1.0/';
+    public const DEFAULT_WS_ENDPOINT = 'https://api.setlist.fm/rest/1.0/';
 
     /**
      * @var string
