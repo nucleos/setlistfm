@@ -17,16 +17,16 @@ final class Core23SetlistFmBundle extends Bundle
     /**
      * {@inheritdoc}
      */
-    protected function getContainerExtensionClass()
+    public function getPath()
     {
-        return Core23SetlistFmExtension::class;
+        return __DIR__.'/..';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getPath()
+    protected function getContainerExtensionClass()
     {
-        return __DIR__.'/..';
+        return Core23SetlistFmExtension::class;
     }
 }
