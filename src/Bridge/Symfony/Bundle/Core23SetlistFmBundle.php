@@ -21,4 +21,12 @@ final class Core23SetlistFmBundle extends Bundle
     {
         return Core23SetlistFmExtension::class;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPath()
+    {
+        return __DIR__.'/..';
+    }
 }
