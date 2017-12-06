@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,10 +21,10 @@ final class ArtistService extends AbstractService
      *
      * @param string $mbid
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getArtist(string $mbid): array
     {
@@ -37,18 +39,18 @@ final class ArtistService extends AbstractService
      * @param string|null $mbid
      * @param int         $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
-    public function search(? string $name = null, ? string $tmbid = null, ? string $mbid = null, int $page = 1): array
+    public function search(?string $name = null, ?string $tmbid = null, ?string $mbid = null, int $page = 1): array
     {
-        return $this->call('search/artists', array(
+        return $this->call('search/artists', [
             'mbid'       => $mbid,
             'tmbid'      => $tmbid,
             'artistName' => $name,
             'p'          => $page,
-        ));
+        ]);
     }
 }

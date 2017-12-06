@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -37,12 +39,12 @@ abstract class AbstractService
      * @param array  $params
      * @param string $requestMethod
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
-    final protected function call(string $method, array $params = array(), $requestMethod = 'GET'): array
+    final protected function call(string $method, array $params = [], $requestMethod = 'GET'): array
     {
         foreach ($params as $key => $value) {
             if ($value instanceof \DateTime) {
@@ -60,7 +62,7 @@ abstract class AbstractService
      *
      * @return string|null
      */
-    private function toDateString(\DateTime $date = null): ? string
+    private function toDateString(\DateTime $date = null): ?string
     {
         if (null === $date) {
             return null;

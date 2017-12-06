@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,10 +21,10 @@ final class SetlistService extends AbstractService
      *
      * @param string $setlistId
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getSetlist(string $setlistId): array
     {
@@ -34,10 +36,10 @@ final class SetlistService extends AbstractService
      *
      * @param string $versionId
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getSetlistByVersion(string $versionId): array
     {
@@ -50,16 +52,16 @@ final class SetlistService extends AbstractService
      * @param string $mbid
      * @param int    $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getArtistSetlists(string $mbid, int $page = 1): array
     {
-        return $this->call('artist/'.$mbid.'/setlists', array(
+        return $this->call('artist/'.$mbid.'/setlists', [
             'p' => $page,
-        ));
+        ]);
     }
 
     /**
@@ -68,16 +70,16 @@ final class SetlistService extends AbstractService
      * @param string $venueId
      * @param int    $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getVenueSetlists(string $venueId, int $page = 1): array
     {
-        return $this->call('venue/'.$venueId.'/setlists', array(
+        return $this->call('venue/'.$venueId.'/setlists', [
             'p' => $page,
-        ));
+        ]);
     }
 
     /**
@@ -86,15 +88,15 @@ final class SetlistService extends AbstractService
      * @param array $fields
      * @param int   $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/setlists', array_merge($fields, array(
+        return $this->call('search/setlists', array_merge($fields, [
             'p' => $page,
-        )));
+        ]));
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -14,13 +16,13 @@ use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
 class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
 {
-    public function testLoadDefault()
+    public function testLoadDefault(): void
     {
-        $this->load(array(
-            'api' => array(
+        $this->load([
+            'api' => [
                 'key' => '0815',
-            ),
-        ));
+            ],
+        ]);
 
         $this->assertContainerBuilderHasParameter('core23.setlistfm.api.endpoint', 'https://api.setlist.fm/rest/1.0/');
         $this->assertContainerBuilderHasParameter('core23.setlistfm.api.key', '0815');
@@ -31,8 +33,8 @@ class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
 
     protected function getContainerExtensions(): array
     {
-        return array(
+        return [
             new Core23SetlistFmExtension(),
-        );
+        ];
     }
 }

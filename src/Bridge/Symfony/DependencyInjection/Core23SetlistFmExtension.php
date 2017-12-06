@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,7 +21,7 @@ final class Core23SetlistFmExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
@@ -35,7 +37,7 @@ final class Core23SetlistFmExtension extends Extension
      * @param ContainerBuilder $container
      * @param array            $config
      */
-    private function configureApi(ContainerBuilder $container, array $config)
+    private function configureApi(ContainerBuilder $container, array $config): void
     {
         $container->setParameter('core23.setlistfm.api.key', $config['api']['key']);
         $container->setParameter('core23.setlistfm.api.endpoint', $config['api']['endpoint']);
@@ -45,7 +47,7 @@ final class Core23SetlistFmExtension extends Extension
      * @param ContainerBuilder $container
      * @param array            $config
      */
-    private function configureHttpClient(ContainerBuilder $container, array $config)
+    private function configureHttpClient(ContainerBuilder $container, array $config): void
     {
         $container->setAlias('core23.setlistfm.http.client', $config['http']['client']);
         $container->setAlias('core23.setlistfm.http.message_factory', $config['http']['message_factory']);

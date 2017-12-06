@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -21,10 +23,10 @@ interface ConnectionInterface
      * @param array  $params
      * @param string $requestMethod
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
-    public function call(string $method, array $params = array(), string $requestMethod = 'GET'): array;
+    public function call(string $method, array $params = [], string $requestMethod = 'GET'): array;
 }

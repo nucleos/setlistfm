@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -46,14 +48,14 @@ final class HTTPlugConnection extends AbstractConnection
     /**
      * {@inheritdoc}
      */
-    public function call(string $method, array $params = array(), string $requestMethod = 'GET'): array
+    public function call(string $method, array $params = [], string $requestMethod = 'GET'): array
     {
         $data = $this->buildParameter($params);
 
-        $headers = array(
+        $headers = [
             'Accept'    => 'application/json',
             'x-api-key' => $this->apiKey,
-        );
+        ];
 
         if ('POST' === $requestMethod) {
             $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method, $headers, $data);
@@ -78,10 +80,10 @@ final class HTTPlugConnection extends AbstractConnection
     /**
      * @param ResponseInterface $response
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     private function parseResponse(ResponseInterface $response): array
     {

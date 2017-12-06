@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -15,26 +17,26 @@ use Symfony\Component\Config\Definition\Processor;
 
 final class ConfigurationTest extends TestCase
 {
-    public function testDefaultOptions()
+    public function testDefaultOptions(): void
     {
         $processor = new Processor();
 
-        $config = $processor->processConfiguration(new Configuration(), array(array(
-            'api' => array(
+        $config = $processor->processConfiguration(new Configuration(), [[
+            'api' => [
                 'key' => '0815',
-            ),
-        )));
+            ],
+        ]]);
 
-        $expected = array(
-            'api' => array(
+        $expected = [
+            'api' => [
                 'key'      => '0815',
                 'endpoint' => 'https://api.setlist.fm/rest/1.0/',
-            ),
-            'http' => array(
+            ],
+            'http' => [
                 'client'          => 'httplug.client.default',
                 'message_factory' => 'httplug.message_factory.default',
-            ),
-        );
+            ],
+        ];
 
         $this->assertSame($expected, $config);
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,10 +21,10 @@ final class CityService extends AbstractService
      *
      * @param string $cityId
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getCity(string $cityId): array
     {
@@ -35,25 +37,25 @@ final class CityService extends AbstractService
      * @param array $fields
      * @param int   $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/cities', array_merge($fields, array(
+        return $this->call('search/cities', array_merge($fields, [
             'p' => $page,
-        )));
+        ]));
     }
 
     /**
      * Search for countries.
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function searchCountries(): array
     {

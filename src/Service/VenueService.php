@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,10 +21,10 @@ final class VenueService extends AbstractService
      *
      * @param string $venueId
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function getVenue(string $venueId): array
     {
@@ -35,15 +37,15 @@ final class VenueService extends AbstractService
      * @param array $fields
      * @param int   $page
      *
-     * @return array
-     *
      * @throws ApiException
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/venues', array_merge($fields, array(
+        return $this->call('search/venues', array_merge($fields, [
             'p' => $page,
-        )));
+        ]));
     }
 }
