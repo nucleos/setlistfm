@@ -6,7 +6,6 @@ What is the SetlistFM PHP library?
 
 [![Build Status](https://travis-ci.org/core23/setlistfm-php-api.svg)](http://travis-ci.org/core23/setlistfm-php-api)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/setlistfm-php-api/badges/quality-score.png)](https://scrutinizer-ci.com/g/core23/setlistfm-php-api/)
-[![Code Climate](https://codeclimate.com/github/core23/setlistfm-php-api/badges/gpa.svg)](https://codeclimate.com/github/core23/setlistfm-php-api)
 [![Coverage Status](https://coveralls.io/repos/core23/setlistfm-php-api/badge.svg)](https://coveralls.io/r/core23/setlistfm-php-api)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/51aa4b42-d229-4994-bb3a-156da22a1375/mini.png)](https://insight.sensiolabs.com/projects/51aa4b42-d229-4994-bb3a-156da22a1375)
 
