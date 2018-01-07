@@ -23,7 +23,7 @@
     "psr/log": "^1.0"
   },
   "require-dev": {
-    "matthiasnoback/symfony-dependency-injection-test": "^1.1",
+    "matthiasnoback/symfony-dependency-injection-test": "^2.3",
     "php-http/httplug-bundle": "^1.1",
     "php-http/mock-client": "^0.3",
     "symfony/dependency-injection": "^3.4 || ^4.0",
