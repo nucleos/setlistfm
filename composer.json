@@ -42,6 +42,14 @@
         "php-http/guzzle6-adapter": "Guzzle HTTP client implementation",
         "symfony/framework-bundle": "If you want to use symfony"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Core23\\SetlistFm\\": "src/"
@@ -59,13 +67,5 @@
         "post-update-cmd": [
             "@composer bin all update --ansi"
         ]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.x-dev"
-        }
-    },
-    "config": {
-        "sort-packages": true
     }
 }
