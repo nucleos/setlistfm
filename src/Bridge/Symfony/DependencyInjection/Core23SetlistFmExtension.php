@@ -39,8 +39,8 @@ final class Core23SetlistFmExtension extends Extension
      */
     private function configureApi(ContainerBuilder $container, array $config): void
     {
-        $container->setParameter('core23.setlistfm.api.key', $config['api']['key']);
-        $container->setParameter('core23.setlistfm.api.endpoint', $config['api']['endpoint']);
+        $container->setParameter('core23_setlistfm.api.key', $config['api']['key']);
+        $container->setParameter('core23_setlistfm.api.endpoint', $config['api']['endpoint']);
     }
 
     /**
@@ -49,7 +49,7 @@ final class Core23SetlistFmExtension extends Extension
      */
     private function configureHttpClient(ContainerBuilder $container, array $config): void
     {
-        $container->setAlias('core23.setlistfm.http.client', $config['http']['client']);
-        $container->setAlias('core23.setlistfm.http.message_factory', $config['http']['message_factory']);
+        $container->setAlias('core23_setlistfm.http.client', $config['http']['client']);
+        $container->setAlias('core23_setlistfm.http.message_factory', $config['http']['message_factory']);
     }
 }

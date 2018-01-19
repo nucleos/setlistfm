@@ -24,11 +24,11 @@ class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('core23.setlistfm.api.endpoint', 'https://api.setlist.fm/rest/1.0/');
-        $this->assertContainerBuilderHasParameter('core23.setlistfm.api.key', '0815');
+        $this->assertContainerBuilderHasParameter('core23_setlistfm.api.endpoint', 'https://api.setlist.fm/rest/1.0/');
+        $this->assertContainerBuilderHasParameter('core23_setlistfm.api.key', '0815');
 
-        $this->assertContainerBuilderHasAlias('core23.setlistfm.http.client', 'httplug.client.default');
-        $this->assertContainerBuilderHasAlias('core23.setlistfm.http.message_factory', 'httplug.message_factory.default');
+        $this->assertContainerBuilderHasAlias('core23_setlistfm.http.client', 'httplug.client.default');
+        $this->assertContainerBuilderHasAlias('core23_setlistfm.http.message_factory', 'httplug.message_factory.default');
     }
 
     protected function getContainerExtensions(): array

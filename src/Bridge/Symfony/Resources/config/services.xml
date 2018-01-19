@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="core23.setlistfm.connection" class="Core23\SetlistFm\Connection\HTTPlugConnection" public="false">
-      <argument type="service" id="core23.setlistfm.http.client"/>
-      <argument type="service" id="core23.setlistfm.http.message_factory"/>
-      <argument>%core23.setlistfm.api.key%</argument>
-      <argument>%core23.setlistfm.api.endpoint%</argument>
+    <service id="core23_setlistfm.connection" class="Core23\SetlistFm\Connection\HTTPlugConnection" public="false">
+      <argument type="service" id="core23_setlistfm.http.client"/>
+      <argument type="service" id="core23_setlistfm.http.message_factory"/>
+      <argument>%core23_setlistfm.api.key%</argument>
+      <argument>%core23_setlistfm.api.endpoint%</argument>
     </service>
-    <service id="core23.setlistfm.service.artist" class="Core23\SetlistFm\Service\ArtistService">
-      <argument type="service" id="core23.setlistfm.connection"/>
+    <service id="core23_setlistfm.service.artist" class="Core23\SetlistFm\Service\ArtistService">
+      <argument type="service" id="core23_setlistfm.connection"/>
     </service>
-    <service id="core23.setlistfm.service.city" class="Core23\SetlistFm\Service\CityService">
-      <argument type="service" id="core23.setlistfm.connection"/>
+    <service id="core23_setlistfm.service.city" class="Core23\SetlistFm\Service\CityService">
+      <argument type="service" id="core23_setlistfm.connection"/>
     </service>
-    <service id="core23.setlistfm.service.user" class="Core23\SetlistFm\Service\UserService">
-      <argument type="service" id="core23.setlistfm.connection"/>
+    <service id="core23_setlistfm.service.user" class="Core23\SetlistFm\Service\UserService">
+      <argument type="service" id="core23_setlistfm.connection"/>
     </service>
-    <service id="core23.setlistfm.service.setlist" class="Core23\SetlistFm\Service\SetlistService">
-      <argument type="service" id="core23.setlistfm.connection"/>
+    <service id="core23_setlistfm.service.setlist" class="Core23\SetlistFm\Service\SetlistService">
+      <argument type="service" id="core23_setlistfm.connection"/>
     </service>
-    <service id="core23.setlistfm.service.venue" class="Core23\SetlistFm\Service\VenueService">
-      <argument type="service" id="core23.setlistfm.connection"/>
+    <service id="core23_setlistfm.service.venue" class="Core23\SetlistFm\Service\VenueService">
+      <argument type="service" id="core23_setlistfm.connection"/>
     </service>
   </services>
 </container>
