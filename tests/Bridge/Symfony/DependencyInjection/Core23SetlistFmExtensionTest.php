@@ -14,7 +14,7 @@ namespace Core23\SetlistFm\Tests\Bridge\Symfony\DependencyInjection;
 use Core23\SetlistFm\Bridge\Symfony\DependencyInjection\Core23SetlistFmExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
-class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
+final class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
