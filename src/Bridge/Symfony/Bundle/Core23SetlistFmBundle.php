@@ -27,6 +27,18 @@ final class Core23SetlistFmBundle extends Bundle
     /**
      * {@inheritdoc}
      */
+    public function getContainerExtension()
+    {
+        if (null === $this->extension) {
+            $this->extension = new Core23SetlistFmExtension();
+        }
+
+        return $this->extension;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     protected function getContainerExtensionClass()
     {
         return Core23SetlistFmExtension::class;

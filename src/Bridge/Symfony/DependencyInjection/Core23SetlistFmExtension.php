@@ -21,6 +21,14 @@ final class Core23SetlistFmExtension extends Extension
     /**
      * {@inheritdoc}
      */
+    public function getAlias()
+    {
+        return 'core23_setlistfm';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();

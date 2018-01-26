@@ -63,7 +63,7 @@ Define the API credentials in your configuration.
 ```yml
     # config.yml
 
-    core23_setlist_fm:
+    core23_setlistfm:
         api:
             key:    %setlistfm_api.key%
 ```
