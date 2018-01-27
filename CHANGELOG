@@ -1,3 +1,72 @@
+27/01/2018 10:18  0.3.0  Changed service bundle prefix
+f7b36ed Improved documentation
+9fff705 Adding stages to travis build
+cb91ae9 Changed config root node
+8d13775 Replaced composer.phar with composer in docs
+8701e0b Make tests final
+f4c4f68 Use correct bundle prefix for serivices and parameters
+0bde68e Ignore vendor-bin when calling lint
+df57b1c Use weak vendors mode
+021c7fc Added rmt tool
+5100014 Normalize composer.json file
+65b922d Cleanup PHPStan ignores
+edb50ec Added dev tools via composer-bin plugin
+41f62f9 Sync config
+f92c8ea Removed old build config
+6071c0f Use global phpunit version when calling RMT
+5ecf8bf Removed PHPUnit from phpstan
+4d4dc8e Use PHPUnit 6
+6d616a5 Moved all translation to xlf
+89ffcfb Removed outdated conflict entries from composer
+3ae690d Ignore PHPUnit warnings when calling phpstan
+3b89c67 Added phpstan extension to travis
+1feabce Removed hard phpunit dependency
+12c2a9a Removed version information from phpunit.xml.dist
+5841b33 Ignore PHPUnit errors when calling phpstan
+db07d46 Fixed coveralls build
+e1cae0f Sync build config
+8f503b7 Removed code climate status
+f2d4598 Sync config
+ef62666 Ignore symfony DI errors when calling phpstan
+6e4edd4 Updated travis config for outdated symfony versions
+77a996c Bumped symfony deps to >=3.4
+ec83243 Require latest phpstan version
+f9f1e76 Fixed CS
+5df7f2e Sync config
+01cfb87 Sync config
+e7dbc27 Added .editorconfig
+aa86090 Apply fixes from StyleCI
+d25b7e7 Fixed symfony bundle path
+fcf967f Added support for PHP 7.2 and Symfony 3.4 / 4.x
+e530c54 Fixed PHPStan issues
+37eb1c7 Fixed PHPUnit path config
+a0bf3cd Fixed CS
+f172585 Revert "Bumped DI test version"
+0b7fb40 Added symfony/expression-language dependency to work with sf3
+c8668fa Bumped DI test version
+5e88887 Cleanup phpstan config
+23f9257 Force phpstan check when running travis
+b24bb95 Added missing dependencies
+619d19d Added SymfonyTestsListener
+4cbc451 Minor code fixes
+0e83752 Apply fixes from StyleCI
+132a076 Fixed CS
+c262f69 Apply fixes from StyleCI
+4eef0cd Fixed CS
+6047eef Apply fixes from StyleCI
+493130c Services will return all raw data from the API
+30d6c4c Modified composer meta data
+57291c5 Apply fixes from StyleCI
+4ea8db8 Fixed CS
+3ef966e [travis] Removed xdebug config
+f4e70b0 Added type hints
+2f1f379 Sort suggested dependencies
+e56a1f6 [travis] Moved phpstan to allow failures
+1285260 Suggest cache adapter
+ac478bd Rewrote example code when using a cache
+20de1d9 Sorted dependencies
+d7586fc Recommend using a cache for requests
+60a2aa2 Use latest phpstan version
 23/07/2017 08:03  0.2.0  Support for new setlist.fm API
 8f22f21 Sorted dependencies
 870ce40 Fixed PHPStan runner
