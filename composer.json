@@ -35,6 +35,9 @@
         "symfony/http-kernel": "^3.4 || ^4.0",
         "symfony/phpunit-bridge": "^4.0"
     },
+    "conflict": {
+        "symfony/framework-bundle": "<3.4"
+    },
     "suggest": {
         "cache/adapter-bundle": "Symfony cache adapter",
         "php-http/buzz-adapter": "Buzz HTTP client implementation",
