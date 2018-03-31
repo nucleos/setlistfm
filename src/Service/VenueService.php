@@ -13,6 +13,7 @@ namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Core23\SetlistFm\Model\Venue;
 
 final class VenueService extends AbstractService
 {
@@ -24,11 +25,13 @@ final class VenueService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Venue
      */
-    public function getVenue(string $venueId): array
+    public function getVenue(string $venueId): Venue
     {
-        return $this->call('venue/'.$venueId);
+        return Venue::fromApi(
+            $this->call('venue/'.$venueId)
+        );
     }
 
     /**
@@ -40,12 +43,20 @@ final class VenueService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Venue[]
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/venues', array_merge($fields, [
+        $response = $this->call('search/venues', array_merge($fields, [
             'p' => $page,
         ]));
+
+        if (!array_key_exists('venue', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Venue::fromApi($data);
+        }, $response['venue']);
     }
 }

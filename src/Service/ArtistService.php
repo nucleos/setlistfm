@@ -13,6 +13,7 @@ namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Core23\SetlistFm\Model\Artist;
 
 final class ArtistService extends AbstractService
 {
@@ -24,11 +25,13 @@ final class ArtistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Artist
      */
-    public function getArtist(string $mbid): array
+    public function getArtist(string $mbid): Artist
     {
-        return $this->call('artist/'.$mbid);
+        return Artist::fromApi(
+            $this->call('artist/'.$mbid)
+        );
     }
 
     /**
@@ -42,15 +45,23 @@ final class ArtistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Artist[]
      */
     public function search(?string $name = null, ?string $tmbid = null, ?string $mbid = null, int $page = 1): array
     {
-        return $this->call('search/artists', [
+        $response = $this->call('search/artists', [
             'mbid'       => $mbid,
             'tmbid'      => $tmbid,
             'artistName' => $name,
             'p'          => $page,
         ]);
+
+        if (!array_key_exists('artist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Artist::fromApi($data);
+        }, $response['artist']);
     }
 }

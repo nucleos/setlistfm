@@ -10,6 +10,9 @@
     <service id="core23_setlistfm.service.artist" class="Core23\SetlistFm\Service\ArtistService">
       <argument type="service" id="core23_setlistfm.connection"/>
     </service>
+    <service id="core23_setlistfm.service.country" class="Core23\SetlistFm\Service\CountryService">
+      <argument type="service" id="core23_setlistfm.connection"/>
+    </service>
     <service id="core23_setlistfm.service.city" class="Core23\SetlistFm\Service\CityService">
       <argument type="service" id="core23_setlistfm.connection"/>
     </service>

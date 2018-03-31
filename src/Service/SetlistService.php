@@ -13,6 +13,7 @@ namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Core23\SetlistFm\Model\Setlist;
 
 final class SetlistService extends AbstractService
 {
@@ -24,11 +25,13 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist
      */
-    public function getSetlist(string $setlistId): array
+    public function getSetlist(string $setlistId): Setlist
     {
-        return $this->call('setlist/'.$setlistId);
+        return Setlist::fromApi(
+            $this->call('setlist/'.$setlistId)
+        );
     }
 
     /**
@@ -39,11 +42,13 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist
      */
-    public function getSetlistByVersion(string $versionId): array
+    public function getSetlistByVersion(string $versionId): Setlist
     {
-        return $this->call('setlist/version/'.$versionId);
+        return Setlist::fromApi(
+            $this->call('setlist/version/'.$versionId)
+        );
     }
 
     /**
@@ -55,13 +60,21 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist[]
      */
     public function getArtistSetlists(string $mbid, int $page = 1): array
     {
-        return $this->call('artist/'.$mbid.'/setlists', [
+        $response = $this->call('artist/'.$mbid.'/setlists', [
             'p' => $page,
         ]);
+
+        if (!array_key_exists('setlist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Setlist::fromApi($data);
+        }, $response['setlist']);
     }
 
     /**
@@ -73,13 +86,21 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist[]
      */
     public function getVenueSetlists(string $venueId, int $page = 1): array
     {
-        return $this->call('venue/'.$venueId.'/setlists', [
+        $response =  $this->call('venue/'.$venueId.'/setlists', [
             'p' => $page,
         ]);
+
+        if (!array_key_exists('setlist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Setlist::fromApi($data);
+        }, $response['setlist']);
     }
 
     /**
@@ -91,12 +112,20 @@ final class SetlistService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist[]
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/setlists', array_merge($fields, [
+        $response=  $this->call('search/setlists', array_merge($fields, [
             'p' => $page,
         ]));
+
+        if (!array_key_exists('setlist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Setlist::fromApi($data);
+        }, $response['setlist']);
     }
 }

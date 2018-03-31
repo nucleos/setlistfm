@@ -13,22 +13,25 @@ namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Core23\SetlistFm\Model\City;
 
 final class CityService extends AbstractService
 {
     /**
      * Get the city data for an id.
      *
-     * @param string $cityId
+     * @param int $cityId
      *
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return City
      */
-    public function getCity(string $cityId): array
+    public function getCity(int $cityId): City
     {
-        return $this->call('city/'.$cityId);
+        return City::fromApi(
+            $this->call('city/'.$cityId)
+        );
     }
 
     /**
@@ -40,25 +43,20 @@ final class CityService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return City[]
      */
     public function search(array $fields, int $page = 1): array
     {
-        return $this->call('search/cities', array_merge($fields, [
+        $response = $this->call('search/cities', array_merge($fields, [
             'p' => $page,
         ]));
-    }
 
-    /**
-     * Search for countries.
-     *
-     * @throws ApiException
-     * @throws NotFoundException
-     *
-     * @return array
-     */
-    public function searchCountries(): array
-    {
-        return $this->call('search/countries');
+        if (!array_key_exists('cities', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return City::fromApi($data);
+        }, $response['cities']);
     }
 }

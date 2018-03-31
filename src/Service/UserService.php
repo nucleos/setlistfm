@@ -13,6 +13,8 @@ namespace Core23\SetlistFm\Service;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Core23\SetlistFm\Model\Setlist;
+use Core23\SetlistFm\Model\User;
 
 final class UserService extends AbstractService
 {
@@ -24,11 +26,13 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return User
      */
-    public function getUser(string $userId): array
+    public function getUser(string $userId): User
     {
-        return $this->call('user/'.$userId);
+        return User::fromApi(
+            $this->call('user/'.$userId)
+        );
     }
 
     /**
@@ -40,13 +44,21 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist[]
      */
     public function getAttends(string $userId, int $page = 1): array
     {
-        return $this->call('user/'.$userId.'/attended', [
+        $response = $this->call('user/'.$userId.'/attended', [
             'p' => $page,
         ]);
+
+        if (!array_key_exists('setlist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Setlist::fromApi($data);
+        }, $response['setlist']);
     }
 
     /**
@@ -58,12 +70,20 @@ final class UserService extends AbstractService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return array
+     * @return Setlist[]
      */
     public function getEdits(string $userId, int $page = 1): array
     {
-        return $this->call('user/'.$userId.'/edited', [
+        $response = $this->call('user/'.$userId.'/edited', [
             'p' => $page,
         ]);
+
+        if (!array_key_exists('setlist', $response)) {
+            return [];
+        }
+
+        return array_map(function ($data) {
+            return Setlist::fromApi($data);
+        }, $response['setlist']);
     }
 }
