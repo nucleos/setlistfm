@@ -54,13 +54,13 @@ final class HTTPlugConnection extends AbstractConnection
 
         $headers = [
             'Accept'    => 'application/json',
-            'x-api-key' => $this->apiKey,
+            'x-api-key' => $this->getApiKey(),
         ];
 
         if ('POST' === $requestMethod) {
-            $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method, $headers, $data);
+            $request = $this->messageFactory->createRequest($requestMethod, $this->getUri().$method, $headers, $data);
         } else {
-            $request = $this->messageFactory->createRequest($requestMethod, $this->uri.$method.'?'.$data, $headers);
+            $request = $this->messageFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data, $headers);
         }
 
         try {

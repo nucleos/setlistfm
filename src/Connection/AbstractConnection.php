@@ -21,12 +21,12 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * @var string
      */
-    protected $apiKey;
+    private $apiKey;
 
     /**
      * @var string
      */
-    protected $uri;
+    private $uri;
 
     /**
      * AbstractConnection constructor.
@@ -42,5 +42,21 @@ abstract class AbstractConnection implements ConnectionInterface
 
         $this->apiKey = $apikey;
         $this->uri    = $uri;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getApiKey(): string
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getUri(): string
+    {
+        return $this->uri;
     }
 }
