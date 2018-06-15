@@ -22,6 +22,9 @@
         "php": "^7.1",
         "psr/log": "^1.0"
     },
+    "conflict": {
+        "symfony/framework-bundle": "<3.4"
+    },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
         "matthiasnoback/symfony-dependency-injection-test": "^2.3",
@@ -34,9 +37,6 @@
         "symfony/http-foundation": "^3.4 || ^4.0",
         "symfony/http-kernel": "^3.4 || ^4.0",
         "symfony/phpunit-bridge": "^4.0"
-    },
-    "conflict": {
-        "symfony/framework-bundle": "<3.4"
     },
     "suggest": {
         "cache/adapter-bundle": "Symfony cache adapter",
