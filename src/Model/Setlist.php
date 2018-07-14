@@ -64,8 +64,6 @@ final class Setlist
     private $updateDate;
 
     /**
-     * Setlist constructor.
-     *
      * @param string         $id
      * @param Artist|null    $artist
      * @param Venue|null     $venue

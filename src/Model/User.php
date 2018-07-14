@@ -39,8 +39,6 @@ final class User
     private $url;
 
     /**
-     * User constructor.
-     *
      * @param string      $id
      * @param null|string $fullname
      * @param null|string $about

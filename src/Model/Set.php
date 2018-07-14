@@ -29,8 +29,6 @@ final class Set
     private $songs;
 
     /**
-     * Set constructor.
-     *
      * @param null|string $name
      * @param int|null    $encore
      * @param Song[]      $songs

@@ -24,8 +24,6 @@ final class Geo
     private $latitude;
 
     /**
-     * Geo constructor.
-     *
      * @param float $longitude
      * @param float $latitude
      */

@@ -44,8 +44,6 @@ final class City
     private $geo;
 
     /**
-     * City constructor.
-     *
      * @param int          $id
      * @param string       $name
      * @param null|string  $state

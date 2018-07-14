@@ -39,8 +39,6 @@ final class Song
     private $featurings;
 
     /**
-     * Song constructor.
-     *
      * @param string      $name
      * @param null|string $info
      * @param Artist|null $cover

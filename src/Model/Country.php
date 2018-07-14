@@ -24,8 +24,6 @@ final class Country
     private $name;
 
     /**
-     * Country constructor.
-     *
      * @param string $code
      * @param string $name
      */

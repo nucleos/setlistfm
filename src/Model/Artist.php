@@ -44,8 +44,6 @@ final class Artist
     private $url;
 
     /**
-     * Artist constructor.
-     *
      * @param string      $name
      * @param null|string $mbid
      * @param null|int    $tmid
