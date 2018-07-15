@@ -21,6 +21,7 @@
     "require": {
         "php": "^7.1",
         "ext-json": "*",
+        "psr/http-message": "^1.0",
         "psr/log": "^1.0"
     },
     "conflict": {
@@ -32,6 +33,7 @@
         "php-http/httplug-bundle": "^1.1",
         "php-http/mock-client": "^1.1",
         "sllh/composer-lint": "^1.0",
+        "symfony/config": "^3.4 || ^4.0",
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/expression-language": "^3.4 || ^4.0",
         "symfony/framework-bundle": "^3.4 || ^4.0",
