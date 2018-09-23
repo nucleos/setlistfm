@@ -1,3 +1,24 @@
+23/09/2018 13:45  0.4.0  Use models instead of arrays
+c764ec0 Added missing dependencies
+e09fad7 Added php-http/client-implementation dependency
+d654035 Updated .editorconfig
+4a008a1 TRAVIS: Moved dependencies check to allow failures
+8f7e27b Added missing dependencies
+5b8ec3a Added missing dependencies
+6547c0f Removed useless PHPDoc
+fa184e1 Sync config
+627bbcd Added composer-require-checker to build
+0786107 Added mising extensions to composer.json
+650fc9c Sync phpstan config
+9ae69c4 phpstan findings
+371c9db Require latest phpstan version
+016a67c Normalize composer.json
+9f1a8bc Require latest httplug mock
+55c0a4f Created issue templates
+434eca0 Closing API
+ea923bc Use explicit models instead of anonymous arrays
+fc424a7 Added old symfony/framework-bundle versions to conflict section
+ebabcfe Don't use PHPUnit 7 yet
 27/01/2018 10:18  0.3.0  Changed service bundle prefix
 f7b36ed Improved documentation
 9fff705 Adding stages to travis build
