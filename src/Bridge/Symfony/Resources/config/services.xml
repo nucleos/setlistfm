@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
+    <service alias="core23_setlistfm.service.artist" id="Core23\SetlistFm\Service\ArtistService" public="true"/>
+    <service alias="core23_setlistfm.service.country" id="Core23\SetlistFm\Service\CountryService" public="true"/>
+    <service alias="core23_setlistfm.service.city" id="Core23\SetlistFm\Service\CityService" public="true"/>
+    <service alias="core23_setlistfm.service.user" id="Core23\SetlistFm\Service\UserService" public="true"/>
+    <service alias="core23_setlistfm.service.setlist" id="Core23\SetlistFm\Service\SetlistService" public="true"/>
+    <service alias="core23_setlistfm.service.venue" id="Core23\SetlistFm\Service\VenueService" public="true"/>
     <service id="core23_setlistfm.connection" class="Core23\SetlistFm\Connection\HTTPlugConnection" public="false">
       <argument type="service" id="core23_setlistfm.http.client"/>
       <argument type="service" id="core23_setlistfm.http.message_factory"/>
