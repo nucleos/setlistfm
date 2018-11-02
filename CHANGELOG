@@ -1,3 +1,8 @@
+02/11/2018 08:17  0.4.1  Autowiring
+007b5c6 Removed donation from README
+36bb49d Added service aliases for autowiring
+80ded1f Updated release config
+bf10210 Updated style config
 23/09/2018 13:45  0.4.0  Use models instead of arrays
 c764ec0 Added missing dependencies
 e09fad7 Added php-http/client-implementation dependency
