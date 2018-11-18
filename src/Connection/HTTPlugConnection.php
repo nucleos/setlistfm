@@ -13,6 +13,7 @@ namespace Core23\SetlistFm\Connection;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Psr\Http\Message\ResponseInterface;
@@ -73,6 +74,8 @@ final class HTTPlugConnection extends AbstractConnection
         } catch (NotFoundException $e) {
             throw $e;
         } catch (\Exception $e) {
+            throw new ApiException('Technical error occurred.', 500, $e);
+        } catch (Exception $e) {
             throw new ApiException('Technical error occurred.', 500, $e);
         }
     }
