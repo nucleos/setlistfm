@@ -24,13 +24,13 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('core23_setlistfm');
 
-        /* @var ArrayNodeDefinition $rootNode */
         // Keep compatibility with symfony/config < 4.2
         if (!\method_exists($treeBuilder, 'getRootNode')) {
             $rootNode = $treeBuilder->root('core23_setlistfm');
         } else {
             $rootNode = $treeBuilder->getRootNode();
         }
+        \assert($rootNode instanceof ArrayNodeDefinition);
 
         $this->addApiSection($rootNode);
         $this->addHttpClientSection($rootNode);
