@@ -1,3 +1,17 @@
+29/12/2018 08:34  0.5.0  Catch client exception
+8763d3e Fixed phpunit config for release command
+a3a7c3a Use correct error code when wrapping client exceptions
+3051536 Use asserts for type safe root config nodes
+ef25c6f Removed deprecation warnings
+5fa2efb Removed deprecation warnings
+4f0dad7 Added platform workaround for php-cs-fixer tool
+f50e595 Require latest phpunit bridge
+d455d67 Require latest phpunit bridge
+537f456 Travis: Test against PHP 7.3
+68c3680 Dropped support for PHP 7.1
+daa4a96 Catched client exceptions
+c978a2a Fixed syntax error in editorconfig
+0ceb018 Moved test dependencies to vendor-bin
 02/11/2018 08:17  0.4.1  Autowiring
 007b5c6 Removed donation from README
 36bb49d Added service aliases for autowiring
