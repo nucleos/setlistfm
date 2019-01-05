@@ -45,11 +45,11 @@ final class Artist
 
     /**
      * @param string      $name
-     * @param null|string $mbid
-     * @param null|int    $tmid
-     * @param null|string $sortName
-     * @param null|string $disambiguation
-     * @param null|string $url
+     * @param string|null $mbid
+     * @param int|null    $tmid
+     * @param string|null $sortName
+     * @param string|null $disambiguation
+     * @param string|null $url
      */
     public function __construct(
         string $name,
@@ -76,7 +76,7 @@ final class Artist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getMbid(): ?string
     {
@@ -84,7 +84,7 @@ final class Artist
     }
 
     /**
-     * @return null|int
+     * @return int|null
      */
     public function getTmid(): ?int
     {
@@ -92,7 +92,7 @@ final class Artist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getSortName(): ?string
     {
@@ -100,7 +100,7 @@ final class Artist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getDisambiguation(): ?string
     {
@@ -108,7 +108,7 @@ final class Artist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getUrl(): ?string
     {

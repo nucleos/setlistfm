@@ -40,10 +40,10 @@ final class User
 
     /**
      * @param string      $id
-     * @param null|string $fullname
-     * @param null|string $about
-     * @param null|string $website
-     * @param null|string $url
+     * @param string|null $fullname
+     * @param string|null $about
+     * @param string|null $website
+     * @param string|null $url
      */
     public function __construct(string $id, ?string $fullname, ?string $about, ?string $website, ?string $url)
     {
@@ -63,7 +63,7 @@ final class User
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getFullname(): ?string
     {
@@ -71,7 +71,7 @@ final class User
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAbout(): ?string
     {
@@ -79,7 +79,7 @@ final class User
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getWebsite(): ?string
     {
@@ -87,7 +87,7 @@ final class User
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getUrl(): ?string
     {

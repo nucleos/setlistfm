@@ -46,8 +46,8 @@ final class City
     /**
      * @param int          $id
      * @param string       $name
-     * @param null|string  $state
-     * @param null|string  $stateCode
+     * @param string|null  $state
+     * @param string|null  $stateCode
      * @param Country|null $county
      * @param Geo|null     $geo
      */
@@ -84,7 +84,7 @@ final class City
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getState(): ?string
     {
@@ -92,7 +92,7 @@ final class City
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getStateCode(): ?string
     {

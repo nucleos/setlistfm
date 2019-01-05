@@ -36,7 +36,7 @@ final class Venue
     /**
      * @param string      $id
      * @param string      $name
-     * @param null|string $url
+     * @param string|null $url
      * @param City|null   $city
      */
     public function __construct(string $id, string $name, ?string $url, ?City $city)
@@ -64,7 +64,7 @@ final class Venue
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getUrl(): ?string
     {

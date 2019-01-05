@@ -40,7 +40,7 @@ final class Song
 
     /**
      * @param string      $name
-     * @param null|string $info
+     * @param string|null $info
      * @param Artist|null $cover
      * @param bool        $taped
      * @param Artist[]    $featurings
@@ -63,7 +63,7 @@ final class Song
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getInfo(): ?string
     {

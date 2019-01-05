@@ -29,7 +29,7 @@ final class Set
     private $songs;
 
     /**
-     * @param null|string $name
+     * @param string|null $name
      * @param int|null    $encore
      * @param Song[]      $songs
      */
@@ -41,7 +41,7 @@ final class Set
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getName(): ?string
     {

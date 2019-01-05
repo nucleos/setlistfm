@@ -69,9 +69,9 @@ final class Setlist
      * @param Venue|null     $venue
      * @param Tour|null      $tour
      * @param Set[]          $sets
-     * @param null|string    $info
-     * @param null|string    $url
-     * @param null|string    $versionId
+     * @param string|null    $info
+     * @param string|null    $url
+     * @param string|null    $versionId
      * @param \DateTime      $eventDate
      * @param \DateTime|null $updateDate
      */
@@ -140,7 +140,7 @@ final class Setlist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getInfo(): ?string
     {
@@ -148,7 +148,7 @@ final class Setlist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getUrl(): ?string
     {
@@ -156,7 +156,7 @@ final class Setlist
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getVersionId(): ?string
     {
