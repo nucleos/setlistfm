@@ -31,7 +31,7 @@ final class Core23SetlistFmExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasAlias('core23_setlistfm.http.message_factory', 'httplug.message_factory.default');
     }
 
-    protected function getContainerExtensions(): array
+    protected function getContainerExtensions()
     {
         return [
             new Core23SetlistFmExtension(),
