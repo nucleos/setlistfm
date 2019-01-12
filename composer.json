@@ -35,12 +35,12 @@
         "bamarni/composer-bin-plugin": "^1.2",
         "php-http/mock-client": "^1.1",
         "sllh/composer-lint": "^1.0",
-        "symfony/config": "^3.4 || ^4.0",
-        "symfony/dependency-injection": "^3.4 || ^4.0",
-        "symfony/expression-language": "^3.4 || ^4.0",
-        "symfony/framework-bundle": "^3.4 || ^4.0",
-        "symfony/http-foundation": "^3.4 || ^4.0",
-        "symfony/http-kernel": "^3.4 || ^4.0"
+        "symfony/config": "^3.4 || ^4.2",
+        "symfony/dependency-injection": "^3.4 || ^4.2",
+        "symfony/expression-language": "^3.4 || ^4.2",
+        "symfony/framework-bundle": "^3.4 || ^4.2",
+        "symfony/http-foundation": "^3.4 || ^4.2",
+        "symfony/http-kernel": "^3.4 || ^4.2"
     },
     "suggest": {
         "cache/adapter-bundle": "Symfony cache adapter",
