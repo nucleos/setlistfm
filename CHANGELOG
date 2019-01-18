@@ -1,3 +1,15 @@
+18/01/2019 17:22  1.0.0  First stable
+4a2e5b7 [MINOR] Added support for latest httplug version
+64e011d [MINOR] Use generic request factory when creating new http request
+9e73578 [BUILD] Fixed phpstan ignore list
+3607f10 [PATCH] Fixed typo in composer.json
+3ce42fd [MAJOR] Removed symfony bridge
+2fc869a [BUILD] Updated phpstan version
+6dce8ab [BUILD] Fixed symfony test setup
+1a6e5d4 [MINOR] Removed support for outdated symfony versions
+09c6598 Updated cs-fixer config
+84d986d Use return types
+b25dac5 Fixed CS
 29/12/2018 08:34  0.5.0  Catch client exception
 8763d3e Fixed phpunit config for release command
 a3a7c3a Use correct error code when wrapping client exceptions
