@@ -1,64 +1,64 @@
 {
-    "name": "core23/setlistfm-api",
-    "type": "library",
-    "description": "Setlist.fm webservice client for php with symfony integration.",
-    "keywords": [
-        "setlist.fm",
-        "api",
-        "bridge",
-        "webservice client"
-    ],
-    "homepage": "https://core23.de",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Christian Gripp",
-            "email": "mail@core23.de"
-        }
-    ],
-    "require": {
-        "php": "^7.2",
-        "ext-json": "*",
-        "php-http/client-implementation": "^1.0",
-        "php-http/httplug": "^1.0",
-        "php-http/message-factory": "^1.0",
-        "psr/http-message": "^1.0",
-        "psr/log": "^1.0"
-    },
-    "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.2",
-        "php-http/mock-client": "^1.1",
-        "sllh/composer-lint": "^1.0"
-    },
-    "suggest": {
-        "php-http/buzz-adapter": "Buzz HTTP client implementation",
-        "php-http/cache-plugin": "Cache plugin to reduce API usage",
-        "php-http/guzzle6-adapter": "Guzzle HTTP client implementation"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.x-dev"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Core23\\SetlistFm\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Core23\\SetlistFm\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "@composer bin all install --ansi"
-        ],
-        "post-update-cmd": [
-            "@composer bin all update --ansi"
-        ]
+  "name": "core23/setlistfm-api",
+  "type": "library",
+  "description": "Setlist.fm webservice client for php with symfony integration.",
+  "keywords": [
+    "setlist.fm",
+    "api",
+    "bridge",
+    "webservice client"
+  ],
+  "homepage": "https://core23.de",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Gripp",
+      "email": "mail@core23.de"
     }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "php-http/client-implementation": "^1.0",
+    "php-http/httplug": "^1.0 || ^2.0",
+    "php-http/message-factory": "^1.0",
+    "psr/http-message": "^1.0",
+    "psr/log": "^1.0"
+  },
+  "require-dev": {
+    "bamarni/composer-bin-plugin": "^1.2",
+    "php-http/mock-client": "^1.0",
+    "sllh/composer-lint": "^1.0"
+  },
+  "suggest": {
+    "php-http/buzz-adapter": "Buzz HTTP client implementation",
+    "php-http/cache-plugin": "Cache plugin to reduce API usage",
+    "php-http/guzzle6-adapter": "Guzzle HTTP client implementation"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Core23\\SetlistFm\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Core23\\SetlistFm\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer bin all install --ansi"
+    ],
+    "post-update-cmd": [
+      "@composer bin all update --ansi"
+    ]
+  }
 }
