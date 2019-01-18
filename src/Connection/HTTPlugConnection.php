@@ -15,7 +15,7 @@ use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Http\Client\Exception;
 use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
+use Http\Message\RequestFactory;
 use Psr\Http\Message\ResponseInterface;
 
 final class HTTPlugConnection extends AbstractConnection
@@ -26,24 +26,24 @@ final class HTTPlugConnection extends AbstractConnection
     private $client;
 
     /**
-     * @var MessageFactory
+     * @var RequestFactory
      */
-    private $messageFactory;
+    private $requestFactory;
 
     /**
      * Initialize client.
      *
      * @param HttpClient     $client
-     * @param MessageFactory $messageFactory
+     * @param RequestFactory $requestFactory
      * @param string         $apiKey
      * @param string         $uri
      */
-    public function __construct(HttpClient $client, MessageFactory $messageFactory, string $apiKey, string $uri = null)
+    public function __construct(HttpClient $client, RequestFactory $requestFactory, string $apiKey, string $uri = null)
     {
         parent::__construct($apiKey, $uri);
 
         $this->client         = $client;
-        $this->messageFactory = $messageFactory;
+        $this->requestFactory = $requestFactory;
     }
 
     /**
@@ -59,9 +59,9 @@ final class HTTPlugConnection extends AbstractConnection
         ];
 
         if ('POST' === $requestMethod) {
-            $request = $this->messageFactory->createRequest($requestMethod, $this->getUri().$method, $headers, $data);
+            $request = $this->requestFactory->createRequest($requestMethod, $this->getUri().$method, $headers, $data);
         } else {
-            $request = $this->messageFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data, $headers);
+            $request = $this->requestFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data, $headers);
         }
 
         try {
