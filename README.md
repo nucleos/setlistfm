@@ -43,68 +43,6 @@ $artists = $artistApi->search(array(
 ));
 ```
 
-## Symfony usage
-
-If you want to use this library inside symfony, you can use a bridge.
-
-### Enable the Bundle
-
-Then, enable the bundle by adding it to the list of registered bundles in `bundles.php` file of your project:
-
-```php
-// config/bundles.php
-
-return [
-    // ...
-    Http\HttplugBundle\HttplugBundle::class                             => ['all' => true],
-    Core23\SetlistFm\Bridge\Symfony\Bundle\Core23SetlistFmBundle::class => ['all' => true],
-];
-```
-
-### Configure the Bundle
-
-Create a configuration file called `core23_setlistfm.yaml`:
-
-```yaml
-# config/packages/core23_setlistfm.yaml
-
-core23_setlistfm:
-    api:
-        key:    "%setlistfm_api.key%"
-```
-
-Define a [HTTPlug] client in your configuration.
-
-```yaml
-# config/packages/httplug.yaml
-
-httplug:
-    classes:
-        client: Http\Adapter\Guzzle6\Client
-        message_factory: Http\Message\MessageFactory\GuzzleMessageFactory
-        uri_factory: Http\Message\UriFactory\GuzzleUriFactory
-        stream_factory: Http\Message\StreamFactory\GuzzleStreamFactory
-```
-
-### API cache
-
-It is recommended to use a cache to reduce the API usage.
-
-```yaml
-# config/packages/httplug.yaml
-
-httplug:
-    plugins:
-        cache:
-            cache_pool: 'acme.httplug_cache'
-            config:
-                default_ttl: 7200 # Two hours
-    clients:
-        default:
-            plugins:
-                - httplug.plugin.cache
-```
-
 ## License
 
 This library is under the [MIT license](LICENSE.md).
