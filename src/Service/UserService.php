@@ -52,7 +52,7 @@ final class UserService extends AbstractService
             'p' => $page,
         ]);
 
-        if (!array_key_exists('setlist', $response)) {
+        if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 
@@ -78,7 +78,7 @@ final class UserService extends AbstractService
             'p' => $page,
         ]);
 
-        if (!array_key_exists('setlist', $response)) {
+        if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 

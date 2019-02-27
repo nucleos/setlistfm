@@ -29,7 +29,7 @@ final class CountryService extends AbstractService
     {
         $response = $this->call('search/countries');
 
-        if (!array_key_exists('country', $response)) {
+        if (!\array_key_exists('country', $response)) {
             return [];
         }
 

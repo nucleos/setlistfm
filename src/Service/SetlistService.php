@@ -68,7 +68,7 @@ final class SetlistService extends AbstractService
             'p' => $page,
         ]);
 
-        if (!array_key_exists('setlist', $response)) {
+        if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 
@@ -94,7 +94,7 @@ final class SetlistService extends AbstractService
             'p' => $page,
         ]);
 
-        if (!array_key_exists('setlist', $response)) {
+        if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 
@@ -120,7 +120,7 @@ final class SetlistService extends AbstractService
             'p' => $page,
         ]));
 
-        if (!array_key_exists('setlist', $response)) {
+        if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 

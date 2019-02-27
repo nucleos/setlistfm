@@ -191,21 +191,21 @@ final class Setlist
         $tour   = null;
         $sets   = [];
 
-        if (array_key_exists('artist', $data)) {
+        if (\array_key_exists('artist', $data)) {
             $artist = Artist::fromApi($data['artist']);
         }
-        if (array_key_exists('venue', $data)) {
+        if (\array_key_exists('venue', $data)) {
             $venue = Venue::fromApi($data['venue']);
         }
-        if (array_key_exists('tour', $data)) {
+        if (\array_key_exists('tour', $data)) {
             $tour = Tour::fromApi($data['tour']);
         }
 
         $setData = [];
 
-        if (array_key_exists('sets', $data) && array_key_exists('set', $data['sets'])) {
+        if (\array_key_exists('sets', $data) && \array_key_exists('set', $data['sets'])) {
             $setData = $data['sets']['set'];
-        } elseif (array_key_exists('set', $data)) {
+        } elseif (\array_key_exists('set', $data)) {
             $setData = $data['set'];
         }
 

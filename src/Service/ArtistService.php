@@ -56,7 +56,7 @@ final class ArtistService extends AbstractService
             'p'          => $page,
         ]);
 
-        if (!array_key_exists('artist', $response)) {
+        if (!\array_key_exists('artist', $response)) {
             return [];
         }
 

@@ -51,7 +51,7 @@ final class CityService extends AbstractService
             'p' => $page,
         ]));
 
-        if (!array_key_exists('cities', $response)) {
+        if (!\array_key_exists('cities', $response)) {
             return [];
         }
 

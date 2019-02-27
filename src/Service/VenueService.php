@@ -51,7 +51,7 @@ final class VenueService extends AbstractService
             'p' => $page,
         ]));
 
-        if (!array_key_exists('venue', $response)) {
+        if (!\array_key_exists('venue', $response)) {
             return [];
         }
 
