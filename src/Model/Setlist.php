@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Model;
 
+use DateTime;
+
 final class Setlist
 {
     /**
@@ -54,26 +56,26 @@ final class Setlist
     private $versionId;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     private $eventDate;
 
     /**
-     * @var \DateTime|null
+     * @var DateTime|null
      */
     private $updateDate;
 
     /**
-     * @param string         $id
-     * @param Artist|null    $artist
-     * @param Venue|null     $venue
-     * @param Tour|null      $tour
-     * @param Set[]          $sets
-     * @param string|null    $info
-     * @param string|null    $url
-     * @param string|null    $versionId
-     * @param \DateTime      $eventDate
-     * @param \DateTime|null $updateDate
+     * @param string        $id
+     * @param Artist|null   $artist
+     * @param Venue|null    $venue
+     * @param Tour|null     $tour
+     * @param Set[]         $sets
+     * @param string|null   $info
+     * @param string|null   $url
+     * @param string|null   $versionId
+     * @param DateTime      $eventDate
+     * @param DateTime|null $updateDate
      */
     public function __construct(
         string $id,
@@ -84,8 +86,8 @@ final class Setlist
         ?string $info,
         ?string $url,
         ?string $versionId,
-        \DateTime $eventDate,
-        ?\DateTime $updateDate
+        DateTime $eventDate,
+        ?DateTime $updateDate
     ) {
         $this->id         = $id;
         $this->artist     = $artist;
@@ -164,17 +166,17 @@ final class Setlist
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEventDate(): \DateTime
+    public function getEventDate(): DateTime
     {
         return $this->eventDate;
     }
 
     /**
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getUpdateDate(): ?\DateTime
+    public function getUpdateDate(): ?DateTime
     {
         return $this->updateDate;
     }
@@ -189,7 +191,6 @@ final class Setlist
         $artist = null;
         $venue  = null;
         $tour   = null;
-        $sets   = [];
 
         if (\array_key_exists('artist', $data)) {
             $artist = Artist::fromApi($data['artist']);
@@ -200,6 +201,31 @@ final class Setlist
         if (\array_key_exists('tour', $data)) {
             $tour = Tour::fromApi($data['tour']);
         }
+
+        $sets = self::createSetsFromApi($data);
+
+        return new self(
+            $data['id'],
+            $artist,
+            $venue,
+            $tour,
+            $sets,
+            $data['info'] ?? null,
+            $data['url'] ?? null,
+            $data['versionId'] ?? null,
+            new DateTime($data['eventDate']),
+            $data['lastUpdated'] ? new DateTime($data['lastUpdated']) : null
+        );
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return array
+     */
+    private static function createSetsFromApi(array $data): array
+    {
+        $sets = [];
 
         $setData = [];
 
@@ -213,17 +239,6 @@ final class Setlist
             $sets[] = Set::fromApi($set);
         }
 
-        return new self(
-            $data['id'],
-            $artist,
-            $venue,
-            $tour,
-            $sets,
-            $data['info'] ?? null,
-            $data['url'] ?? null,
-            $data['versionId'] ?? null,
-            new \DateTime($data['eventDate']),
-            $data['lastUpdated'] ? new \DateTime($data['lastUpdated']) : null
-        );
+        return $sets;
     }
 }
