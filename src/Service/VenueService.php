@@ -54,6 +54,9 @@ final class VenueService
      *
      * @param VenueSearchBuilder $builder
      *
+     * @throws ApiException
+     * @throws NotFoundException
+     *
      * @return Venue[]
      */
     public function search(VenueSearchBuilder $builder): array

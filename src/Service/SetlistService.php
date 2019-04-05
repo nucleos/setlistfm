@@ -123,6 +123,9 @@ final class SetlistService
      *
      * @param SetlistSearchBuilder $builder
      *
+     * @throws ApiException
+     * @throws NotFoundException
+     *
      * @return Setlist[]
      */
     public function search(SetlistSearchBuilder $builder): array

@@ -54,6 +54,9 @@ final class ArtistService
      *
      * @param ArtistSearchBuilder $builder
      *
+     * @throws ApiException
+     * @throws NotFoundException
+     *
      * @return Artist[]
      */
     public function search(ArtistSearchBuilder $builder): array

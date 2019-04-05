@@ -54,6 +54,9 @@ final class CityService
      *
      * @param CitySearchBuilder $builder
      *
+     * @throws ApiException
+     * @throws NotFoundException
+     *
      * @return City[]
      */
     public function search(CitySearchBuilder $builder): array
