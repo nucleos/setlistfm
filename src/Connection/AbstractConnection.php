@@ -45,7 +45,7 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * @return string
      */
-    protected function getApiKey(): string
+    final protected function getApiKey(): string
     {
         return $this->apiKey;
     }
@@ -53,7 +53,7 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * @return string
      */
-    protected function getUri(): string
+    final protected function getUri(): string
     {
         return $this->uri;
     }
