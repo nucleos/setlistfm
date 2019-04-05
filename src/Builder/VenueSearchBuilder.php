@@ -98,7 +98,7 @@ final class VenueSearchBuilder
      */
     public function withState(string $name): self
     {
-        $this->query['stateName'] = $name;
+        $this->query['state'] = $name;
 
         return $this;
     }

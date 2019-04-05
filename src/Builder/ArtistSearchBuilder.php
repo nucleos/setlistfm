@@ -68,7 +68,7 @@ final class ArtistSearchBuilder
      */
     public function withName(string $name): self
     {
-        $this->query['name'] = $name;
+        $this->query['artistName'] = $name;
 
         return $this;
     }
@@ -80,7 +80,7 @@ final class ArtistSearchBuilder
      */
     public function withMbid(string $mbid): self
     {
-        $this->query['mbid'] = $mbid;
+        $this->query['artistMbid'] = $mbid;
 
         return $this;
     }
@@ -92,7 +92,7 @@ final class ArtistSearchBuilder
      */
     public function withTmbid(int $tmid): self
     {
-        $this->query['tmbid'] = $tmid;
+        $this->query['artistTmid'] = $tmid;
 
         return $this;
     }
