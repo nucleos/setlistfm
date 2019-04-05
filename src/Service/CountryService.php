@@ -47,7 +47,7 @@ final class CountryService
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Country::fromApi($data);
         }, $response['country']);
     }
