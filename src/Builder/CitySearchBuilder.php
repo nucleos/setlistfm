@@ -24,6 +24,14 @@ final class CitySearchBuilder
     }
 
     /**
+     * @return CitySearchBuilder
+     */
+    public static function create(): self
+    {
+        return new static();
+    }
+
+    /**
      * @param int $page
      *
      * @return CitySearchBuilder

@@ -24,6 +24,14 @@ final class VenueSearchBuilder
     }
 
     /**
+     * @return VenueSearchBuilder
+     */
+    public static function create(): self
+    {
+        return new static();
+    }
+
+    /**
      * @param int $page
      *
      * @return VenueSearchBuilder

@@ -26,6 +26,14 @@ final class SetlistSearchBuilder
     }
 
     /**
+     * @return SetlistSearchBuilder
+     */
+    public static function create(): self
+    {
+        return new static();
+    }
+
+    /**
      * @param int $page
      *
      * @return SetlistSearchBuilder
