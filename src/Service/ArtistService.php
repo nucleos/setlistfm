@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Builder\ArtistSearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
@@ -49,32 +50,21 @@ final class ArtistService
     }
 
     /**
-     * Search for artists. Returns artists sorted by relevance.
+     * Search for artists.
      *
-     * @param string|null $name
-     * @param string|null $tmbid
-     * @param string|null $mbid
-     * @param int         $page
-     *
-     * @throws ApiException
-     * @throws NotFoundException
+     * @param ArtistSearchBuilder $builder
      *
      * @return Artist[]
      */
-    public function search(?string $name = null, ?string $tmbid = null, ?string $mbid = null, int $page = 1): array
+    public function search(ArtistSearchBuilder $builder): array
     {
-        $response = $this->connection->call('search/artists', [
-            'mbid'       => $mbid,
-            'tmbid'      => $tmbid,
-            'artistName' => $name,
-            'p'          => $page,
-        ]);
+        $response = $this->connection->call('search/artists', $builder->getQuery());
 
         if (!\array_key_exists('artist', $response)) {
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Artist::fromApi($data);
         }, $response['artist']);
     }

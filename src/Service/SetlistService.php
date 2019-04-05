@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Builder\SetlistSearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
@@ -86,7 +87,7 @@ final class SetlistService
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }
@@ -112,33 +113,27 @@ final class SetlistService
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }
 
     /**
-     * Search for setlists. Returns setlists sorted by relevance.
+     * Search for setlists.
      *
-     * @param array $fields
-     * @param int   $page
-     *
-     * @throws ApiException
-     * @throws NotFoundException
+     * @param SetlistSearchBuilder $builder
      *
      * @return Setlist[]
      */
-    public function search(array $fields, int $page = 1): array
+    public function search(SetlistSearchBuilder $builder): array
     {
-        $response=  $this->connection->call('search/setlists', array_merge($fields, [
-            'p' => $page,
-        ]));
+        $response=  $this->connection->call('search/setlists', $builder->getQuery());
 
         if (!\array_key_exists('setlist', $response)) {
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }

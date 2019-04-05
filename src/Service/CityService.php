@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Builder\CitySearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
@@ -49,27 +50,21 @@ final class CityService
     }
 
     /**
-     * Search for cities. Returns cities sorted by relevance.
+     * Search for cities.
      *
-     * @param array $fields
-     * @param int   $page
-     *
-     * @throws ApiException
-     * @throws NotFoundException
+     * @param CitySearchBuilder $builder
      *
      * @return City[]
      */
-    public function search(array $fields, int $page = 1): array
+    public function search(CitySearchBuilder $builder): array
     {
-        $response = $this->connection->call('search/cities', array_merge($fields, [
-            'p' => $page,
-        ]));
+        $response = $this->connection->call('search/cities', $builder->getQuery());
 
         if (!\array_key_exists('cities', $response)) {
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return City::fromApi($data);
         }, $response['cities']);
     }

@@ -70,7 +70,7 @@ final class UserService
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }
@@ -96,7 +96,7 @@ final class UserService
             return [];
         }
 
-        return array_map(function ($data) {
+        return array_map(static function ($data) {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }
