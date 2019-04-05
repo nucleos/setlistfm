@@ -11,12 +11,26 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Country;
 
-final class CountryService extends AbstractService
+final class CountryService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Search for countries.
      *
@@ -27,7 +41,7 @@ final class CountryService extends AbstractService
      */
     public function search(): array
     {
-        $response = $this->call('search/countries');
+        $response = $this->connection->call('search/countries');
 
         if (!\array_key_exists('country', $response)) {
             return [];

@@ -11,12 +11,26 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Artist;
 
-final class ArtistService extends AbstractService
+final class ArtistService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Get the metadata for an artist.
      *
@@ -30,7 +44,7 @@ final class ArtistService extends AbstractService
     public function getArtist(string $mbid): Artist
     {
         return Artist::fromApi(
-            $this->call('artist/'.$mbid)
+            $this->connection->call('artist/'.$mbid)
         );
     }
 
@@ -49,7 +63,7 @@ final class ArtistService extends AbstractService
      */
     public function search(?string $name = null, ?string $tmbid = null, ?string $mbid = null, int $page = 1): array
     {
-        $response = $this->call('search/artists', [
+        $response = $this->connection->call('search/artists', [
             'mbid'       => $mbid,
             'tmbid'      => $tmbid,
             'artistName' => $name,

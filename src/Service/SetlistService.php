@@ -11,12 +11,26 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Setlist;
 
-final class SetlistService extends AbstractService
+final class SetlistService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Get setlist information.
      *
@@ -30,7 +44,7 @@ final class SetlistService extends AbstractService
     public function getSetlist(string $setlistId): Setlist
     {
         return Setlist::fromApi(
-            $this->call('setlist/'.$setlistId)
+            $this->connection->call('setlist/'.$setlistId)
         );
     }
 
@@ -47,7 +61,7 @@ final class SetlistService extends AbstractService
     public function getSetlistByVersion(string $versionId): Setlist
     {
         return Setlist::fromApi(
-            $this->call('setlist/version/'.$versionId)
+            $this->connection->call('setlist/version/'.$versionId)
         );
     }
 
@@ -64,7 +78,7 @@ final class SetlistService extends AbstractService
      */
     public function getArtistSetlists(string $mbid, int $page = 1): array
     {
-        $response = $this->call('artist/'.$mbid.'/setlists', [
+        $response = $this->connection->call('artist/'.$mbid.'/setlists', [
             'p' => $page,
         ]);
 
@@ -90,7 +104,7 @@ final class SetlistService extends AbstractService
      */
     public function getVenueSetlists(string $venueId, int $page = 1): array
     {
-        $response =  $this->call('venue/'.$venueId.'/setlists', [
+        $response =  $this->connection->call('venue/'.$venueId.'/setlists', [
             'p' => $page,
         ]);
 
@@ -116,7 +130,7 @@ final class SetlistService extends AbstractService
      */
     public function search(array $fields, int $page = 1): array
     {
-        $response=  $this->call('search/setlists', array_merge($fields, [
+        $response=  $this->connection->call('search/setlists', array_merge($fields, [
             'p' => $page,
         ]));
 

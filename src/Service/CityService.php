@@ -11,12 +11,26 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\City;
 
-final class CityService extends AbstractService
+final class CityService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Get the city data for an id.
      *
@@ -30,7 +44,7 @@ final class CityService extends AbstractService
     public function getCity(int $cityId): City
     {
         return City::fromApi(
-            $this->call('city/'.$cityId)
+            $this->connection->call('city/'.$cityId)
         );
     }
 
@@ -47,7 +61,7 @@ final class CityService extends AbstractService
      */
     public function search(array $fields, int $page = 1): array
     {
-        $response = $this->call('search/cities', array_merge($fields, [
+        $response = $this->connection->call('search/cities', array_merge($fields, [
             'p' => $page,
         ]));
 

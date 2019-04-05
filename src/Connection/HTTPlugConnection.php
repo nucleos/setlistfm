@@ -13,6 +13,7 @@ namespace Core23\SetlistFm\Connection;
 
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
+use DateTime;
 use Exception;
 use Http\Client\Exception as ClientException;
 use Http\Client\HttpClient;
@@ -105,6 +106,12 @@ final class HTTPlugConnection extends AbstractConnection
      */
     private static function buildParameter(array $parameter): string
     {
+        foreach ($parameter as $key => $value) {
+            if ($value instanceof DateTime) {
+                $params[$key] = self::toDateString($value);
+            }
+        }
+
         return http_build_query($parameter);
     }
 
@@ -129,5 +136,21 @@ final class HTTPlugConnection extends AbstractConnection
         }
 
         return $this->requestFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data, $headers);
+    }
+
+    /**
+     * Formats a date to a timestamp.
+     *
+     * @param DateTime|null $date
+     *
+     * @return string|null
+     */
+    private static function toDateString(DateTime $date = null): ?string
+    {
+        if (null === $date) {
+            return null;
+        }
+
+        return $date->format('d-m-Y');
     }
 }

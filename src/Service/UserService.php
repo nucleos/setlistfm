@@ -11,13 +11,27 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Service;
 
+use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Setlist;
 use Core23\SetlistFm\Model\User;
 
-final class UserService extends AbstractService
+final class UserService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Get the user data for an id.
      *
@@ -31,7 +45,7 @@ final class UserService extends AbstractService
     public function getUser(string $userId): User
     {
         return User::fromApi(
-            $this->call('user/'.$userId)
+            $this->connection->call('user/'.$userId)
         );
     }
 
@@ -48,7 +62,7 @@ final class UserService extends AbstractService
      */
     public function getAttends(string $userId, int $page = 1): array
     {
-        $response = $this->call('user/'.$userId.'/attended', [
+        $response = $this->connection->call('user/'.$userId.'/attended', [
             'p' => $page,
         ]);
 
@@ -74,7 +88,7 @@ final class UserService extends AbstractService
      */
     public function getEdits(string $userId, int $page = 1): array
     {
-        $response = $this->call('user/'.$userId.'/edited', [
+        $response = $this->connection->call('user/'.$userId.'/edited', [
             'p' => $page,
         ]);
 

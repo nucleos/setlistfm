@@ -15,8 +15,21 @@ use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Venue;
 
-final class VenueService extends AbstractService
+final class VenueService
 {
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
+
+    /**
+     * @param ConnectionInterface $connection
+     */
+    public function __construct(ConnectionInterface $connection)
+    {
+        $this->connection = $connection;
+    }
+
     /**
      * Get the metadata for an artist.
      *
@@ -30,7 +43,7 @@ final class VenueService extends AbstractService
     public function getVenue(string $venueId): Venue
     {
         return Venue::fromApi(
-            $this->call('venue/'.$venueId)
+            $this->connection->call('venue/'.$venueId)
         );
     }
 
