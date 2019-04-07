@@ -20,7 +20,7 @@ class TourTest extends TestCase
                     {
                         "name" : "North American Tour 1964"
                     }
-            EOD;
+EOD;
 
         $tour = Tour::fromApi(json_decode($data, true));
         $this->assertSame('North American Tour 1964', $tour->getName());

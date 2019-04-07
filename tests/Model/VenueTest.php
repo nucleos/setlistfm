@@ -36,7 +36,7 @@ class VenueTest extends TestCase
                       "id" : "6bd6ca6e",
                       "name" : "Compaq Center"
                     }
-            EOD;
+EOD;
 
         $venue = Venue::fromApi(json_decode($data, true));
         $this->assertSame('6bd6ca6e', $venue->getId());

@@ -24,7 +24,7 @@ class UserTest extends TestCase
                       "website": "http://example.com",
                       "url": "https://www.setlist.fm/user/Metal-42"
                     }
-            EOD;
+EOD;
 
         $user = User::fromApi(json_decode($data, true));
         $this->assertSame('Metal-42', $user->getId());
