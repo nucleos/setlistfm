@@ -162,7 +162,7 @@ final class SetlistSearchBuilder
      */
     public function withLastUpdated(DateTime $date): self
     {
-        $this->query['lastUpdated'] = $date->format('YmdHHmmss');
+        $this->query['lastUpdated'] = $date->format('YmdHis');
 
         return $this;
     }
