@@ -38,9 +38,9 @@ $messageFactory = \Http\Discovery\MessageFactoryDiscovery::find();
 $connection = new \Core23\SetlistFm\Connection\HTTPlugConnection($client, $messageFactory);
 
 $artistApi = new \Core23\SetlistFm\Service\ArtistService($connection);
-$artists = $artistApi->search(array(
-    'artistName' => 'Slipknot'
-));
+$artists = $artistApi->search(ArtistSearchBuilder::create()
+    ->withArtistName('Slipknot')
+);
 ```
 
 ## License
