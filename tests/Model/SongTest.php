@@ -38,7 +38,7 @@ class SongTest extends TestCase
                            "url" : "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
                        }
                     }
-            EOD;
+EOD;
 
         $song = Song::fromApi(json_decode($data, true));
         $this->assertSame('Roll Over Beethoven', $song->getName());
