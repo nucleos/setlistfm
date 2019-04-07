@@ -16,8 +16,7 @@ class SongTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                         "name" : "Roll Over Beethoven",
                         "info": "This is a song",
@@ -39,12 +38,9 @@ class SongTest extends TestCase
                            "url" : "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
                        }
                     }
-            EOD
-        ,
-            true
-        );
+            EOD;
 
-        $song = Song::fromApi($apiData);
+        $song = Song::fromApi(json_decode($data, true));
         $this->assertSame('Roll Over Beethoven', $song->getName());
         $this->assertSame('This is a song', $song->getInfo());
         $this->assertNotNull($song->getCover());

@@ -16,17 +16,13 @@ class TourTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                         "name" : "North American Tour 1964"
                     }
-            EOD
-        ,
-            true
-        );
+            EOD;
 
-        $tour = Tour::fromApi($apiData);
+        $tour = Tour::fromApi(json_decode($data, true));
         $this->assertSame('North American Tour 1964', $tour->getName());
     }
 }

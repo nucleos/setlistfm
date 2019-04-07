@@ -17,8 +17,7 @@ class SetlistTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
             {
                "id" : "63de4613",
                "versionId" : "7be1aaa0",
@@ -115,12 +114,9 @@ class SetlistTest extends TestCase
                "info" : "Recorded and published as 'The Beatles at the Hollywood Bowl'",
                "url" : "https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html"
             }
-            EOD
-        ,
-            true
-        );
+EOD;
 
-        $setlist = Setlist::fromApi($apiData);
+        $setlist = Setlist::fromApi(json_decode($data, true));
         $this->assertSame('63de4613', $setlist->getId());
         $this->assertSame('7be1aaa0', $setlist->getVersionId());
         $this->assertNotNull($setlist->getVenue());

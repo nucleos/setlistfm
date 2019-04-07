@@ -16,18 +16,14 @@ class CountryTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                         "code" : "US",
                         "name" : "United States"
                     }
-            EOD
-        ,
-            true
-        );
+EOD;
 
-        $country = Country::fromApi($apiData);
+        $country = Country::fromApi(json_decode($data, true));
         $this->assertSame('US', $country->getCode());
         $this->assertSame('United States', $country->getName());
     }

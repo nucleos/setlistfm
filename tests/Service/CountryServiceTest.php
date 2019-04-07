@@ -31,9 +31,7 @@ class CountryServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->connection->call('search/countries')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                     {
                       "country" : [ {
                         "code" : "US",
@@ -43,10 +41,10 @@ class CountryServiceTest extends TestCase
                       "page" : 1,
                       "itemsPerPage" : 20
                     }
-                EOD
-                ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('search/countries')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new CountryService($this->connection->reveal());

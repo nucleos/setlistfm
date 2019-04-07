@@ -16,18 +16,14 @@ class GeoTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                         "long" : -118.3267434,
                         "lat" : 34.0983425
                     }
-            EOD
-        ,
-            true
-        );
+EOD;
 
-        $geo = Geo::fromApi($apiData);
+        $geo = Geo::fromApi(json_decode($data, true));
         $this->assertSame(34.0983425, $geo->getLatitude());
         $this->assertSame(-118.3267434, $geo->getLongitude());
     }

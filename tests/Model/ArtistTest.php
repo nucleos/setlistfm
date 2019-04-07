@@ -16,22 +16,18 @@ class ArtistTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
-                    {
-                      "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
-                      "tmid" : 735610,
-                      "name" : "The Beatles",
-                      "sortName" : "Beatles, The",
-                      "disambiguation" : "John, Paul, George and Ringo",
-                      "url" : "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
-                    }
-            EOD
-        ,
-            true
-        );
+        $data = <<<'EOD'
+                {
+                  "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+                  "tmid" : 735610,
+                  "name" : "The Beatles",
+                  "sortName" : "Beatles, The",
+                  "disambiguation" : "John, Paul, George and Ringo",
+                  "url" : "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
+                }
+EOD;
 
-        $artist = Artist::fromApi($apiData);
+        $artist = Artist::fromApi(json_decode($data, true));
         $this->assertSame('The Beatles', $artist->getName());
         $this->assertSame('Beatles, The', $artist->getSortName());
         $this->assertSame('John, Paul, George and Ringo', $artist->getDisambiguation());

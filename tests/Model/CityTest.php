@@ -16,8 +16,7 @@ class CityTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data = <<<'EOD'
                     {
                       "id" : "5357527",
                       "name" : "Hollywood",
@@ -32,12 +31,9 @@ class CityTest extends TestCase
                         "name" : "United States"
                       }
                     }
-            EOD
-        ,
-            true
-        );
+EOD;
 
-        $city = City::fromApi($apiData);
+        $city = City::fromApi(json_decode($data, true));
         $this->assertSame(5357527, $city->getId());
         $this->assertSame('Hollywood', $city->getName());
         $this->assertSame('California', $city->getState());

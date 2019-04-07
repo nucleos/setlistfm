@@ -16,8 +16,7 @@ class VenueTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                       "city" : {
                         "id" : "5357527",
@@ -37,12 +36,9 @@ class VenueTest extends TestCase
                       "id" : "6bd6ca6e",
                       "name" : "Compaq Center"
                     }
-            EOD
-        ,
-            true
-        );
+            EOD;
 
-        $venue = Venue::fromApi($apiData);
+        $venue = Venue::fromApi(json_decode($data, true));
         $this->assertSame('6bd6ca6e', $venue->getId());
         $this->assertSame('Compaq Center', $venue->getName());
         $this->assertNotNull($venue->getCity());

@@ -16,8 +16,7 @@ class SetTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                   	{
                   	 "name": "First set",
                   	 "encore": 3,
@@ -76,12 +75,9 @@ class SetTest extends TestCase
                         }
                      } ]
                   }
-            EOD
-        ,
-            true
-        );
+EOD;
 
-        $set = Set::fromApi($apiData);
+        $set = Set::fromApi(json_decode($data, true));
         $this->assertSame('First set', $set->getName());
         $this->assertCount(12, $set->getSongs());
         $this->assertSame(3, $set->getEncore());

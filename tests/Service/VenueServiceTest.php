@@ -32,9 +32,7 @@ class VenueServiceTest extends TestCase
 
     public function testGetVenue(): void
     {
-        $this->connection->call('venue/6bd6ca6e')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                     {
                       "city" : {
                         "id" : "5357527",
@@ -54,10 +52,10 @@ class VenueServiceTest extends TestCase
                       "id" : "6bd6ca6e",
                       "name" : "Compaq Center"
                     }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('venue/6bd6ca6e')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new VenueService($this->connection->reveal());
@@ -68,9 +66,7 @@ class VenueServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->connection->call('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                    {
                      "venue" : [ {
                        "city" : {
@@ -89,10 +85,10 @@ class VenueServiceTest extends TestCase
                      "page" : 1,
                      "itemsPerPage" : 20
                    }
-                EOD
-                ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new VenueService($this->connection->reveal());

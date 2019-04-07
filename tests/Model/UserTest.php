@@ -16,8 +16,7 @@ class UserTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $apiData = json_decode(
-            <<<'EOD'
+        $data    = <<<'EOD'
                     {
                       "userId": "Metal-42",
                       "fullname": "Max",
@@ -25,12 +24,9 @@ class UserTest extends TestCase
                       "website": "http://example.com",
                       "url": "https://www.setlist.fm/user/Metal-42"
                     }
-            EOD
-        ,
-            true
-        );
+            EOD;
 
-        $user = User::fromApi($apiData);
+        $user = User::fromApi(json_decode($data, true));
         $this->assertSame('Metal-42', $user->getId());
         $this->assertSame('Some dummy text', $user->getAbout());
         $this->assertSame('Max', $user->getFullname());

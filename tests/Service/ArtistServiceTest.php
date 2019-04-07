@@ -32,9 +32,7 @@ class ArtistServiceTest extends TestCase
 
     public function testGetArtist(): void
     {
-        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                         {
                           "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
                           "tmid" : 735610,
@@ -43,10 +41,10 @@ class ArtistServiceTest extends TestCase
                           "disambiguation" : "John, Paul, George and Ringo",
                           "url" : "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
                         }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new ArtistService($this->connection->reveal());
@@ -57,9 +55,7 @@ class ArtistServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->connection->call('search/artists', ['p' => 1, 'artistName' => 'The Beatles'])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                     {
                       "artist" : [ {
                         "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
@@ -73,10 +69,10 @@ class ArtistServiceTest extends TestCase
                       "page" : 1,
                       "itemsPerPage" : 20
                     }
-                EOD
-                ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('search/artists', ['p' => 1, 'artistName' => 'The Beatles'])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new ArtistService($this->connection->reveal());

@@ -32,9 +32,7 @@ class CityServiceTest extends TestCase
 
     public function testGetCity(): void
     {
-        $this->connection->call('city/5357527')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                         {
                           "id" : "5357527",
                           "name" : "Hollywood",
@@ -49,10 +47,10 @@ class CityServiceTest extends TestCase
                             "name" : "United States"
                           }
                         }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('city/5357527')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new CityService($this->connection->reveal());
@@ -63,9 +61,7 @@ class CityServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->connection->call('search/cities', ['p' => 1, 'name' => 'Hollywood'])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                    {
                      "cities" : [ {
                        "id" : "5357527",
@@ -85,10 +81,10 @@ class CityServiceTest extends TestCase
                      "page" : 1,
                      "itemsPerPage" : 20
                    }
-                EOD
-                ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('search/cities', ['p' => 1, 'name' => 'Hollywood'])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new CityService($this->connection->reveal());

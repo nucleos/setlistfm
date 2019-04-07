@@ -31,9 +31,7 @@ class UserServiceTest extends TestCase
 
     public function testGetUser(): void
     {
-        $this->connection->call('user/42')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                         {
                           "userId": "Metal-42",
                           "fullname": "Max",
@@ -41,10 +39,10 @@ class UserServiceTest extends TestCase
                           "website": "http://example.com",
                           "url": "https://www.setlist.fm/user/Metal-42"
                         }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('user/42')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new UserService($this->connection->reveal());
@@ -55,9 +53,7 @@ class UserServiceTest extends TestCase
 
     public function testGetEdits(): void
     {
-        $this->connection->call('user/42/edited', ['p' => 1])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                         {
                           "setlist" : [ {
                             "artist" : {
@@ -88,10 +84,10 @@ class UserServiceTest extends TestCase
                           "page" : 1,
                           "itemsPerPage" : 20
                         }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('user/42/edited', ['p' => 1])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new UserService($this->connection->reveal());
@@ -102,9 +98,7 @@ class UserServiceTest extends TestCase
 
     public function testGetAttends(): void
     {
-        $this->connection->call('user/42/attended', ['p' => 1])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                         {
                           "setlist" : [ {
                             "artist" : {
@@ -135,10 +129,10 @@ class UserServiceTest extends TestCase
                           "page" : 1,
                           "itemsPerPage" : 20
                         }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('user/42/attended', ['p' => 1])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new UserService($this->connection->reveal());

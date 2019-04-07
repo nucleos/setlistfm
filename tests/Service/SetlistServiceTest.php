@@ -32,9 +32,7 @@ class SetlistServiceTest extends TestCase
 
     public function testGetSetlist(): void
     {
-        $this->connection->call('setlist/63de4613')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                        {
                          "artist" : {
                            "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
@@ -67,10 +65,10 @@ class SetlistServiceTest extends TestCase
                          "eventDate" : "23-08-1964",
                          "lastUpdated" : "2013-10-20T05:18:08.000+0000"
                        }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('setlist/63de4613')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new SetlistService($this->connection->reveal());
@@ -81,9 +79,7 @@ class SetlistServiceTest extends TestCase
 
     public function testGetArtistSetlists(): void
     {
-        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                        {
                          "setlist" : [ {
                            "artist" : {
@@ -114,10 +110,10 @@ class SetlistServiceTest extends TestCase
                          "page" : 1,
                          "itemsPerPage" : 20
                        }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new SetlistService($this->connection->reveal());
@@ -128,9 +124,7 @@ class SetlistServiceTest extends TestCase
 
     public function testGetVenueSetlists(): void
     {
-        $this->connection->call('venue/6bd6ca6e/setlists', ['p' => 1])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                        {
                          "setlist" : [ {
                            "artist" : {
@@ -161,10 +155,10 @@ class SetlistServiceTest extends TestCase
                          "page" : 1,
                          "itemsPerPage" : 20
                        }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('venue/6bd6ca6e/setlists', ['p' => 1])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new SetlistService($this->connection->reveal());
@@ -175,9 +169,7 @@ class SetlistServiceTest extends TestCase
 
     public function testGetSetlistByVersion(): void
     {
-        $this->connection->call('setlist/version/7be1aaa0')
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                        {
                          "artist" : {
                            "mbid" : "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
@@ -210,10 +202,10 @@ class SetlistServiceTest extends TestCase
                          "eventDate" : "23-08-1964",
                          "lastUpdated" : "2013-10-20T05:18:08.000+0000"
                        }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('setlist/version/7be1aaa0')
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new SetlistService($this->connection->reveal());
@@ -224,9 +216,7 @@ class SetlistServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->connection->call('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
-            ->willReturn(json_decode(
-                <<<'EOD'
+        $rawResponse = <<<'EOD'
                        {
                          "setlist" : [ {
                            "artist" : {
@@ -257,10 +247,10 @@ class SetlistServiceTest extends TestCase
                          "page" : 1,
                          "itemsPerPage" : 20
                        }
-                EOD
-            ,
-                true
-            ))
+EOD;
+
+        $this->connection->call('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
+            ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new SetlistService($this->connection->reveal());
