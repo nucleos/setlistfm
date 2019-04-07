@@ -16,7 +16,7 @@ class TourTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                         "name" : "North American Tour 1964"
                     }

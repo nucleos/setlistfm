@@ -16,7 +16,7 @@ class CountryTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                         "code" : "US",
                         "name" : "United States"

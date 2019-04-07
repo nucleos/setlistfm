@@ -16,7 +16,7 @@ class SongTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                         "name" : "Roll Over Beethoven",
                         "info": "This is a song",

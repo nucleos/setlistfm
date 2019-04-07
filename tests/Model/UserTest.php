@@ -16,7 +16,7 @@ class UserTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                       "userId": "Metal-42",
                       "fullname": "Max",

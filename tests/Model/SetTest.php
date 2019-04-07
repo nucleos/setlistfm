@@ -16,7 +16,7 @@ class SetTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                   	{
                   	 "name": "First set",
                   	 "encore": 3,

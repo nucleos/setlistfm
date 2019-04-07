@@ -16,7 +16,7 @@ class GeoTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                         "long" : -118.3267434,
                         "lat" : 34.0983425

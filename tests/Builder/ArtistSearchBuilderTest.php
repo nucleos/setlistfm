@@ -10,6 +10,7 @@
 namespace Core23\SetlistFm\Tests\Builder;
 
 use Core23\SetlistFm\Builder\ArtistSearchBuilder;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class ArtistSearchBuilderTest extends TestCase
@@ -88,6 +89,16 @@ class ArtistSearchBuilderTest extends TestCase
             'sort' => 'relevance',
         ];
         $this->assertSame($expected, $builder->getQuery());
+    }
+
+    public function testSortWithInvalidType(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid sort mode given: foo');
+
+        ArtistSearchBuilder::create()
+            ->sort('foo')
+        ;
     }
 
     public function testSortByName(): void

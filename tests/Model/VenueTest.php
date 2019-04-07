@@ -16,7 +16,7 @@ class VenueTest extends TestCase
 {
     public function testFromApi(): void
     {
-        $data    = <<<'EOD'
+        $data = <<<'EOD'
                     {
                       "city" : {
                         "id" : "5357527",
