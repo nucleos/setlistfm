@@ -37,7 +37,7 @@ EOD;
         $this->assertSame(5357527, $city->getId());
         $this->assertSame('Hollywood', $city->getName());
         $this->assertSame('California', $city->getState());
-        $this->assertNotNull($city->getCounty());
+        $this->assertNotNull($city->getCountry());
         $this->assertNotNull($city->getGeo());
         $this->assertSame('CA', $city->getStateCode());
     }

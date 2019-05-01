@@ -36,7 +36,7 @@ final class City
     /**
      * @var Country|null
      */
-    private $county;
+    private $country;
 
     /**
      * @var Geo|null
@@ -63,7 +63,7 @@ final class City
         $this->name      = $name;
         $this->state     = $state;
         $this->stateCode = $stateCode;
-        $this->county    = $county;
+        $this->country   = $county;
         $this->geo       = $geo;
     }
 
@@ -100,11 +100,21 @@ final class City
     }
 
     /**
+     * @deprecated use getCountry instead
+     *
      * @return Country|null
      */
     public function getCounty(): ?Country
     {
-        return $this->county;
+        return $this->getCountry();
+    }
+
+    /**
+     * @return Country|null
+     */
+    public function getCountry(): ?Country
+    {
+        return $this->country;
     }
 
     /**
