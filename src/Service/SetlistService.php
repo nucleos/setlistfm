@@ -16,6 +16,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Setlist;
+use Core23\SetlistFm\Model\SetlistSearchResult;
 
 final class SetlistService
 {
@@ -126,18 +127,16 @@ final class SetlistService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return Setlist[]
+     * @return SetlistSearchResult
      */
-    public function search(SetlistSearchBuilder $builder): array
+    public function search(SetlistSearchBuilder $builder): SetlistSearchResult
     {
         $response=  $this->connection->call('search/setlists', $builder->getQuery());
 
         if (!\array_key_exists('setlist', $response)) {
-            return [];
+            return SetlistSearchResult::createEmpty();
         }
 
-        return array_map(static function ($data) {
-            return Setlist::fromApi($data);
-        }, $response['setlist']);
+        return SetlistSearchResult::fromApi($response);
     }
 }

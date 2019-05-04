@@ -16,6 +16,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\City;
+use Core23\SetlistFm\Model\CitySearchResult;
 
 final class CityService
 {
@@ -57,18 +58,16 @@ final class CityService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return City[]
+     * @return CitySearchResult
      */
-    public function search(CitySearchBuilder $builder): array
+    public function search(CitySearchBuilder $builder): CitySearchResult
     {
         $response = $this->connection->call('search/cities', $builder->getQuery());
 
         if (!\array_key_exists('cities', $response)) {
-            return [];
+            return CitySearchResult::createEmpty();
         }
 
-        return array_map(static function ($data) {
-            return City::fromApi($data);
-        }, $response['cities']);
+        return CitySearchResult::fromApi($response);
     }
 }

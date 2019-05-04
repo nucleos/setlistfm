@@ -91,6 +91,6 @@ EOD;
         $result  = $service->search(CitySearchBuilder::create()
             ->withName('Hollywood'));
 
-        $this->assertCount(1, $result);
+        $this->assertCount(1, $result->getResult());
     }
 }

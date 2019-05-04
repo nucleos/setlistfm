@@ -79,6 +79,6 @@ EOD;
         $result  = $service->search(ArtistSearchBuilder::create()
             ->withName('The Beatles'));
 
-        $this->assertCount(1, $result);
+        $this->assertCount(1, $result->getResult());
     }
 }

@@ -16,6 +16,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Artist;
+use Core23\SetlistFm\Model\ArtistSearchResult;
 
 final class ArtistService
 {
@@ -57,18 +58,16 @@ final class ArtistService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return Artist[]
+     * @return ArtistSearchResult
      */
-    public function search(ArtistSearchBuilder $builder): array
+    public function search(ArtistSearchBuilder $builder): ArtistSearchResult
     {
         $response = $this->connection->call('search/artists', $builder->getQuery());
 
         if (!\array_key_exists('artist', $response)) {
-            return [];
+            return ArtistSearchResult::createEmpty();
         }
 
-        return array_map(static function ($data) {
-            return Artist::fromApi($data);
-        }, $response['artist']);
+        return ArtistSearchResult::fromApi($response);
     }
 }

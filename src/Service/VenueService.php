@@ -16,6 +16,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Core23\SetlistFm\Model\Venue;
+use Core23\SetlistFm\Model\VenueSearchResult;
 
 final class VenueService
 {
@@ -57,18 +58,16 @@ final class VenueService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return Venue[]
+     * @return VenueSearchResult
      */
-    public function search(VenueSearchBuilder $builder): array
+    public function search(VenueSearchBuilder $builder): VenueSearchResult
     {
         $response = $this->connection->call('search/venues', $builder->getQuery());
 
         if (!\array_key_exists('venue', $response)) {
-            return [];
+            return VenueSearchResult::createEmpty();
         }
 
-        return array_map(static function ($data) {
-            return Venue::fromApi($data);
-        }, $response['venue']);
+        return VenueSearchResult::fromApi($response);
     }
 }

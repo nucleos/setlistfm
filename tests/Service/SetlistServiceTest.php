@@ -257,6 +257,6 @@ EOD;
         $result  = $service->search(SetlistSearchBuilder::create()
             ->withArtistName('The Beatles'));
 
-        $this->assertNotNull($result);
+        $this->assertNotNull($result->getResult());
     }
 }

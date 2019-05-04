@@ -14,7 +14,7 @@ namespace Core23\SetlistFm\Service;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
-use Core23\SetlistFm\Model\Country;
+use Core23\SetlistFm\Model\CountrySearchResult;
 
 final class CountryService
 {
@@ -37,18 +37,16 @@ final class CountryService
      * @throws ApiException
      * @throws NotFoundException
      *
-     * @return Country[]
+     * @return CountrySearchResult
      */
-    public function search(): array
+    public function search(): CountrySearchResult
     {
         $response = $this->connection->call('search/countries');
 
         if (!\array_key_exists('country', $response)) {
-            return [];
+            return CountrySearchResult::createEmpty();
         }
 
-        return array_map(static function ($data) {
-            return Country::fromApi($data);
-        }, $response['country']);
+        return CountrySearchResult::fromApi($response);
     }
 }

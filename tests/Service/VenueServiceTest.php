@@ -95,6 +95,6 @@ EOD;
         $result  = $service->search(VenueSearchBuilder::create()
             ->withName('Compaq Center'));
 
-        $this->assertCount(1, $result);
+        $this->assertCount(1, $result->getResult());
     }
 }
