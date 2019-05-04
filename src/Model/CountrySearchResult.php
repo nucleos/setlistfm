@@ -82,7 +82,7 @@ final class CountrySearchResult
      */
     public function getLastPage(): int
     {
-        return (int) floor($this->totalSize / $this->pageSize);
+        return (int) ceil($this->totalSize / $this->pageSize);
     }
 
     /**
