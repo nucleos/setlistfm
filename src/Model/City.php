@@ -146,8 +146,8 @@ final class City
         return new self(
             (int) $data['id'],
             $data['name'],
-            $data['state'],
-            $data['stateCode'],
+            $data['state'] ?? null,
+            $data['stateCode'] ?? null,
             $country,
             $geo
         );

@@ -95,7 +95,7 @@ final class Venue
         return new self(
             $data['id'],
             $data['name'],
-            $data['url'],
+            $data['url'] ?? null,
             $city
         );
     }
