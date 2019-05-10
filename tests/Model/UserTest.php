@@ -27,10 +27,10 @@ class UserTest extends TestCase
 EOD;
 
         $user = User::fromApi(json_decode($data, true));
-        $this->assertSame('Metal-42', $user->getId());
-        $this->assertSame('Some dummy text', $user->getAbout());
-        $this->assertSame('Max', $user->getFullname());
-        $this->assertSame('http://example.com', $user->getWebsite());
-        $this->assertSame('https://www.setlist.fm/user/Metal-42', $user->getUrl());
+        static::assertSame('Metal-42', $user->getId());
+        static::assertSame('Some dummy text', $user->getAbout());
+        static::assertSame('Max', $user->getFullname());
+        static::assertSame('http://example.com', $user->getWebsite());
+        static::assertSame('https://www.setlist.fm/user/Metal-42', $user->getUrl());
     }
 }

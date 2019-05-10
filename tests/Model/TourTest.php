@@ -23,6 +23,6 @@ class TourTest extends TestCase
 EOD;
 
         $tour = Tour::fromApi(json_decode($data, true));
-        $this->assertSame('North American Tour 1964', $tour->getName());
+        static::assertSame('North American Tour 1964', $tour->getName());
     }
 }

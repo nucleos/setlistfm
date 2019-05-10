@@ -27,7 +27,7 @@ class CityServiceTest extends TestCase
     {
         $service = new CityService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testGetCity(): void
@@ -56,7 +56,7 @@ EOD;
         $service = new CityService($this->connection->reveal());
         $result  = $service->getCity(5357527);
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testSearch(): void
@@ -91,6 +91,6 @@ EOD;
         $result  = $service->search(CitySearchBuilder::create()
             ->withName('Hollywood'));
 
-        $this->assertCount(1, $result->getResult());
+        static::assertCount(1, $result->getResult());
     }
 }

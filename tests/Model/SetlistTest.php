@@ -117,16 +117,16 @@ class SetlistTest extends TestCase
 EOD;
 
         $setlist = Setlist::fromApi(json_decode($data, true));
-        $this->assertSame('63de4613', $setlist->getId());
-        $this->assertSame('7be1aaa0', $setlist->getVersionId());
-        $this->assertNotNull($setlist->getVenue());
-        $this->assertNotNull($setlist->getArtist());
-        $this->assertEquals(new DateTime('23-08-1964'), $setlist->getEventDate(), '', 0);
-        $this->assertSame('Recorded and published as \'The Beatles at the Hollywood Bowl\'', $setlist->getInfo());
-        $this->assertNotNull($setlist->getSets());
-        $this->assertNotNull($setlist->getTour());
-        $this->assertEquals(new DateTime('2013-10-20T05:18:08.000+0000'), $setlist->getUpdateDate(), '', 0);
-        $this->assertSame('https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html', $setlist->getUrl());
+        static::assertSame('63de4613', $setlist->getId());
+        static::assertSame('7be1aaa0', $setlist->getVersionId());
+        static::assertNotNull($setlist->getVenue());
+        static::assertNotNull($setlist->getArtist());
+        static::assertEquals(new DateTime('23-08-1964'), $setlist->getEventDate(), '', 0);
+        static::assertSame('Recorded and published as \'The Beatles at the Hollywood Bowl\'', $setlist->getInfo());
+        static::assertNotNull($setlist->getSets());
+        static::assertNotNull($setlist->getTour());
+        static::assertEquals(new DateTime('2013-10-20T05:18:08.000+0000'), $setlist->getUpdateDate(), '', 0);
+        static::assertSame('https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html', $setlist->getUrl());
     }
 
     public function testFromApiWithSingleSet(): void
@@ -229,15 +229,15 @@ EOD;
 EOD;
 
         $setlist = Setlist::fromApi(json_decode($data, true));
-        $this->assertSame('63de4613', $setlist->getId());
-        $this->assertSame('7be1aaa0', $setlist->getVersionId());
-        $this->assertNotNull($setlist->getVenue());
-        $this->assertNotNull($setlist->getArtist());
-        $this->assertEquals(new DateTime('23-08-1964'), $setlist->getEventDate(), '', 0);
-        $this->assertSame('Recorded and published as \'The Beatles at the Hollywood Bowl\'', $setlist->getInfo());
-        $this->assertNotNull($setlist->getSets());
-        $this->assertNotNull($setlist->getTour());
-        $this->assertEquals(new DateTime('2013-10-20T05:18:08.000+0000'), $setlist->getUpdateDate(), '', 0);
-        $this->assertSame('https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html', $setlist->getUrl());
+        static::assertSame('63de4613', $setlist->getId());
+        static::assertSame('7be1aaa0', $setlist->getVersionId());
+        static::assertNotNull($setlist->getVenue());
+        static::assertNotNull($setlist->getArtist());
+        static::assertEquals(new DateTime('23-08-1964'), $setlist->getEventDate(), '', 0);
+        static::assertSame('Recorded and published as \'The Beatles at the Hollywood Bowl\'', $setlist->getInfo());
+        static::assertNotNull($setlist->getSets());
+        static::assertNotNull($setlist->getTour());
+        static::assertEquals(new DateTime('2013-10-20T05:18:08.000+0000'), $setlist->getUpdateDate(), '', 0);
+        static::assertSame('https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html', $setlist->getUrl());
     }
 }

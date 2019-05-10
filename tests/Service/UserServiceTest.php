@@ -26,7 +26,7 @@ class UserServiceTest extends TestCase
     {
         $service = new UserService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testGetUser(): void
@@ -48,7 +48,7 @@ EOD;
         $service = new UserService($this->connection->reveal());
         $result  = $service->getUser('42');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testGetEdits(): void
@@ -93,7 +93,7 @@ EOD;
         $service = new UserService($this->connection->reveal());
         $result  = $service->getEdits('42');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testGetAttends(): void
@@ -138,6 +138,6 @@ EOD;
         $service = new UserService($this->connection->reveal());
         $result  = $service->getAttends('42');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 }

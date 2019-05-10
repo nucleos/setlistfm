@@ -24,7 +24,7 @@ class GeoTest extends TestCase
 EOD;
 
         $geo = Geo::fromApi(json_decode($data, true));
-        $this->assertSame(34.0983425, $geo->getLatitude());
-        $this->assertSame(-118.3267434, $geo->getLongitude());
+        static::assertSame(34.0983425, $geo->getLatitude());
+        static::assertSame(-118.3267434, $geo->getLongitude());
     }
 }

@@ -27,7 +27,7 @@ class SetlistSearchBuilderTest extends TestCase
         $expected = [
             'p' => 1,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithVenueName(): void
@@ -40,7 +40,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'         => 1,
             'venueName' => 'Live in New York',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithVenueId(): void
@@ -53,7 +53,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'       => 1,
             'venueId' => '13',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithLastUpdated(): void
@@ -66,7 +66,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'           => 1,
             'lastUpdated' => '20161012231200',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithDate(): void
@@ -79,7 +79,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'    => 1,
             'date' => '12-10-2016',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithYear(): void
@@ -92,7 +92,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'    => 1,
             'year' => 2018,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithTourName(): void
@@ -105,7 +105,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'        => 1,
             'tourName' => 'My Tour',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithArtistName(): void
@@ -118,7 +118,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistName' => 'Slipknot',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithArtistMbid(): void
@@ -131,7 +131,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistMbid' => 'a466c2a2-6517-42fb-a160-1087c3bafd9f',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithArtistTmbid(): void
@@ -144,7 +144,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'           => 1,
             'artistTmbid' => 15515,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithCity(): void
@@ -157,7 +157,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'        => 1,
             'cityName' => 'Hamburg',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithCityId(): void
@@ -170,7 +170,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'      => 1,
             'cityId' => 15,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithCountryCode(): void
@@ -183,7 +183,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'           => 1,
             'countryCode' => 'DE',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithLastFm(): void
@@ -196,7 +196,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'      => 1,
             'lastFm' => '5fsdf5',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithStateCode(): void
@@ -209,7 +209,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'         => 1,
             'stateCode' => 'NY',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithState(): void
@@ -222,7 +222,7 @@ class SetlistSearchBuilderTest extends TestCase
             'p'     => 1,
             'state' => 'Lower Saxony',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testPage(): void
@@ -234,6 +234,6 @@ class SetlistSearchBuilderTest extends TestCase
         $expected = [
             'p' => 42,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 }

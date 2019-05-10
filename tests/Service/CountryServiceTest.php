@@ -26,7 +26,7 @@ class CountryServiceTest extends TestCase
     {
         $service = new CountryService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testSearch(): void
@@ -50,6 +50,6 @@ EOD;
         $service = new CountryService($this->connection->reveal());
         $result  = $service->search();
 
-        $this->assertCount(1, $result->getResult());
+        static::assertCount(1, $result->getResult());
     }
 }
