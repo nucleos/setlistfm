@@ -27,7 +27,7 @@ class VenueServiceTest extends TestCase
     {
         $service = new VenueService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testGetVenue(): void
@@ -61,7 +61,7 @@ EOD;
         $service = new VenueService($this->connection->reveal());
         $result  = $service->getVenue('6bd6ca6e');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testSearch(): void
@@ -95,6 +95,6 @@ EOD;
         $result  = $service->search(VenueSearchBuilder::create()
             ->withName('Compaq Center'));
 
-        $this->assertCount(1, $result->getResult());
+        static::assertCount(1, $result->getResult());
     }
 }

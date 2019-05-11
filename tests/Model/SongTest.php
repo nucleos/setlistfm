@@ -41,10 +41,10 @@ class SongTest extends TestCase
 EOD;
 
         $song = Song::fromApi(json_decode($data, true));
-        $this->assertSame('Roll Over Beethoven', $song->getName());
-        $this->assertSame('This is a song', $song->getInfo());
-        $this->assertNotNull($song->getCover());
-        $this->assertNotNull($song->getFeaturings());
-        $this->assertTrue($song->isTaped());
+        static::assertSame('Roll Over Beethoven', $song->getName());
+        static::assertSame('This is a song', $song->getInfo());
+        static::assertNotNull($song->getCover());
+        static::assertNotNull($song->getFeaturings());
+        static::assertTrue($song->isTaped());
     }
 }

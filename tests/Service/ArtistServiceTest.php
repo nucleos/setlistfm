@@ -27,7 +27,7 @@ class ArtistServiceTest extends TestCase
     {
         $service = new ArtistService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testGetArtist(): void
@@ -50,7 +50,7 @@ EOD;
         $service = new ArtistService($this->connection->reveal());
         $result  = $service->getArtist('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testSearch(): void
@@ -79,6 +79,6 @@ EOD;
         $result  = $service->search(ArtistSearchBuilder::create()
             ->withName('The Beatles'));
 
-        $this->assertCount(1, $result->getResult());
+        static::assertCount(1, $result->getResult());
     }
 }

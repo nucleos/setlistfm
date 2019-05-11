@@ -38,7 +38,7 @@ class HTTPlugConnectionTest extends TestCase
     {
         $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
 
-        $this->assertInstanceOf(ConnectionInterface::class, $client);
+        static::assertInstanceOf(ConnectionInterface::class, $client);
     }
 
     public function testSend(): void
@@ -60,7 +60,7 @@ class HTTPlugConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        $this->assertSame(['data' => 'test'], $client->call('method', ['foo' => 'bar']));
+        static::assertSame(['data' => 'test'], $client->call('method', ['foo' => 'bar']));
     }
 
     public function testSendWithBooleanParameter(): void
@@ -82,7 +82,7 @@ class HTTPlugConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        $this->assertSame(['data' => 'test'], $client->call('method', ['active' => true, 'inactive' => false]));
+        static::assertSame(['data' => 'test'], $client->call('method', ['active' => true, 'inactive' => false]));
     }
 
     public function testSendWithArrayParameter(): void
@@ -104,7 +104,7 @@ class HTTPlugConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        $this->assertSame(['data' => 'test'], $client->call('method', ['foo' => ['bar', 'baz']]));
+        static::assertSame(['data' => 'test'], $client->call('method', ['foo' => ['bar', 'baz']]));
     }
 
     public function testSendWithException(): void

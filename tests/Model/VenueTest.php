@@ -39,9 +39,9 @@ class VenueTest extends TestCase
 EOD;
 
         $venue = Venue::fromApi(json_decode($data, true));
-        $this->assertSame('6bd6ca6e', $venue->getId());
-        $this->assertSame('Compaq Center', $venue->getName());
-        $this->assertNotNull($venue->getCity());
-        $this->assertSame('https://www.setlist.fm/venue/compaq-center-san-jose-ca-usa-6bd6ca6e.html', $venue->getUrl());
+        static::assertSame('6bd6ca6e', $venue->getId());
+        static::assertSame('Compaq Center', $venue->getName());
+        static::assertNotNull($venue->getCity());
+        static::assertSame('https://www.setlist.fm/venue/compaq-center-san-jose-ca-usa-6bd6ca6e.html', $venue->getUrl());
     }
 }

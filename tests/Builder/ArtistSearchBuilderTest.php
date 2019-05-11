@@ -22,7 +22,7 @@ class ArtistSearchBuilderTest extends TestCase
         $expected = [
             'p' => 1,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithTmbid(): void
@@ -35,7 +35,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistTmid' => 123,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithMbid(): void
@@ -48,7 +48,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistMbid' => 'a466c2a2-6517-42fb-a160-1087c3bafd9f',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithName(): void
@@ -61,7 +61,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistName' => 'FooBar',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithNameOverride(): void
@@ -75,7 +75,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'          => 1,
             'artistName' => 'BarBaz',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testSortByRelevance(): void
@@ -88,7 +88,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'    => 1,
             'sort' => 'relevance',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testSortWithInvalidType(): void
@@ -111,7 +111,7 @@ class ArtistSearchBuilderTest extends TestCase
             'p'    => 1,
             'sort' => 'sortName',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testPage(): void
@@ -123,6 +123,6 @@ class ArtistSearchBuilderTest extends TestCase
         $expected = [
             'p' => 42,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 }

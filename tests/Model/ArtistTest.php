@@ -28,11 +28,11 @@ class ArtistTest extends TestCase
 EOD;
 
         $artist = Artist::fromApi(json_decode($data, true));
-        $this->assertSame('The Beatles', $artist->getName());
-        $this->assertSame('Beatles, The', $artist->getSortName());
-        $this->assertSame('John, Paul, George and Ringo', $artist->getDisambiguation());
-        $this->assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $artist->getMbid());
-        $this->assertSame(735610, $artist->getTmid());
-        $this->assertSame('https://www.setlist.fm/setlists/the-beatles-23d6a88b.html', $artist->getUrl());
+        static::assertSame('The Beatles', $artist->getName());
+        static::assertSame('Beatles, The', $artist->getSortName());
+        static::assertSame('John, Paul, George and Ringo', $artist->getDisambiguation());
+        static::assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $artist->getMbid());
+        static::assertSame(735610, $artist->getTmid());
+        static::assertSame('https://www.setlist.fm/setlists/the-beatles-23d6a88b.html', $artist->getUrl());
     }
 }

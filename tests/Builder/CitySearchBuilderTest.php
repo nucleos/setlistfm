@@ -21,7 +21,7 @@ class CitySearchBuilderTest extends TestCase
         $expected = [
             'p' => 1,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithState(): void
@@ -34,7 +34,7 @@ class CitySearchBuilderTest extends TestCase
             'p'     => 1,
             'state' => 'Lower Saxony',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithName(): void
@@ -47,7 +47,7 @@ class CitySearchBuilderTest extends TestCase
             'p'    => 1,
             'name' => 'Hamburg',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithCountry(): void
@@ -60,7 +60,7 @@ class CitySearchBuilderTest extends TestCase
             'p'       => 1,
             'country' => 'DE',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testWithStateCode(): void
@@ -73,7 +73,7 @@ class CitySearchBuilderTest extends TestCase
             'p'         => 1,
             'stateCode' => 'NY',
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 
     public function testPage(): void
@@ -85,6 +85,6 @@ class CitySearchBuilderTest extends TestCase
         $expected = [
             'p' => 42,
         ];
-        $this->assertSame($expected, $builder->getQuery());
+        static::assertSame($expected, $builder->getQuery());
     }
 }

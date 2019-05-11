@@ -27,7 +27,7 @@ class SetlistServiceTest extends TestCase
     {
         $service = new SetlistService($this->connection->reveal());
 
-        $this->assertNotNull($service);
+        static::assertNotNull($service);
     }
 
     public function testGetSetlist(): void
@@ -74,7 +74,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getSetlist('63de4613');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testGetArtistSetlists(): void
@@ -119,7 +119,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getArtistSetlists('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testGetVenueSetlists(): void
@@ -164,7 +164,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getVenueSetlists('6bd6ca6e');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testGetSetlistByVersion(): void
@@ -211,7 +211,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getSetlistByVersion('7be1aaa0');
 
-        $this->assertNotNull($result);
+        static::assertNotNull($result);
     }
 
     public function testSearch(): void
@@ -257,6 +257,6 @@ EOD;
         $result  = $service->search(SetlistSearchBuilder::create()
             ->withArtistName('The Beatles'));
 
-        $this->assertNotNull($result->getResult());
+        static::assertNotNull($result->getResult());
     }
 }
