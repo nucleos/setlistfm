@@ -13,7 +13,7 @@ use Core23\SetlistFm\Model\Setlist;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class SetlistTest extends TestCase
+final class SetlistTest extends TestCase
 {
     public function testFromApi(): void
     {

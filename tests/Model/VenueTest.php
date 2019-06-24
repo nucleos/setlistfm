@@ -12,7 +12,7 @@ namespace Core23\SetlistFm\Tests\Model;
 use Core23\SetlistFm\Model\Venue;
 use PHPUnit\Framework\TestCase;
 
-class VenueTest extends TestCase
+final class VenueTest extends TestCase
 {
     public function testFromApi(): void
     {
