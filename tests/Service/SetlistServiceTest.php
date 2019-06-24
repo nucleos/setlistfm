@@ -14,7 +14,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\SetlistService;
 use PHPUnit\Framework\TestCase;
 
-class SetlistServiceTest extends TestCase
+final class SetlistServiceTest extends TestCase
 {
     private $connection;
 

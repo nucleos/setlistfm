@@ -12,7 +12,7 @@ namespace Core23\SetlistFm\Tests\Model;
 use Core23\SetlistFm\Model\Geo;
 use PHPUnit\Framework\TestCase;
 
-class GeoTest extends TestCase
+final class GeoTest extends TestCase
 {
     public function testFromApi(): void
     {

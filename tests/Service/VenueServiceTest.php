@@ -14,7 +14,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\VenueService;
 use PHPUnit\Framework\TestCase;
 
-class VenueServiceTest extends TestCase
+final class VenueServiceTest extends TestCase
 {
     private $connection;
 

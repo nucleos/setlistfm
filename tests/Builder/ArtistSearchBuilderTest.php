@@ -13,7 +13,7 @@ use Core23\SetlistFm\Builder\ArtistSearchBuilder;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
-class ArtistSearchBuilderTest extends TestCase
+final class ArtistSearchBuilderTest extends TestCase
 {
     public function testCreate(): void
     {

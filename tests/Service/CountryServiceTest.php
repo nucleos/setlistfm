@@ -13,7 +13,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\CountryService;
 use PHPUnit\Framework\TestCase;
 
-class CountryServiceTest extends TestCase
+final class CountryServiceTest extends TestCase
 {
     private $connection;
 

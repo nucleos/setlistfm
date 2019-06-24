@@ -13,7 +13,7 @@ use Core23\SetlistFm\Builder\SetlistSearchBuilder;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class SetlistSearchBuilderTest extends TestCase
+final class SetlistSearchBuilderTest extends TestCase
 {
     public static function setUpBeforeClass()
     {

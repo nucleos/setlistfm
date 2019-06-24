@@ -14,7 +14,7 @@ use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\ArtistService;
 use PHPUnit\Framework\TestCase;
 
-class ArtistServiceTest extends TestCase
+final class ArtistServiceTest extends TestCase
 {
     private $connection;
 

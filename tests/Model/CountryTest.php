@@ -12,7 +12,7 @@ namespace Core23\SetlistFm\Tests\Model;
 use Core23\SetlistFm\Model\Country;
 use PHPUnit\Framework\TestCase;
 
-class CountryTest extends TestCase
+final class CountryTest extends TestCase
 {
     public function testFromApi(): void
     {

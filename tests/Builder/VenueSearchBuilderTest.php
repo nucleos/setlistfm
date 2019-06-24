@@ -12,7 +12,7 @@ namespace Core23\SetlistFm\Tests\Builder;
 use Core23\SetlistFm\Builder\VenueSearchBuilder;
 use PHPUnit\Framework\TestCase;
 
-class VenueSearchBuilderTest extends TestCase
+final class VenueSearchBuilderTest extends TestCase
 {
     public function testCreate(): void
     {
