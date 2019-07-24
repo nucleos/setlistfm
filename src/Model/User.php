@@ -38,13 +38,6 @@ final class User
      */
     private $url;
 
-    /**
-     * @param string      $id
-     * @param string|null $fullname
-     * @param string|null $about
-     * @param string|null $website
-     * @param string|null $url
-     */
     public function __construct(string $id, ?string $fullname, ?string $about, ?string $website, ?string $url)
     {
         $this->id       = $id;
@@ -54,49 +47,32 @@ final class User
         $this->url      = $url;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string|null
-     */
     public function getFullname(): ?string
     {
         return $this->fullname;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAbout(): ?string
     {
         return $this->about;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWebsite(): ?string
     {
         return $this->website;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
     /**
-     * @param array $data
-     *
      * @return User
      */
     public static function fromApi(array $data): self

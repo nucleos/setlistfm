@@ -34,8 +34,6 @@ final class ArtistSearchBuilder
     }
 
     /**
-     * @param int $page
-     *
      * @return ArtistSearchBuilder
      */
     public function page(int $page): self
@@ -46,8 +44,6 @@ final class ArtistSearchBuilder
     }
 
     /**
-     * @param string $mode
-     *
      * @return ArtistSearchBuilder
      */
     public function sort(string $mode): self
@@ -62,8 +58,6 @@ final class ArtistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return ArtistSearchBuilder
      */
     public function withName(string $name): self
@@ -74,8 +68,6 @@ final class ArtistSearchBuilder
     }
 
     /**
-     * @param string $mbid
-     *
      * @return ArtistSearchBuilder
      */
     public function withMbid(string $mbid): self
@@ -86,8 +78,6 @@ final class ArtistSearchBuilder
     }
 
     /**
-     * @param int $tmid
-     *
      * @return ArtistSearchBuilder
      */
     public function withTmbid(int $tmid): self
@@ -97,9 +87,6 @@ final class ArtistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getQuery(): array
     {
         return $this->query;

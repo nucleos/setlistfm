@@ -25,9 +25,6 @@ final class SetlistService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -36,12 +33,8 @@ final class SetlistService
     /**
      * Get setlist information.
      *
-     * @param string $setlistId
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist
      */
     public function getSetlist(string $setlistId): Setlist
     {
@@ -53,12 +46,8 @@ final class SetlistService
     /**
      * Get setlist information by version id.
      *
-     * @param string $versionId
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist
      */
     public function getSetlistByVersion(string $versionId): Setlist
     {
@@ -69,9 +58,6 @@ final class SetlistService
 
     /**
      * Get artist setlists.
-     *
-     * @param string $mbid
-     * @param int    $page
      *
      * @throws ApiException
      * @throws NotFoundException
@@ -96,9 +82,6 @@ final class SetlistService
     /**
      * Get venue setlists.
      *
-     * @param string $venueId
-     * @param int    $page
-     *
      * @throws ApiException
      * @throws NotFoundException
      *
@@ -122,12 +105,8 @@ final class SetlistService
     /**
      * Search for setlists.
      *
-     * @param SetlistSearchBuilder $builder
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return SetlistSearchResult
      */
     public function search(SetlistSearchBuilder $builder): SetlistSearchResult
     {

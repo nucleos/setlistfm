@@ -18,25 +18,17 @@ final class Tour
      */
     private $name;
 
-    /**
-     * @param string $name
-     */
     public function __construct(string $name)
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param array $data
-     *
      * @return Tour
      */
     public static function fromApi(array $data): self

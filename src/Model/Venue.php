@@ -33,12 +33,6 @@ final class Venue
      */
     private $city;
 
-    /**
-     * @param string      $id
-     * @param string      $name
-     * @param string|null $url
-     * @param City|null   $city
-     */
     public function __construct(string $id, string $name, ?string $url, ?City $city)
     {
         $this->id   = $id;
@@ -47,41 +41,27 @@ final class Venue
         $this->city = $city;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
-    /**
-     * @return City|null
-     */
     public function getCity(): ?City
     {
         return $this->city;
     }
 
     /**
-     * @param array $data
-     *
      * @return Venue
      */
     public static function fromApi(array $data): self

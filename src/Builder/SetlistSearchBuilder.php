@@ -34,8 +34,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param int $page
-     *
      * @return SetlistSearchBuilder
      */
     public function page(int $page): self
@@ -46,8 +44,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return SetlistSearchBuilder
      */
     public function withArtistName(string $name): self
@@ -58,8 +54,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $mbid
-     *
      * @return SetlistSearchBuilder
      */
     public function withArtistMbid(string $mbid): self
@@ -70,8 +64,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param int $tmid
-     *
      * @return SetlistSearchBuilder
      */
     public function withArtistTmbid(int $tmid): self
@@ -82,8 +74,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return SetlistSearchBuilder
      */
     public function withCity(string $name): self
@@ -94,8 +84,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param int $id
-     *
      * @return SetlistSearchBuilder
      */
     public function withCityId(int $id): self
@@ -106,8 +94,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $code
-     *
      * @return SetlistSearchBuilder
      */
     public function withCountryCode(string $code): self
@@ -118,8 +104,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param DateTime $date
-     *
      * @return SetlistSearchBuilder
      */
     public function withDate(DateTime $date): self
@@ -130,8 +114,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param int $year
-     *
      * @return SetlistSearchBuilder
      */
     public function withYear(int $year): self
@@ -142,8 +124,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $eventId
-     *
      * @return SetlistSearchBuilder
      *
      * @deprecated since setlist.fm API 1.0
@@ -156,8 +136,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param DateTime $date
-     *
      * @return SetlistSearchBuilder
      */
     public function withLastUpdated(DateTime $date): self
@@ -168,8 +146,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return SetlistSearchBuilder
      */
     public function withState(string $name): self
@@ -180,8 +156,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $code
-     *
      * @return SetlistSearchBuilder
      */
     public function withStateCode(string $code): self
@@ -192,8 +166,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return SetlistSearchBuilder
      */
     public function withTourName(string $name): self
@@ -204,8 +176,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return SetlistSearchBuilder
      */
     public function withVenueName(string $name): self
@@ -216,8 +186,6 @@ final class SetlistSearchBuilder
     }
 
     /**
-     * @param string $venueId
-     *
      * @return SetlistSearchBuilder
      */
     public function withVenueId(string $venueId): self
@@ -227,9 +195,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getQuery(): array
     {
         return $this->query;

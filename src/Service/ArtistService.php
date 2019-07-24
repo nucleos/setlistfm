@@ -25,9 +25,6 @@ final class ArtistService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -36,12 +33,8 @@ final class ArtistService
     /**
      * Get the metadata for an artist.
      *
-     * @param string $mbid
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Artist
      */
     public function getArtist(string $mbid): Artist
     {
@@ -53,12 +46,8 @@ final class ArtistService
     /**
      * Search for artists.
      *
-     * @param ArtistSearchBuilder $builder
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return ArtistSearchResult
      */
     public function search(ArtistSearchBuilder $builder): ArtistSearchResult
     {

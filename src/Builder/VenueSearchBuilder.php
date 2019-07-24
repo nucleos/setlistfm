@@ -32,8 +32,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param int $page
-     *
      * @return VenueSearchBuilder
      */
     public function page(int $page): self
@@ -44,8 +42,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return VenueSearchBuilder
      */
     public function withName(string $name): self
@@ -56,8 +52,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return VenueSearchBuilder
      */
     public function withCity(string $name): self
@@ -68,8 +62,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param int $id
-     *
      * @return VenueSearchBuilder
      */
     public function withCityId(int $id): self
@@ -80,8 +72,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param string $country
-     *
      * @return VenueSearchBuilder
      */
     public function withCountry(string $country): self
@@ -92,8 +82,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return VenueSearchBuilder
      */
     public function withState(string $name): self
@@ -104,8 +92,6 @@ final class VenueSearchBuilder
     }
 
     /**
-     * @param string $code
-     *
      * @return VenueSearchBuilder
      */
     public function withStateCode(string $code): self
@@ -115,9 +101,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getQuery(): array
     {
         return $this->query;

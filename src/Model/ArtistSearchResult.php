@@ -33,9 +33,6 @@ final class ArtistSearchResult
 
     /**
      * @param Artist[] $result
-     * @param int      $page
-     * @param int      $pageSize
-     * @param int      $totalSize
      */
     private function __construct(array $result, int $page, int $pageSize, int $totalSize)
     {
@@ -53,33 +50,21 @@ final class ArtistSearchResult
         return $this->result;
     }
 
-    /**
-     * @return int
-     */
     public function getPage(): int
     {
         return $this->page;
     }
 
-    /**
-     * @return int
-     */
     public function getPageSize(): int
     {
         return $this->pageSize;
     }
 
-    /**
-     * @return int
-     */
     public function getTotalSize(): int
     {
         return $this->totalSize;
     }
 
-    /**
-     * @return int
-     */
     public function getLastPage(): int
     {
         return (int) ceil($this->totalSize / $this->pageSize);
@@ -94,8 +79,6 @@ final class ArtistSearchResult
     }
 
     /**
-     * @param array $response
-     *
      * @return ArtistSearchResult
      */
     public static function fromApi(array $response): self

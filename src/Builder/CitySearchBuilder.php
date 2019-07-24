@@ -32,8 +32,6 @@ final class CitySearchBuilder
     }
 
     /**
-     * @param int $page
-     *
      * @return CitySearchBuilder
      */
     public function page(int $page): self
@@ -44,8 +42,6 @@ final class CitySearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return CitySearchBuilder
      */
     public function withName(string $name): self
@@ -56,8 +52,6 @@ final class CitySearchBuilder
     }
 
     /**
-     * @param string $country
-     *
      * @return CitySearchBuilder
      */
     public function withCountry(string $country): self
@@ -68,8 +62,6 @@ final class CitySearchBuilder
     }
 
     /**
-     * @param string $name
-     *
      * @return CitySearchBuilder
      */
     public function withState(string $name): self
@@ -80,8 +72,6 @@ final class CitySearchBuilder
     }
 
     /**
-     * @param string $code
-     *
      * @return CitySearchBuilder
      */
     public function withStateCode(string $code): self
@@ -91,9 +81,6 @@ final class CitySearchBuilder
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getQuery(): array
     {
         return $this->query;

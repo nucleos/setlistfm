@@ -24,9 +24,6 @@ final class UserService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -35,12 +32,8 @@ final class UserService
     /**
      * Get the user data for an id.
      *
-     * @param string $userId
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return User
      */
     public function getUser(string $userId): User
     {
@@ -51,9 +44,6 @@ final class UserService
 
     /**
      * Get a list of attended venues for a user id.
-     *
-     * @param string $userId
-     * @param int    $page
      *
      * @throws ApiException
      * @throws NotFoundException
@@ -77,9 +67,6 @@ final class UserService
 
     /**
      * Get a list of edited venues for a user id.
-     *
-     * @param string $userId
-     * @param int    $page
      *
      * @throws ApiException
      * @throws NotFoundException

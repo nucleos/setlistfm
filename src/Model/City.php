@@ -43,14 +43,6 @@ final class City
      */
     private $geo;
 
-    /**
-     * @param int          $id
-     * @param string       $name
-     * @param string|null  $state
-     * @param string|null  $stateCode
-     * @param Country|null $county
-     * @param Geo|null     $geo
-     */
     public function __construct(
         int $id,
         string $name,
@@ -67,33 +59,21 @@ final class City
         $this->geo       = $geo;
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string|null
-     */
     public function getState(): ?string
     {
         return $this->state;
     }
 
-    /**
-     * @return string|null
-     */
     public function getStateCode(): ?string
     {
         return $this->stateCode;
@@ -101,33 +81,23 @@ final class City
 
     /**
      * @deprecated use getCountry instead
-     *
-     * @return Country|null
      */
     public function getCounty(): ?Country
     {
         return $this->getCountry();
     }
 
-    /**
-     * @return Country|null
-     */
     public function getCountry(): ?Country
     {
         return $this->country;
     }
 
-    /**
-     * @return Geo|null
-     */
     public function getGeo(): ?Geo
     {
         return $this->geo;
     }
 
     /**
-     * @param array $data
-     *
      * @return City
      */
     public static function fromApi(array $data): self
