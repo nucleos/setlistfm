@@ -23,35 +23,23 @@ final class Country
      */
     private $name;
 
-    /**
-     * @param string $code
-     * @param string $name
-     */
     public function __construct(string $code, string $name)
     {
         $this->code = $code;
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getCode(): string
     {
         return $this->code;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param array $data
-     *
      * @return Country
      */
     public static function fromApi(array $data): self

@@ -29,7 +29,6 @@ abstract class AbstractConnection implements ConnectionInterface
     private $uri;
 
     /**
-     * @param string $apikey
      * @param string $uri
      */
     public function __construct(string $apikey, string $uri = null)
@@ -42,17 +41,11 @@ abstract class AbstractConnection implements ConnectionInterface
         $this->uri    = $uri;
     }
 
-    /**
-     * @return string
-     */
     final protected function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @return string
-     */
     final protected function getUri(): string
     {
         return $this->uri;

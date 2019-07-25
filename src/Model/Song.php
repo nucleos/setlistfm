@@ -39,11 +39,7 @@ final class Song
     private $featurings;
 
     /**
-     * @param string      $name
-     * @param string|null $info
-     * @param Artist|null $cover
-     * @param bool        $taped
-     * @param Artist[]    $featurings
+     * @param Artist[] $featurings
      */
     public function __construct(string $name, ?string $info, ?Artist $cover, bool $taped, array $featurings)
     {
@@ -54,33 +50,21 @@ final class Song
         $this->featurings = $featurings;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInfo(): ?string
     {
         return $this->info;
     }
 
-    /**
-     * @return Artist|null
-     */
     public function getCover(): ?Artist
     {
         return $this->cover;
     }
 
-    /**
-     * @return bool
-     */
     public function isTaped(): bool
     {
         return $this->taped;
@@ -95,8 +79,6 @@ final class Song
     }
 
     /**
-     * @param array $data
-     *
      * @return Song
      */
     public static function fromApi(array $data): self

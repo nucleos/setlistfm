@@ -35,10 +35,7 @@ final class HTTPlugConnection extends AbstractConnection
     /**
      * Initialize client.
      *
-     * @param HttpClient     $client
-     * @param RequestFactory $requestFactory
-     * @param string         $apiKey
-     * @param string         $uri
+     * @param string $uri
      */
     public function __construct(HttpClient $client, RequestFactory $requestFactory, string $apiKey, string $uri = null)
     {
@@ -69,12 +66,8 @@ final class HTTPlugConnection extends AbstractConnection
     }
 
     /**
-     * @param ResponseInterface $response
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return array
      */
     private function parseResponse(ResponseInterface $response): array
     {
@@ -98,23 +91,12 @@ final class HTTPlugConnection extends AbstractConnection
 
     /**
      * Builds request parameter.
-     *
-     * @param array $parameter
-     *
-     * @return string
      */
     private static function buildParameter(array $parameter): string
     {
         return http_build_query($parameter);
     }
 
-    /**
-     * @param string $method
-     * @param array  $params
-     * @param string $requestMethod
-     *
-     * @return RequestInterface
-     */
     private function buildRequest(string $method, array $params, string $requestMethod): RequestInterface
     {
         $data = self::buildParameter($params);

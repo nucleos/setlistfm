@@ -19,14 +19,8 @@ interface ConnectionInterface
     /**
      * Calls the API.
      *
-     * @param string $method
-     * @param array  $params
-     * @param string $requestMethod
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return array
      */
     public function call(string $method, array $params = [], string $requestMethod = 'GET'): array;
 }

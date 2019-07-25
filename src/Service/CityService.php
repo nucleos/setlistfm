@@ -25,9 +25,6 @@ final class CityService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -36,12 +33,8 @@ final class CityService
     /**
      * Get the city data for an id.
      *
-     * @param int $cityId
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return City
      */
     public function getCity(int $cityId): City
     {
@@ -53,12 +46,8 @@ final class CityService
     /**
      * Search for cities.
      *
-     * @param CitySearchBuilder $builder
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return CitySearchResult
      */
     public function search(CitySearchBuilder $builder): CitySearchResult
     {

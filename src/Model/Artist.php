@@ -43,14 +43,6 @@ final class Artist
      */
     private $url;
 
-    /**
-     * @param string      $name
-     * @param string|null $mbid
-     * @param int|null    $tmid
-     * @param string|null $sortName
-     * @param string|null $disambiguation
-     * @param string|null $url
-     */
     public function __construct(
         string $name,
         ?string $mbid,
@@ -67,57 +59,37 @@ final class Artist
         $this->url            = $url;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMbid(): ?string
     {
         return $this->mbid;
     }
 
-    /**
-     * @return int|null
-     */
     public function getTmid(): ?int
     {
         return $this->tmid;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSortName(): ?string
     {
         return $this->sortName;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDisambiguation(): ?string
     {
         return $this->disambiguation;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
     /**
-     * @param array $data
-     *
      * @return Artist
      */
     public static function fromApi(array $data): self

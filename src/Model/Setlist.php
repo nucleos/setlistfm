@@ -66,16 +66,7 @@ final class Setlist
     private $updateDate;
 
     /**
-     * @param string        $id
-     * @param Artist|null   $artist
-     * @param Venue|null    $venue
-     * @param Tour|null     $tour
-     * @param Set[]         $sets
-     * @param string|null   $info
-     * @param string|null   $url
-     * @param string|null   $versionId
-     * @param DateTime      $eventDate
-     * @param DateTime|null $updateDate
+     * @param Set[] $sets
      */
     public function __construct(
         string $id,
@@ -101,33 +92,21 @@ final class Setlist
         $this->updateDate = $updateDate;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return Artist|null
-     */
     public function getArtist(): ?Artist
     {
         return $this->artist;
     }
 
-    /**
-     * @return Venue|null
-     */
     public function getVenue(): ?Venue
     {
         return $this->venue;
     }
 
-    /**
-     * @return Tour|null
-     */
     public function getTour(): ?Tour
     {
         return $this->tour;
@@ -141,49 +120,32 @@ final class Setlist
         return $this->sets;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInfo(): ?string
     {
         return $this->info;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
-    /**
-     * @return string|null
-     */
     public function getVersionId(): ?string
     {
         return $this->versionId;
     }
 
-    /**
-     * @return DateTime
-     */
     public function getEventDate(): DateTime
     {
         return $this->eventDate;
     }
 
-    /**
-     * @return DateTime|null
-     */
     public function getUpdateDate(): ?DateTime
     {
         return $this->updateDate;
     }
 
     /**
-     * @param array $data
-     *
      * @return Setlist
      */
     public static function fromApi(array $data): self
@@ -218,11 +180,6 @@ final class Setlist
         );
     }
 
-    /**
-     * @param array $data
-     *
-     * @return array
-     */
     private static function createSetsFromApi(array $data): array
     {
         $sets = [];

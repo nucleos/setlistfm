@@ -29,9 +29,7 @@ final class Set
     private $songs;
 
     /**
-     * @param string|null $name
-     * @param int|null    $encore
-     * @param Song[]      $songs
+     * @param Song[] $songs
      */
     public function __construct(?string $name, ?int $encore, array $songs)
     {
@@ -40,17 +38,11 @@ final class Set
         $this->songs  = $songs;
     }
 
-    /**
-     * @return string|null
-     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @return int|null
-     */
     public function getEncore(): ?int
     {
         return $this->encore;
@@ -65,8 +57,6 @@ final class Set
     }
 
     /**
-     * @param array $data
-     *
      * @return Set
      */
     public static function fromApi(array $data): self

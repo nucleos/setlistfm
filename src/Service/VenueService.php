@@ -25,9 +25,6 @@ final class VenueService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -36,12 +33,8 @@ final class VenueService
     /**
      * Get the metadata for an artist.
      *
-     * @param string $venueId
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Venue
      */
     public function getVenue(string $venueId): Venue
     {
@@ -53,12 +46,8 @@ final class VenueService
     /**
      * Search for venues.
      *
-     * @param VenueSearchBuilder $builder
-     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return VenueSearchResult
      */
     public function search(VenueSearchBuilder $builder): VenueSearchResult
     {

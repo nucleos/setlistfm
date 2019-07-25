@@ -23,9 +23,6 @@ final class CountryService
      */
     private $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
@@ -36,8 +33,6 @@ final class CountryService
      *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return CountrySearchResult
      */
     public function search(): CountrySearchResult
     {
