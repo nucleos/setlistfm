@@ -45,9 +45,6 @@ final class HTTPlugConnection extends AbstractConnection
         $this->requestFactory = $requestFactory;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function call(string $method, array $params = [], string $requestMethod = 'GET'): array
     {
         $request = $this->buildRequest($method, $params, $requestMethod);
