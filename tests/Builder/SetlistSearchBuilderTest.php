@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 
 final class SetlistSearchBuilderTest extends TestCase
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         date_default_timezone_set('UTC');
     }

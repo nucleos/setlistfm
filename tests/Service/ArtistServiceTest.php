@@ -18,7 +18,7 @@ final class ArtistServiceTest extends TestCase
 {
     private $connection;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->connection =  $this->prophesize(ConnectionInterface::class);
     }
