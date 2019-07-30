@@ -23,13 +23,6 @@ final class SetlistServiceTest extends TestCase
         $this->connection =  $this->prophesize(ConnectionInterface::class);
     }
 
-    public function testItIsInstantiable(): void
-    {
-        $service = new SetlistService($this->connection->reveal());
-
-        static::assertNotNull($service);
-    }
-
     public function testGetSetlist(): void
     {
         $rawResponse = <<<'EOD'
@@ -74,7 +67,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getSetlist('63de4613');
 
-        static::assertNotNull($result);
+        static::assertSame('63de4613', $result->getId());
     }
 
     public function testGetArtistSetlists(): void
@@ -119,7 +112,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getArtistSetlists('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        static::assertNotNull($result);
+        static::assertCount(1, $result);
     }
 
     public function testGetVenueSetlists(): void
@@ -164,7 +157,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getVenueSetlists('6bd6ca6e');
 
-        static::assertNotNull($result);
+        static::assertCount(1, $result);
     }
 
     public function testGetSetlistByVersion(): void
@@ -211,7 +204,7 @@ EOD;
         $service = new SetlistService($this->connection->reveal());
         $result  = $service->getSetlistByVersion('7be1aaa0');
 
-        static::assertNotNull($result);
+        static::assertSame('7be1aaa0', $result->getVersionId());
     }
 
     public function testSearch(): void
@@ -257,6 +250,6 @@ EOD;
         $result  = $service->search(SetlistSearchBuilder::create()
             ->withArtistName('The Beatles'));
 
-        static::assertNotNull($result->getResult());
+        static::assertCount(1, $result->getResult());
     }
 }

@@ -22,13 +22,6 @@ final class UserServiceTest extends TestCase
         $this->connection =  $this->prophesize(ConnectionInterface::class);
     }
 
-    public function testItIsInstantiable(): void
-    {
-        $service = new UserService($this->connection->reveal());
-
-        static::assertNotNull($service);
-    }
-
     public function testGetUser(): void
     {
         $rawResponse = <<<'EOD'
@@ -41,14 +34,14 @@ final class UserServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->call('user/42')
+        $this->connection->call('user/Metal-42')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
         $service = new UserService($this->connection->reveal());
-        $result  = $service->getUser('42');
+        $result  = $service->getUser('Metal-42');
 
-        static::assertNotNull($result);
+        static::assertSame('Metal-42', $result->getId());
     }
 
     public function testGetEdits(): void
@@ -93,7 +86,7 @@ EOD;
         $service = new UserService($this->connection->reveal());
         $result  = $service->getEdits('42');
 
-        static::assertNotNull($result);
+        static::assertCount(1, $result);
     }
 
     public function testGetAttends(): void
@@ -138,6 +131,6 @@ EOD;
         $service = new UserService($this->connection->reveal());
         $result  = $service->getAttends('42');
 
-        static::assertNotNull($result);
+        static::assertCount(1, $result);
     }
 }

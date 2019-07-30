@@ -22,13 +22,6 @@ final class CountryServiceTest extends TestCase
         $this->connection =  $this->prophesize(ConnectionInterface::class);
     }
 
-    public function testItIsInstantiable(): void
-    {
-        $service = new CountryService($this->connection->reveal());
-
-        static::assertNotNull($service);
-    }
-
     public function testSearch(): void
     {
         $rawResponse = <<<'EOD'

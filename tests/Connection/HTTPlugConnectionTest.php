@@ -9,7 +9,6 @@
 
 namespace Core23\SetlistFm\Tests\Connection;
 
-use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Connection\HTTPlugConnection;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Tests\Fixtures\ClientException;
@@ -32,13 +31,6 @@ final class HTTPlugConnectionTest extends TestCase
     {
         $this->client         = $this->prophesize(HttpClient::class);
         $this->messageFactory = $this->prophesize(MessageFactory::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
-
-        static::assertInstanceOf(ConnectionInterface::class, $client);
     }
 
     public function testSend(): void
