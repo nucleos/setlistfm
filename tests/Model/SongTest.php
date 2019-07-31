@@ -44,7 +44,7 @@ EOD;
         static::assertSame('Roll Over Beethoven', $song->getName());
         static::assertSame('This is a song', $song->getInfo());
         static::assertNotNull($song->getCover());
-        static::assertNotNull($song->getFeaturings());
+        static::assertCount(1, $song->getFeaturings());
         static::assertTrue($song->isTaped());
     }
 }

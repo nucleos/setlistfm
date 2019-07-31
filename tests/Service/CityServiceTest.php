@@ -18,16 +18,9 @@ final class CityServiceTest extends TestCase
 {
     private $connection;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->connection =  $this->prophesize(ConnectionInterface::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $service = new CityService($this->connection->reveal());
-
-        static::assertNotNull($service);
     }
 
     public function testGetCity(): void
@@ -56,7 +49,7 @@ EOD;
         $service = new CityService($this->connection->reveal());
         $result  = $service->getCity(5357527);
 
-        static::assertNotNull($result);
+        static::assertSame('Hollywood', $result->getName());
     }
 
     public function testSearch(): void

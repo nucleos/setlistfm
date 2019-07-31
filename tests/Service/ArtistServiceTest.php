@@ -18,16 +18,9 @@ final class ArtistServiceTest extends TestCase
 {
     private $connection;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->connection =  $this->prophesize(ConnectionInterface::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $service = new ArtistService($this->connection->reveal());
-
-        static::assertNotNull($service);
     }
 
     public function testGetArtist(): void
@@ -50,7 +43,7 @@ EOD;
         $service = new ArtistService($this->connection->reveal());
         $result  = $service->getArtist('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        static::assertNotNull($result);
+        static::assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $result->getMbid());
     }
 
     public function testSearch(): void

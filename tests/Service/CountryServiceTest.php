@@ -17,16 +17,9 @@ final class CountryServiceTest extends TestCase
 {
     private $connection;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->connection =  $this->prophesize(ConnectionInterface::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $service = new CountryService($this->connection->reveal());
-
-        static::assertNotNull($service);
     }
 
     public function testSearch(): void

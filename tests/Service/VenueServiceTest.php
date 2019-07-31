@@ -18,16 +18,9 @@ final class VenueServiceTest extends TestCase
 {
     private $connection;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->connection =  $this->prophesize(ConnectionInterface::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $service = new VenueService($this->connection->reveal());
-
-        static::assertNotNull($service);
     }
 
     public function testGetVenue(): void
@@ -61,7 +54,7 @@ EOD;
         $service = new VenueService($this->connection->reveal());
         $result  = $service->getVenue('6bd6ca6e');
 
-        static::assertNotNull($result);
+        static::assertSame('6bd6ca6e', $result->getId());
     }
 
     public function testSearch(): void
