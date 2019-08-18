@@ -3,7 +3,6 @@ language: php
 php:
   - 7.2
   - 7.3
-  - nightly
 
 sudo: false
 
@@ -41,7 +40,6 @@ matrix:
       php: 7.2
       env: COMPOSER_FLAGS="--prefer-lowest"
   allow_failures:
-    - php: nightly
     - php: 7.3
       env: TARGET=checkdeps
 
