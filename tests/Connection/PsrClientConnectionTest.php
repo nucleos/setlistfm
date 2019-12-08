@@ -9,40 +9,43 @@
 
 namespace Core23\SetlistFm\Tests\Connection;
 
-use Core23\SetlistFm\Connection\HTTPlugConnection;
+use Core23\SetlistFm\Connection\PsrClientConnection;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Tests\Fixtures\ClientException;
 use Exception;
-use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
-final class HTTPlugConnectionTest extends TestCase
+final class PsrClientConnectionTest extends TestCase
 {
     private $client;
 
-    private $messageFactory;
+    private $requestFactory;
 
     protected function setUp(): void
     {
-        $this->client         = $this->prophesize(HttpClient::class);
-        $this->messageFactory = $this->prophesize(MessageFactory::class);
+        $this->client         = $this->prophesize(ClientInterface::class);
+        $this->requestFactory = $this->prophesize(RequestFactoryInterface::class);
     }
 
     public function testSend(): void
     {
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?foo=bar', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
@@ -57,14 +60,17 @@ final class HTTPlugConnectionTest extends TestCase
 
     public function testSendWithBooleanParameter(): void
     {
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?active=1&inactive=0', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?active=1&inactive=0')
             ->willReturn($request)
         ;
 
@@ -79,14 +85,17 @@ final class HTTPlugConnectionTest extends TestCase
 
     public function testSendWithArrayParameter(): void
     {
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?foo%5B0%5D=bar&foo%5B1%5D=baz', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?foo%5B0%5D=bar&foo%5B1%5D=baz')
             ->willReturn($request)
         ;
 
@@ -104,14 +113,17 @@ final class HTTPlugConnectionTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('Technical error occurred.');
 
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?foo=bar', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
@@ -127,14 +139,17 @@ final class HTTPlugConnectionTest extends TestCase
         $this->expectException(ApiException::class);
         $this->expectExceptionMessage('Technical error occurred.');
 
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?foo=bar', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
@@ -150,14 +165,17 @@ final class HTTPlugConnectionTest extends TestCase
         $this->expectException(ApiException::class);
         $this->expectExceptionMessage('Server did not reply with a valid response.');
 
-        $client = new HTTPlugConnection($this->client->reveal(), $this->messageFactory->reveal(), 'my-key', 'http://api.url/');
+        $client = new PsrClientConnection($this->client->reveal(), $this->requestFactory->reveal(), 'my-key', 'http://api.url/');
 
         $request =  $this->prophesize(RequestInterface::class);
+        $request->withHeader('Accept', 'application/json')
+            ->willReturn($request)
+        ;
+        $request->withHeader('x-api-key', 'my-key')
+            ->willReturn($request)
+        ;
 
-        $this->messageFactory->createRequest('GET', 'http://api.url/method?foo=bar', [
-            'Accept'    => 'application/json',
-            'x-api-key' => 'my-key',
-        ])
+        $this->requestFactory->createRequest('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 

@@ -10,8 +10,8 @@
 namespace Core23\SetlistFm\Tests\Fixtures;
 
 use Exception;
-use Http\Client\Exception as PsrException;
+use Psr\Http\Client\ClientExceptionInterface;
 
-final class ClientException extends Exception implements PsrException
+final class ClientException extends Exception implements ClientExceptionInterface
 {
 }
