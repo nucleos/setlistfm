@@ -8,10 +8,8 @@ Setlist.fm PHP library
 [![Monthly Downloads](https://poser.pugx.org/core23/setlistfm-api/d/monthly)](https://packagist.org/packages/core23/setlistfm-api)
 [![Daily Downloads](https://poser.pugx.org/core23/setlistfm-api/d/daily)](https://packagist.org/packages/core23/setlistfm-api)
 
-[![Build Status](https://travis-ci.org/core23/setlistfm-php-api.svg)](http://travis-ci.org/core23/setlistfm-php-api)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/setlistfm-php-api/badges/quality-score.png)](https://scrutinizer-ci.com/g/core23/setlistfm-php-api/)
-[![Code Climate](https://codeclimate.com/github/core23/setlistfm-php-api/badges/gpa.svg)](https://codeclimate.com/github/core23/setlistfm-php-api)
-[![Coverage Status](https://coveralls.io/repos/core23/setlistfm-php-api/badge.svg)](https://coveralls.io/r/core23/setlistfm-php-api)
+[![Continuous Integration](https://github.com/core23/setlistfm-php-api/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/setlistfm-php-api/actions)
+[![Code Coverage](https://codecov.io/gh/core23/setlistfm-php-api/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/setlistfm-php-api)
 
 This library provides a wrapper for using the [Setlist.fm API] inside PHP and a bridge for symfony.
 
