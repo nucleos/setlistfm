@@ -19,24 +19,19 @@ Open a command console, enter your project directory and execute the following c
 
 ```
 composer require core23/setlistfm-api
-
-composer require guzzlehttp/guzzle # if you want to use Guzzle native
-composer require php-http/guzzle6-adapter # if you want to use HTTPlug with Guzzle
+# To define a default http client and message factory
+composer require symfony/http-client nyholm/psr7
 ```
 
 ## Usage
 
 ### General usage
 ```php
-// Get HTTPlug client and message factory
-$client         = \Http\Discovery\HttpClientDiscovery::find();
-$messageFactory = \Http\Discovery\MessageFactoryDiscovery::find();
-
 // Create connection
-$connection = new \Core23\SetlistFm\Connection\HTTPlugConnection($client, $messageFactory);
+$connection = new \Core23\SetlistFm\Connection\PsrClientConnection($httpClient, $requestFactory);
 
 $artistApi = new \Core23\SetlistFm\Service\ArtistService($connection);
-$artists = $artistApi->search(ArtistSearchBuilder::create()
+$artists = $artistApi->search(\Core23\SetlistFm\Builder\ArtistSearchBuilder::create()
     ->withArtistName('Slipknot')
 );
 ```
@@ -45,5 +40,4 @@ $artists = $artistApi->search(ArtistSearchBuilder::create()
 
 This library is under the [MIT license](LICENSE.md).
 
-[HTTPlug]: http://docs.php-http.org/en/latest/index.html
 [Setlist.fm API]: https://api.setlist.fm

@@ -14,21 +14,21 @@ namespace Core23\SetlistFm\Connection;
 use Core23\SetlistFm\Exception\ApiException;
 use Core23\SetlistFm\Exception\NotFoundException;
 use Exception;
-use Http\Client\Exception as ClientException;
-use Http\Client\HttpClient;
-use Http\Message\RequestFactory;
+use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-final class HTTPlugConnection extends AbstractConnection
+final class PsrClientConnection extends AbstractConnection
 {
     /**
-     * @var HttpClient
+     * @var ClientInterface
      */
     private $client;
 
     /**
-     * @var RequestFactory
+     * @var RequestFactoryInterface
      */
     private $requestFactory;
 
@@ -37,7 +37,7 @@ final class HTTPlugConnection extends AbstractConnection
      *
      * @param string $uri
      */
-    public function __construct(HttpClient $client, RequestFactory $requestFactory, string $apiKey, string $uri = null)
+    public function __construct(ClientInterface $client, RequestFactoryInterface $requestFactory, string $apiKey, string $uri = null)
     {
         parent::__construct($apiKey, $uri);
 
@@ -57,8 +57,8 @@ final class HTTPlugConnection extends AbstractConnection
             throw $e;
         } catch (Exception $e) {
             throw new ApiException('Technical error occurred.', 500, $e);
-        } catch (ClientException $e) {
-            throw new ApiException('Technical error occurred.', $e->getCode(), $e);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException('Technical error occurred.', 500, $e);
         }
     }
 
@@ -86,27 +86,13 @@ final class HTTPlugConnection extends AbstractConnection
         return $array;
     }
 
-    /**
-     * Builds request parameter.
-     */
-    private static function buildParameter(array $parameter): string
-    {
-        return http_build_query($parameter);
-    }
-
     private function buildRequest(string $method, array $params, string $requestMethod): RequestInterface
     {
-        $data = self::buildParameter($params);
+        $data = http_build_query($params);
 
-        $headers = [
-            'Accept'    => 'application/json',
-            'x-api-key' => $this->getApiKey(),
-        ];
-
-        if ('POST' === $requestMethod) {
-            return $this->requestFactory->createRequest($requestMethod, $this->getUri().$method, $headers, $data);
-        }
-
-        return $this->requestFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data, $headers);
+        return $this->requestFactory->createRequest($requestMethod, $this->getUri().$method.'?'.$data)
+            ->withHeader('Accept', 'application/json')
+            ->withHeader('x-api-key', $this->getApiKey())
+        ;
     }
 }
