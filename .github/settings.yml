@@ -3,7 +3,7 @@
 _extends: .github
 
 repository:
-  name: SetlistFm
+  name: setlistfm-php-api
   description: 🔌 Setlist.fm webservice client for php.
   homepage: https://core23.de
   topics: php, library, setlistfm, setlist, api, webservice-client
