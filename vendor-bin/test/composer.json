@@ -1,6 +1,7 @@
 {
-    "require": {
-        "phpunit/phpunit": "^8.2",
-        "symfony/phpunit-bridge": "^4.1"
-    }
+  "require": {
+    "infection/infection": "^0.15",
+    "phpunit/phpunit": "^8.2",
+    "symfony/phpunit-bridge": "^4.1"
+  }
 }
