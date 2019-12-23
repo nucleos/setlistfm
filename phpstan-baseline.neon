@@ -1,0 +1,43 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Connection\\\\PsrClientConnectionTest\\:\\:\\$client has no typehint specified\\.$#"
+			count: 1
+			path: tests/Connection/PsrClientConnectionTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Connection\\\\PsrClientConnectionTest\\:\\:\\$requestFactory has no typehint specified\\.$#"
+			count: 1
+			path: tests/Connection/PsrClientConnectionTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\ArtistServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/ArtistServiceTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\CityServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/CityServiceTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\CountryServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/CountryServiceTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\SetlistServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/SetlistServiceTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\UserServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/UserServiceTest.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\VenueServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			count: 1
+			path: tests/Service/VenueServiceTest.php
+
+
