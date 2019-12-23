@@ -11,7 +11,9 @@ declare(strict_types=1);
 
 namespace Core23\SetlistFm\Exception;
 
-final class ApiException extends \Exception
+use Exception;
+
+final class ApiException extends Exception
 {
     public function __toString()
     {
