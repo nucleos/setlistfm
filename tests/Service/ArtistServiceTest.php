@@ -15,9 +15,13 @@ use Core23\SetlistFm\Builder\ArtistSearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\ArtistService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class ArtistServiceTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $connection;
 
     protected function setUp(): void

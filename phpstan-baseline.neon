@@ -1,43 +1,43 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Connection\\\\PsrClientConnectionTest\\:\\:\\$client has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$client of class Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Client\\\\ClientInterface, object given\\.$#"
+			count: 6
 			path: tests/Connection/PsrClientConnectionTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Connection\\\\PsrClientConnectionTest\\:\\:\\$requestFactory has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#2 \\$requestFactory of class Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Message\\\\RequestFactoryInterface, object given\\.$#"
+			count: 6
 			path: tests/Connection/PsrClientConnectionTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\ArtistServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\ArtistService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
+			count: 2
 			path: tests/Service/ArtistServiceTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\CityServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\CityService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
+			count: 2
 			path: tests/Service/CityServiceTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\CountryServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\CountryService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
 			count: 1
 			path: tests/Service/CountryServiceTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\SetlistServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\SetlistService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
+			count: 5
 			path: tests/Service/SetlistServiceTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\UserServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\UserService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
+			count: 3
 			path: tests/Service/UserServiceTest.php
 
 		-
-			message: "#^Property Core23\\\\SetlistFm\\\\Tests\\\\Service\\\\VenueServiceTest\\:\\:\\$connection has no typehint specified\\.$#"
-			count: 1
+			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\VenueService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
+			count: 2
 			path: tests/Service/VenueServiceTest.php
 
 

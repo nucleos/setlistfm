@@ -14,9 +14,13 @@ namespace Core23\SetlistFm\Tests\Service;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\UserService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class UserServiceTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $connection;
 
     protected function setUp(): void
