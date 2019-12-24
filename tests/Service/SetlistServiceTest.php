@@ -15,9 +15,13 @@ use Core23\SetlistFm\Builder\SetlistSearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\SetlistService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class SetlistServiceTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $connection;
 
     protected function setUp(): void

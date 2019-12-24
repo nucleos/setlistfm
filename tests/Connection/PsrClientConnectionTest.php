@@ -25,8 +25,14 @@ use Psr\Http\Message\StreamInterface;
 
 final class PsrClientConnectionTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $client;
 
+    /**
+     * @var ObjectProphecy
+     */
     private $requestFactory;
 
     protected function setUp(): void

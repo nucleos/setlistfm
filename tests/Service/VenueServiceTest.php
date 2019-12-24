@@ -15,9 +15,13 @@ use Core23\SetlistFm\Builder\VenueSearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\VenueService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class VenueServiceTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $connection;
 
     protected function setUp(): void

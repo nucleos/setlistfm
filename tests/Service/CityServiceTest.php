@@ -15,9 +15,13 @@ use Core23\SetlistFm\Builder\CitySearchBuilder;
 use Core23\SetlistFm\Connection\ConnectionInterface;
 use Core23\SetlistFm\Service\CityService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class CityServiceTest extends TestCase
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $connection;
 
     protected function setUp(): void
