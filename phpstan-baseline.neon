@@ -1,6 +1,196 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Builder\\\\ArtistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/ArtistSearchBuilder.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Builder\\\\ArtistSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/ArtistSearchBuilder.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Builder\\\\CitySearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/CitySearchBuilder.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Builder\\\\CitySearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/CitySearchBuilder.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Builder\\\\SetlistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/SetlistSearchBuilder.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Builder\\\\SetlistSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/SetlistSearchBuilder.php
+
+		-
+			message: "#^Property Core23\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/VenueSearchBuilder.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/VenueSearchBuilder.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface\\:\\:call\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/ConnectionInterface.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface\\:\\:call\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/ConnectionInterface.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:call\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/PsrClientConnection.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:call\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/PsrClientConnection.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:parseResponse\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/PsrClientConnection.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:buildRequest\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/PsrClientConnection.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Artist\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Artist.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\ArtistSearchResult\\:\\:fromApi\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/ArtistSearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Artist\"\\.$#"
+			count: 1
+			path: src/Model/ArtistSearchResult.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\City\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/City.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\CitySearchResult\\:\\:fromApi\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/CitySearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\City\"\\.$#"
+			count: 1
+			path: src/Model/CitySearchResult.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Country\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Country.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\CountrySearchResult\\:\\:fromApi\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/CountrySearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Country\"\\.$#"
+			count: 1
+			path: src/Model/CountrySearchResult.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Geo\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Geo.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Set\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Set.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Setlist.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:createSetsFromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Setlist.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:createSetsFromApi\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Setlist.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\SetlistSearchResult\\:\\:fromApi\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/SetlistSearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Setlist\"\\.$#"
+			count: 1
+			path: src/Model/SetlistSearchResult.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Song\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Song.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Tour\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Tour.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\User\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/User.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\Venue\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Venue.php
+
+		-
+			message: "#^Method Core23\\\\SetlistFm\\\\Model\\\\VenueSearchResult\\:\\:fromApi\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/VenueSearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Venue\"\\.$#"
+			count: 1
+			path: src/Model/VenueSearchResult.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Setlist\"\\.$#"
+			count: 2
+			path: src/Service/SetlistService.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"Core23\\\\SetlistFm\\\\Model\\\\Setlist\"\\.$#"
+			count: 2
+			path: src/Service/UserService.php
+
+		-
 			message: "#^Parameter \\#1 \\$client of class Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Client\\\\ClientInterface, object given\\.$#"
 			count: 6
 			path: tests/Connection/PsrClientConnectionTest.php
@@ -9,6 +199,11 @@ parameters:
 			message: "#^Parameter \\#2 \\$requestFactory of class Core23\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Message\\\\RequestFactoryInterface, object given\\.$#"
 			count: 6
 			path: tests/Connection/PsrClientConnectionTest.php
+
+		-
+			message: "#^Static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertEquals\\(\\) invoked with 4 parameters, 2\\-3 required\\.$#"
+			count: 4
+			path: tests/Model/SetlistTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\ArtistService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
@@ -39,5 +234,4 @@ parameters:
 			message: "#^Parameter \\#1 \\$connection of class Core23\\\\SetlistFm\\\\Service\\\\VenueService constructor expects Core23\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
 			count: 2
 			path: tests/Service/VenueServiceTest.php
-
 
