@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Builder;
+namespace Nucleos\SetlistFm\Builder;
 
 final class VenueSearchBuilder
 {

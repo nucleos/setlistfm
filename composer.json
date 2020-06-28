@@ -1,5 +1,5 @@
 {
-    "name": "core23/setlistfm-api",
+    "name": "nucleos/setlistfm-api",
     "type": "library",
     "description": "Setlist.fm webservice client for php.",
     "keywords": [
@@ -8,7 +8,7 @@
         "bridge",
         "webservice client"
     ],
-    "homepage": "https://core23.de",
+    "homepage": "https://nucleos.rocks",
     "license": "MIT",
     "authors": [
         {
@@ -38,17 +38,17 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.x-dev"
+            "dev-master": "3.x-dev"
         }
     },
     "autoload": {
         "psr-4": {
-            "Core23\\SetlistFm\\": "src/"
+            "Nucleos\\SetlistFm\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\SetlistFm\\Tests\\": "tests/"
+            "Nucleos\\SetlistFm\\Tests\\": "tests/"
         }
     },
     "scripts": {

@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Builder;
+namespace Nucleos\SetlistFm\Tests\Builder;
 
-use Core23\SetlistFm\Builder\SetlistSearchBuilder;
 use DateTime;
+use Nucleos\SetlistFm\Builder\SetlistSearchBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class SetlistSearchBuilderTest extends TestCase

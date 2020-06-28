@@ -9,11 +9,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Service;
+namespace Nucleos\SetlistFm\Tests\Service;
 
-use Core23\SetlistFm\Builder\SetlistSearchBuilder;
-use Core23\SetlistFm\Connection\ConnectionInterface;
-use Core23\SetlistFm\Service\SetlistService;
+use Nucleos\SetlistFm\Builder\SetlistSearchBuilder;
+use Nucleos\SetlistFm\Connection\ConnectionInterface;
+use Nucleos\SetlistFm\Service\SetlistService;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 

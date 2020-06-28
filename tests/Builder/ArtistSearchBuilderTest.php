@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Builder;
+namespace Nucleos\SetlistFm\Tests\Builder;
 
-use Core23\SetlistFm\Builder\ArtistSearchBuilder;
 use InvalidArgumentException;
+use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class ArtistSearchBuilderTest extends TestCase

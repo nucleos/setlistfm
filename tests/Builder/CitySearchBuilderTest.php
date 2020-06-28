@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Builder;
+namespace Nucleos\SetlistFm\Tests\Builder;
 
-use Core23\SetlistFm\Builder\CitySearchBuilder;
+use Nucleos\SetlistFm\Builder\CitySearchBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class CitySearchBuilderTest extends TestCase

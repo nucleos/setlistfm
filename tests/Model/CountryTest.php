@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Model;
+namespace Nucleos\SetlistFm\Tests\Model;
 
-use Core23\SetlistFm\Model\Country;
+use Nucleos\SetlistFm\Model\Country;
 use PHPUnit\Framework\TestCase;
 
 final class CountryTest extends TestCase

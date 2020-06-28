@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Model;
+namespace Nucleos\SetlistFm\Tests\Model;
 
-use Core23\SetlistFm\Model\Venue;
+use Nucleos\SetlistFm\Model\Venue;
 use PHPUnit\Framework\TestCase;
 
 final class VenueTest extends TestCase

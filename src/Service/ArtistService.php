@@ -9,14 +9,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Service;
+namespace Nucleos\SetlistFm\Service;
 
-use Core23\SetlistFm\Builder\ArtistSearchBuilder;
-use Core23\SetlistFm\Connection\ConnectionInterface;
-use Core23\SetlistFm\Exception\ApiException;
-use Core23\SetlistFm\Exception\NotFoundException;
-use Core23\SetlistFm\Model\Artist;
-use Core23\SetlistFm\Model\ArtistSearchResult;
+use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;
+use Nucleos\SetlistFm\Connection\ConnectionInterface;
+use Nucleos\SetlistFm\Exception\ApiException;
+use Nucleos\SetlistFm\Exception\NotFoundException;
+use Nucleos\SetlistFm\Model\Artist;
+use Nucleos\SetlistFm\Model\ArtistSearchResult;
 
 final class ArtistService
 {

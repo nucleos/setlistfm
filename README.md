@@ -1,15 +1,15 @@
 Setlist.fm PHP library
 ======================
-[![Latest Stable Version](https://poser.pugx.org/core23/setlistfm-api/v/stable)](https://packagist.org/packages/core23/setlistfm-api)
-[![Latest Unstable Version](https://poser.pugx.org/core23/setlistfm-api/v/unstable)](https://packagist.org/packages/core23/setlistfm-api)
-[![License](https://poser.pugx.org/core23/setlistfm-api/license)](LICENSE.md)
+[![Latest Stable Version](https://poser.pugx.org/nucleos/setlistfm/v/stable)](https://packagist.org/packages/nucleos/setlistfm)
+[![Latest Unstable Version](https://poser.pugx.org/nucleos/setlistfm/v/unstable)](https://packagist.org/packages/nucleos/setlistfm)
+[![License](https://poser.pugx.org/nucleos/setlistfm/license)](LICENSE.md)
 
-[![Total Downloads](https://poser.pugx.org/core23/setlistfm-api/downloads)](https://packagist.org/packages/core23/setlistfm-api)
-[![Monthly Downloads](https://poser.pugx.org/core23/setlistfm-api/d/monthly)](https://packagist.org/packages/core23/setlistfm-api)
-[![Daily Downloads](https://poser.pugx.org/core23/setlistfm-api/d/daily)](https://packagist.org/packages/core23/setlistfm-api)
+[![Total Downloads](https://poser.pugx.org/nucleos/setlistfm/downloads)](https://packagist.org/packages/nucleos/setlistfm)
+[![Monthly Downloads](https://poser.pugx.org/nucleos/setlistfm/d/monthly)](https://packagist.org/packages/nucleos/setlistfm)
+[![Daily Downloads](https://poser.pugx.org/nucleos/setlistfm/d/daily)](https://packagist.org/packages/nucleos/setlistfm)
 
-[![Continuous Integration](https://github.com/core23/setlistfm-php-api/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/setlistfm-php-api/actions)
-[![Code Coverage](https://codecov.io/gh/core23/setlistfm-php-api/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/setlistfm-php-api)
+[![Continuous Integration](https://github.com/nucleos/nucleos-setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/nucleos-setlistfm/actions)
+[![Code Coverage](https://codecov.io/gh/nucleos/nucleos-setlistfm/branch/master/graph/badge.svg)](https://codecov.io/gh/nucleos/nucleos-setlistfm)
 
 This library provides a wrapper for using the [Setlist.fm API] inside PHP and a bridge for symfony.
 
@@ -18,7 +18,7 @@ This library provides a wrapper for using the [Setlist.fm API] inside PHP and a 
 Open a command console, enter your project directory and execute the following command to download the latest stable version of this library:
 
 ```
-composer require core23/setlistfm-api
+composer require nucleos/setlistfm
 # To define a default http client and message factory
 composer require symfony/http-client nyholm/psr7
 ```
@@ -28,10 +28,10 @@ composer require symfony/http-client nyholm/psr7
 ### General usage
 ```php
 // Create connection
-$connection = new \Core23\SetlistFm\Connection\PsrClientConnection($httpClient, $requestFactory);
+use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;use Nucleos\SetlistFm\Connection\PsrClientConnection;use Nucleos\SetlistFm\Service\ArtistService;$connection = new PsrClientConnection($httpClient, $requestFactory);
 
-$artistApi = new \Core23\SetlistFm\Service\ArtistService($connection);
-$artists = $artistApi->search(\Core23\SetlistFm\Builder\ArtistSearchBuilder::create()
+$artistApi = new ArtistService($connection);
+$artists = $artistApi->search(ArtistSearchBuilder::create()
     ->withArtistName('Slipknot')
 );
 ```

@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Connection;
+namespace Nucleos\SetlistFm\Tests\Connection;
 
-use Core23\SetlistFm\Connection\PsrClientConnection;
-use Core23\SetlistFm\Exception\ApiException;
-use Core23\SetlistFm\Tests\Fixtures\ClientException;
 use Exception;
+use Nucleos\SetlistFm\Connection\PsrClientConnection;
+use Nucleos\SetlistFm\Exception\ApiException;
+use Nucleos\SetlistFm\Tests\Fixtures\ClientException;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Client\ClientInterface;

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Exception;
+namespace Nucleos\SetlistFm\Tests\Exception;
 
-use Core23\SetlistFm\Exception\ApiException;
+use Nucleos\SetlistFm\Exception\ApiException;
 use PHPUnit\Framework\TestCase;
 
 final class ApiExceptionTest extends TestCase
