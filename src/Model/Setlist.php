@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\SetlistFm\Model;
 
-use DateTime;
+use DateTimeImmutable;
 
 /**
  * @psalm-immutable
@@ -59,12 +59,12 @@ final class Setlist
     private $versionId;
 
     /**
-     * @var DateTime
+     * @var DateTimeImmutable
      */
     private $eventDate;
 
     /**
-     * @var DateTime|null
+     * @var DateTimeImmutable|null
      */
     private $updateDate;
 
@@ -80,8 +80,8 @@ final class Setlist
         ?string $info,
         ?string $url,
         ?string $versionId,
-        DateTime $eventDate,
-        ?DateTime $updateDate
+        DateTimeImmutable $eventDate,
+        ?DateTimeImmutable $updateDate
     ) {
         $this->id         = $id;
         $this->artist     = $artist;
@@ -138,12 +138,12 @@ final class Setlist
         return $this->versionId;
     }
 
-    public function getEventDate(): DateTime
+    public function getEventDate(): DateTimeImmutable
     {
         return $this->eventDate;
     }
 
-    public function getUpdateDate(): ?DateTime
+    public function getUpdateDate(): ?DateTimeImmutable
     {
         return $this->updateDate;
     }
@@ -178,8 +178,8 @@ final class Setlist
             $data['info'] ?? null,
             $data['url'] ?? null,
             $data['versionId'] ?? null,
-            new DateTime($data['eventDate']),
-            $data['lastUpdated'] ? new DateTime($data['lastUpdated']) : null
+            new DateTimeImmutable($data['eventDate']),
+            $data['lastUpdated'] ? new DateTimeImmutable($data['lastUpdated']) : null
         );
     }
 
