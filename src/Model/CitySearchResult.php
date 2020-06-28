@@ -90,7 +90,7 @@ final class CitySearchResult
     {
         return new self(
             array_map(
-                static function ($data) {
+                static function (array $data): City {
                     return City::fromApi($data);
                 },
                 $response['cities']

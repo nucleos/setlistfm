@@ -90,7 +90,7 @@ final class ArtistSearchResult
     {
         return new self(
             array_map(
-                static function ($data) {
+                static function (array $data): Artist {
                     return Artist::fromApi($data);
                 },
                 $response['artist']
