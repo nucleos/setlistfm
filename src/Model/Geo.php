@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace Nucleos\SetlistFm\Model;
 
+/**
+ * @psalm-immutable
+ */
 final class Geo
 {
     /**
