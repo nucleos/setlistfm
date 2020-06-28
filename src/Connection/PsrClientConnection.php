@@ -9,11 +9,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Connection;
+namespace Nucleos\SetlistFm\Connection;
 
-use Core23\SetlistFm\Exception\ApiException;
-use Core23\SetlistFm\Exception\NotFoundException;
 use Exception;
+use Nucleos\SetlistFm\Exception\ApiException;
+use Nucleos\SetlistFm\Exception\NotFoundException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Exception;
+namespace Nucleos\SetlistFm\Exception;
 
 use Exception;
 

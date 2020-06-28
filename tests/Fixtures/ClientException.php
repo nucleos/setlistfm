@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Fixtures;
+namespace Nucleos\SetlistFm\Tests\Fixtures;
 
 use Exception;
 use Psr\Http\Client\ClientExceptionInterface;

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\SetlistFm\Tests\Model;
+namespace Nucleos\SetlistFm\Tests\Model;
 
-use Core23\SetlistFm\Model\Tour;
+use Nucleos\SetlistFm\Model\Tour;
 use PHPUnit\Framework\TestCase;
 
 final class TourTest extends TestCase
