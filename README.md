@@ -10,6 +10,7 @@ Setlist.fm PHP library
 
 [![Continuous Integration](https://github.com/nucleos/setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/setlistfm/actions)
 [![Code Coverage](https://codecov.io/gh/nucleos/setlistfm/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/setlistfm)
+[![Type Coverage](https://shepherd.dev/github/nucleos/setlistfm/coverage.svg)](https://shepherd.dev/github/nucleos/setlistfm)
 
 This library provides a wrapper for using the [Setlist.fm API] inside PHP and a bridge for symfony.
 
@@ -28,7 +29,11 @@ composer require symfony/http-client nyholm/psr7
 ### General usage
 ```php
 // Create connection
-use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;use Nucleos\SetlistFm\Connection\PsrClientConnection;use Nucleos\SetlistFm\Service\ArtistService;$connection = new PsrClientConnection($httpClient, $requestFactory);
+use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;
+use Nucleos\SetlistFm\Connection\PsrClientConnection;
+use Nucleos\SetlistFm\Service\ArtistService;
+
+$connection = new PsrClientConnection($httpClient, $requestFactory);
 
 $artistApi = new ArtistService($connection);
 $artists = $artistApi->search(ArtistSearchBuilder::create()
