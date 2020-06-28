@@ -7,7 +7,7 @@
   Run
 
   ```
-  $ composer remove core23/setlistfm
+  $ composer remove core23/setlistfm-api
   ```
 
   and
