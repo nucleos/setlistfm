@@ -74,7 +74,7 @@ final class SetlistService
             return [];
         }
 
-        return array_map(static function ($data) {
+        return array_map(static function (array $data): Setlist {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }
@@ -97,7 +97,7 @@ final class SetlistService
             return [];
         }
 
-        return array_map(static function ($data) {
+        return array_map(static function (array $data): Setlist {
             return Setlist::fromApi($data);
         }, $response['setlist']);
     }

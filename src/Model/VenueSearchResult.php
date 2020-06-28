@@ -90,7 +90,7 @@ final class VenueSearchResult
     {
         return new self(
             array_map(
-                static function ($data) {
+                static function (array $data): Venue {
                     return Venue::fromApi($data);
                 },
                 $response['venue']

@@ -90,7 +90,7 @@ final class SetlistSearchResult
     {
         return new self(
             array_map(
-                static function ($data) {
+                static function (array $data): Setlist {
                     return Setlist::fromApi($data);
                 },
                 $response['setlist']

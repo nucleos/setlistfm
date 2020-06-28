@@ -90,7 +90,7 @@ final class CountrySearchResult
     {
         return new self(
             array_map(
-                static function ($data) {
+                static function (array $data): Country {
                     return Country::fromApi($data);
                 },
                 $response['country']
