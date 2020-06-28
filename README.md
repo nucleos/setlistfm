@@ -8,8 +8,8 @@ Setlist.fm PHP library
 [![Monthly Downloads](https://poser.pugx.org/nucleos/setlistfm/d/monthly)](https://packagist.org/packages/nucleos/setlistfm)
 [![Daily Downloads](https://poser.pugx.org/nucleos/setlistfm/d/daily)](https://packagist.org/packages/nucleos/setlistfm)
 
-[![Continuous Integration](https://github.com/nucleos/nucleos-setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/nucleos-setlistfm/actions)
-[![Code Coverage](https://codecov.io/gh/nucleos/nucleos-setlistfm/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/nucleos-setlistfm)
+[![Continuous Integration](https://github.com/nucleos/setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/setlistfm/actions)
+[![Code Coverage](https://codecov.io/gh/nucleos/setlistfm/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/setlistfm)
 
 This library provides a wrapper for using the [Setlist.fm API] inside PHP and a bridge for symfony.
 

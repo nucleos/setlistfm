@@ -1,5 +1,5 @@
 {
-    "name": "nucleos/setlistfm-api",
+    "name": "nucleos/setlistfm",
     "type": "library",
     "description": "Setlist.fm webservice client for php.",
     "keywords": [
