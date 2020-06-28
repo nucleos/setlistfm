@@ -79,14 +79,6 @@ final class City
         return $this->stateCode;
     }
 
-    /**
-     * @deprecated use getCountry instead
-     */
-    public function getCounty(): ?Country
-    {
-        return $this->getCountry();
-    }
-
     public function getCountry(): ?Country
     {
         return $this->country;

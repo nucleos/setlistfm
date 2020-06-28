@@ -127,18 +127,6 @@ final class SetlistSearchBuilder
 
     /**
      * @return SetlistSearchBuilder
-     *
-     * @deprecated since setlist.fm API 1.0
-     */
-    public function withLastFm(string $eventId): self
-    {
-        $this->query['lastFm'] = $eventId;
-
-        return $this;
-    }
-
-    /**
-     * @return SetlistSearchBuilder
      */
     public function withLastUpdated(DateTime $date): self
     {
