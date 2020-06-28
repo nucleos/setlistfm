@@ -188,19 +188,6 @@ final class SetlistSearchBuilderTest extends TestCase
         static::assertSame($expected, $builder->getQuery());
     }
 
-    public function testWithLastFm(): void
-    {
-        $builder = SetlistSearchBuilder::create()
-            ->withLastFm('5fsdf5')
-        ;
-
-        $expected = [
-            'p'      => 1,
-            'lastFm' => '5fsdf5',
-        ];
-        static::assertSame($expected, $builder->getQuery());
-    }
-
     public function testWithStateCode(): void
     {
         $builder = SetlistSearchBuilder::create()
