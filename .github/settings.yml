@@ -9,7 +9,7 @@ repository:
   topics: php, library, setlistfm, setlist, api, webservice-client
 
 branches:
-  - name: master
+  - name: main
     protection:
       enforce_admins: false
       required_status_checks:
