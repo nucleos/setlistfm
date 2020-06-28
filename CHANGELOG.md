@@ -1,8 +1,8 @@
 # 3.0.0
 
-## Changed
+## Changes
 
-* Renamed namespace `Core23\SetlistFm` to `Nucleos\SetlistFm` after move to [@nucleos]
+- Renamed namespace `Core23\SetlistFm` to `Nucleos\SetlistFm` after move to [@nucleos]
 
   Run
 
@@ -33,6 +33,14 @@
   ```
 
   to delete backup files created in the previous step.
+    
+- Add missing strict file header @core23 (#31)
+- Replace HTTPlug with PSR http client @core23 (#26)
+
+## 🚀 Features
+
+- Use builder to pass search parameter
+- Add psalm @core23 (#54)
 
 # 2.0.0
 
