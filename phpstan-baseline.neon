@@ -156,47 +156,7 @@ parameters:
 			path: src/Model/VenueSearchResult.php
 
 		-
-			message: "#^Parameter \\#1 \\$client of class Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Client\\\\ClientInterface, object given\\.$#"
-			count: 6
-			path: tests/Connection/PsrClientConnectionTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$requestFactory of class Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection constructor expects Psr\\\\Http\\\\Message\\\\RequestFactoryInterface, object given\\.$#"
-			count: 6
-			path: tests/Connection/PsrClientConnectionTest.php
-
-		-
 			message: "#^Static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertEquals\\(\\) invoked with 4 parameters, 2\\-3 required\\.$#"
 			count: 4
 			path: tests/Model/SetlistTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\ArtistService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 2
-			path: tests/Service/ArtistServiceTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\CityService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 2
-			path: tests/Service/CityServiceTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\CountryService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 1
-			path: tests/Service/CountryServiceTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\SetlistService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 5
-			path: tests/Service/SetlistServiceTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\UserService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 3
-			path: tests/Service/UserServiceTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$connection of class Nucleos\\\\SetlistFm\\\\Service\\\\VenueService constructor expects Nucleos\\\\SetlistFm\\\\Connection\\\\ConnectionInterface, object given\\.$#"
-			count: 2
-			path: tests/Service/VenueServiceTest.php
 

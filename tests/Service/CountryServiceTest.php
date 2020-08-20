@@ -19,7 +19,7 @@ use Prophecy\Prophecy\ObjectProphecy;
 final class CountryServiceTest extends TestCase
 {
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ConnectionInterface>
      */
     private $connection;
 

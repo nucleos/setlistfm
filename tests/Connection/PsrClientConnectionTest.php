@@ -26,12 +26,12 @@ use Psr\Http\Message\StreamInterface;
 final class PsrClientConnectionTest extends TestCase
 {
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ClientInterface>
      */
     private $client;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<RequestFactoryInterface>
      */
     private $requestFactory;
 
@@ -196,6 +196,9 @@ final class PsrClientConnectionTest extends TestCase
         $client->call('method', ['foo' => 'bar']);
     }
 
+    /**
+     * @return ObjectProphecy<ResponseInterface>
+     */
     private function prepareResponse(string $content, int $code = 200): ObjectProphecy
     {
         $stream = $this->prophesize(StreamInterface::class);

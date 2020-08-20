@@ -20,7 +20,7 @@ use Prophecy\Prophecy\ObjectProphecy;
 final class CityServiceTest extends TestCase
 {
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ConnectionInterface>
      */
     private $connection;
 
