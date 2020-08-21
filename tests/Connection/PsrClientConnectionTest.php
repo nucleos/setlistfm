@@ -16,6 +16,7 @@ use Nucleos\SetlistFm\Connection\PsrClientConnection;
 use Nucleos\SetlistFm\Exception\ApiException;
 use Nucleos\SetlistFm\Tests\Fixtures\ClientException;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -25,6 +26,8 @@ use Psr\Http\Message\StreamInterface;
 
 final class PsrClientConnectionTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var ObjectProphecy<ClientInterface>
      */
