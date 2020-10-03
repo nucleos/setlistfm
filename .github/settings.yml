@@ -6,7 +6,7 @@ repository:
   name: setlistfm
   description: 🔌 Setlist.fm webservice client for php.
   homepage: https://nucleos.rocks
-  topics: php, library, setlistfm, setlist, api, webservice-client
+  topics: hacktoberfest, php, library, setlistfm, setlist, api, webservice-client
 
 branches:
   - name: main
