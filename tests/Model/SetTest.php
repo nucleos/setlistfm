@@ -16,6 +16,9 @@ use PHPUnit\Framework\TestCase;
 
 final class SetTest extends TestCase
 {
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function testFromApi(): void
     {
         $data = <<<'EOD'

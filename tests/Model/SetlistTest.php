@@ -17,6 +17,9 @@ use PHPUnit\Framework\TestCase;
 
 final class SetlistTest extends TestCase
 {
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function testFromApi(): void
     {
         $data = <<<'EOD'
@@ -131,6 +134,9 @@ EOD;
         static::assertSame('https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-los-angeles-ca-63de4613.html', $setlist->getUrl());
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function testFromApiWithSingleSet(): void
     {
         $data = <<<'EOD'
