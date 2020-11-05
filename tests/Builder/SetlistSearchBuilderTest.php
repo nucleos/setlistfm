@@ -15,6 +15,9 @@ use DateTime;
 use Nucleos\SetlistFm\Builder\SetlistSearchBuilder;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 final class SetlistSearchBuilderTest extends TestCase
 {
     public static function setUpBeforeClass(): void
