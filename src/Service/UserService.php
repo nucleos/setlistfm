@@ -56,7 +56,7 @@ final class UserService
             'p' => $page,
         ]);
 
-        if (!\array_key_exists('setlist', $response)) {
+        if (!isset($response['setlist'])) {
             return [];
         }
 
@@ -79,7 +79,7 @@ final class UserService
             'p' => $page,
         ]);
 
-        if (!\array_key_exists('setlist', $response)) {
+        if (!isset($response['setlist'])) {
             return [];
         }
 

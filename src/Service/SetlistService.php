@@ -70,7 +70,7 @@ final class SetlistService
             'p' => $page,
         ]);
 
-        if (!\array_key_exists('setlist', $response)) {
+        if (!isset($response['setlist'])) {
             return [];
         }
 
@@ -93,7 +93,7 @@ final class SetlistService
             'p' => $page,
         ]);
 
-        if (!\array_key_exists('setlist', $response)) {
+        if (!isset($response['setlist'])) {
             return [];
         }
 
@@ -112,7 +112,7 @@ final class SetlistService
     {
         $response=  $this->connection->call('search/setlists', $builder->getQuery());
 
-        if (!\array_key_exists('setlist', $response)) {
+        if (!isset($response['setlist'])) {
             return SetlistSearchResult::createEmpty();
         }
 

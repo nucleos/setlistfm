@@ -53,7 +53,7 @@ final class VenueService
     {
         $response = $this->connection->call('search/venues', $builder->getQuery());
 
-        if (!\array_key_exists('venue', $response)) {
+        if (!isset($response['venue'])) {
             return VenueSearchResult::createEmpty();
         }
 

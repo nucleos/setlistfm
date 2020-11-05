@@ -53,7 +53,7 @@ final class CityService
     {
         $response = $this->connection->call('search/cities', $builder->getQuery());
 
-        if (!\array_key_exists('cities', $response)) {
+        if (!isset($response['cities'])) {
             return CitySearchResult::createEmpty();
         }
 

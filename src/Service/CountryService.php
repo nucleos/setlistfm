@@ -38,7 +38,7 @@ final class CountryService
     {
         $response = $this->connection->call('search/countries');
 
-        if (!\array_key_exists('country', $response)) {
+        if (!isset($response['country'])) {
             return CountrySearchResult::createEmpty();
         }
 
