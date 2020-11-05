@@ -53,7 +53,7 @@ final class ArtistService
     {
         $response = $this->connection->call('search/artists', $builder->getQuery());
 
-        if (!\array_key_exists('artist', $response)) {
+        if (!isset($response['artist'])) {
             return ArtistSearchResult::createEmpty();
         }
 

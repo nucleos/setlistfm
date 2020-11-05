@@ -88,7 +88,7 @@ final class Song
     {
         $featuring = [];
 
-        if (\array_key_exists('with', $data)) {
+        if (isset($data['with'])) {
             $featuring[] = Artist::fromApi($data['with']);
         }
 

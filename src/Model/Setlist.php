@@ -157,13 +157,13 @@ final class Setlist
         $venue  = null;
         $tour   = null;
 
-        if (\array_key_exists('artist', $data)) {
+        if (isset($data['artist'])) {
             $artist = Artist::fromApi($data['artist']);
         }
-        if (\array_key_exists('venue', $data)) {
+        if (isset($data['venue'])) {
             $venue = Venue::fromApi($data['venue']);
         }
-        if (\array_key_exists('tour', $data)) {
+        if (isset($data['tour'])) {
             $tour = Tour::fromApi($data['tour']);
         }
 
@@ -189,9 +189,9 @@ final class Setlist
 
         $setData = [];
 
-        if (\array_key_exists('sets', $data) && \array_key_exists('set', $data['sets'])) {
+        if (isset($data['sets']['set'])) {
             $setData = $data['sets']['set'];
-        } elseif (\array_key_exists('set', $data)) {
+        } elseif (isset($data['set'])) {
             $setData = $data['set'];
         }
 
