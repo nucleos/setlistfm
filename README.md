@@ -8,7 +8,7 @@ Setlist.fm PHP library
 [![Monthly Downloads](https://poser.pugx.org/nucleos/setlistfm/d/monthly)](https://packagist.org/packages/nucleos/setlistfm)
 [![Daily Downloads](https://poser.pugx.org/nucleos/setlistfm/d/daily)](https://packagist.org/packages/nucleos/setlistfm)
 
-[![Continuous Integration](https://github.com/nucleos/setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/setlistfm/actions)
+[![Continuous Integration](https://github.com/nucleos/setlistfm/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/setlistfm/actions?query=workflow%3A"Continuous+Integration"+branch%3Amain)
 [![Code Coverage](https://codecov.io/gh/nucleos/setlistfm/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/setlistfm)
 [![Type Coverage](https://shepherd.dev/github/nucleos/setlistfm/coverage.svg)](https://shepherd.dev/github/nucleos/setlistfm)
 
