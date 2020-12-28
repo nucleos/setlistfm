@@ -34,21 +34,27 @@
 
   to delete backup files created in the previous step.
     
-- Add missing strict file header @core23 (#31)
-- Replace HTTPlug with PSR http client @core23 (#26)
+- Add missing strict file header [@core23] ([#31])
+- Replace HTTPlug with PSR http client [@core23] ([#26])
 
 ## 🚀 Features
 
 - Use builder to pass search parameter
-- Add psalm @core23 (#54)
+- Add psalm [@core23] ([#54])
 
 # 2.0.0
 
 ## Changes
 
-- Add missing strict file header @core23 (#31)
+- Add missing strict file header [@core23] ([#31])
 
 ## ❌ BC Breaks
 
-- Replace HTTPlug with PSR http client @core23 (#26)
+- Replace HTTPlug with PSR http client [@core23] ([#26])
 - Use builder to pass search parameter
+
+[#54]: https://github.com/nucleos/setlistfm/pull/54
+[#31]: https://github.com/nucleos/setlistfm/pull/31
+[#26]: https://github.com/nucleos/setlistfm/pull/26
+[@nucleos]: https://github.com/nucleos
+[@core23]: https://github.com/core23
