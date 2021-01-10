@@ -1,3 +1,16 @@
+# 3.1.0
+
+## Changes
+
+## 🐛 Bug Fixes
+
+- Check for null values when parsing @core23 (#123)
+
+## 📦 Dependencies
+
+- Add support for PHP 8 @core23 (#133)
+- Drop support for PHP 7.2 @core23 (#64)
+
 # 3.0.0
 
 ## Changes
