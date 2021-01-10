@@ -4,12 +4,12 @@
 
 ## 🐛 Bug Fixes
 
-- Check for null values when parsing @core23 (#123)
+- Check for null values when parsing [@core23] ([#123])
 
 ## 📦 Dependencies
 
-- Add support for PHP 8 @core23 (#133)
-- Drop support for PHP 7.2 @core23 (#64)
+- Add support for PHP 8 [@core23] ([#133])
+- Drop support for PHP 7.2 [@core23] ([#64])
 
 # 3.0.0
 
@@ -71,3 +71,6 @@
 [#26]: https://github.com/nucleos/setlistfm/pull/26
 [@nucleos]: https://github.com/nucleos
 [@core23]: https://github.com/core23
+[#133]: https://github.com/nucleos/setlistfm/pull/133
+[#123]: https://github.com/nucleos/setlistfm/pull/123
+[#64]: https://github.com/nucleos/setlistfm/pull/64
