@@ -1,19 +1,46 @@
-# 3.1.0
+# Changelog
 
-## Changes
+All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 🐛 Bug Fixes
+## 3.2.0 - TBD
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+
+## 3.1.0
+
+### Changes
+
+### 🐛 Bug Fixes
 
 - Check for null values when parsing [@core23] ([#123])
 
-## 📦 Dependencies
+### 📦 Dependencies
 
 - Add support for PHP 8 [@core23] ([#133])
 - Drop support for PHP 7.2 [@core23] ([#64])
 
-# 3.0.0
+## 3.0.0
 
-## Changes
+### Changes
 
 - Renamed namespace `Core23\SetlistFm` to `Nucleos\SetlistFm` after move to [@nucleos]
 
@@ -46,22 +73,22 @@
   ```
 
   to delete backup files created in the previous step.
-    
+
 - Add missing strict file header [@core23] ([#31])
 - Replace HTTPlug with PSR http client [@core23] ([#26])
 
-## 🚀 Features
+### 🚀 Features
 
 - Use builder to pass search parameter
 - Add psalm [@core23] ([#54])
 
-# 2.0.0
+## 2.0.0
 
-## Changes
+### Changes
 
 - Add missing strict file header [@core23] ([#31])
 
-## ❌ BC Breaks
+### ❌ BC Breaks
 
 - Replace HTTPlug with PSR http client [@core23] ([#26])
 - Use builder to pass search parameter
