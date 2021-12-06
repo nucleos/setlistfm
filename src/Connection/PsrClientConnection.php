@@ -53,7 +53,7 @@ final class PsrClientConnection extends AbstractConnection
             $response = $this->client->sendRequest($request);
 
             return $this->parseResponse($response);
-        } catch (ApiException | NotFoundException $e) {
+        } catch (ApiException|NotFoundException $e) {
             throw $e;
         } catch (Exception $e) {
             throw new ApiException('Technical error occurred.', 500, $e);
