@@ -2,28 +2,30 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.2.0 - TBD
+## 3.2.0 - 2021-12-06
 
-### Added
 
-- Nothing.
 
-### Changed
+-----
 
-- Nothing.
+### Release Notes for [3.2.0](https://github.com/nucleos/setlistfm/milestone/1)
 
-### Deprecated
 
-- Nothing.
 
-### Removed
+### 3.2.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **2**
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [319: Update tools and use make to run them](https://github.com/nucleos/setlistfm/pull/319) thanks to @core23
 
+#### dependency
+
+ - [315: Update psr/log requirement from ^1.0 to ^1.0 || ^2.0 || ^3.0](https://github.com/nucleos/setlistfm/pull/315) thanks to @dependabot[bot]
+ - [313: Drop PHP 7 support](https://github.com/nucleos/setlistfm/pull/313) thanks to @core23
 
 ## 3.1.0
 
