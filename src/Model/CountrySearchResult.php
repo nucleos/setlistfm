@@ -75,17 +75,11 @@ final class CountrySearchResult
         return (int) ceil($this->totalSize / $this->pageSize);
     }
 
-    /**
-     * @return CountrySearchResult
-     */
     public static function createEmpty(): self
     {
         return new self([], 0, 0, 0);
     }
 
-    /**
-     * @return CountrySearchResult
-     */
     public static function fromApi(array $response): self
     {
         return new self(

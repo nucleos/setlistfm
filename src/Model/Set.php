@@ -59,9 +59,6 @@ final class Set
         return $this->songs;
     }
 
-    /**
-     * @return Set
-     */
     public static function fromApi(array $data): self
     {
         $songs = [];
@@ -71,7 +68,7 @@ final class Set
         }
 
         return new self(
-            $data['name'] ?? null,
+            $data['name']   ?? null,
             $data['encore'] ?? null,
             $songs
         );

@@ -59,10 +59,10 @@ final class SetlistService
     /**
      * Get artist setlists.
      *
+     * @return Setlist[]
+     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist[]
      */
     public function getArtistSetlists(string $mbid, int $page = 1): array
     {
@@ -82,10 +82,10 @@ final class SetlistService
     /**
      * Get venue setlists.
      *
+     * @return Setlist[]
+     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist[]
      */
     public function getVenueSetlists(string $venueId, int $page = 1): array
     {

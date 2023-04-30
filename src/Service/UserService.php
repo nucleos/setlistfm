@@ -45,10 +45,10 @@ final class UserService
     /**
      * Get a list of attended venues for a user id.
      *
+     * @return Setlist[]
+     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist[]
      */
     public function getAttends(string $userId, int $page = 1): array
     {
@@ -68,10 +68,10 @@ final class UserService
     /**
      * Get a list of edited venues for a user id.
      *
+     * @return Setlist[]
+     *
      * @throws ApiException
      * @throws NotFoundException
-     *
-     * @return Setlist[]
      */
     public function getEdits(string $userId, int $page = 1): array
     {

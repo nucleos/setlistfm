@@ -75,17 +75,14 @@ final class User
         return $this->url;
     }
 
-    /**
-     * @return User
-     */
     public static function fromApi(array $data): self
     {
         return new self(
             $data['userId'],
             $data['fullname'] ?? null,
-            $data['about'] ?? null,
-            $data['website'] ?? null,
-            $data['url'] ?? null
+            $data['about']    ?? null,
+            $data['website']  ?? null,
+            $data['url']      ?? null
         );
     }
 }

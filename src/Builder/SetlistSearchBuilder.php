@@ -27,17 +27,11 @@ final class SetlistSearchBuilder
         $this->page(1);
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public static function create(): self
     {
         return new static();
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function page(int $page): self
     {
         $this->query['p'] = $page;
@@ -45,9 +39,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withArtistName(string $name): self
     {
         $this->query['artistName'] = $name;
@@ -55,9 +46,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withArtistMbid(string $mbid): self
     {
         $this->query['artistMbid'] = $mbid;
@@ -65,9 +53,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withArtistTmbid(int $tmid): self
     {
         $this->query['artistTmbid'] = $tmid;
@@ -75,9 +60,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withCity(string $name): self
     {
         $this->query['cityName'] = $name;
@@ -85,9 +67,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withCityId(int $id): self
     {
         $this->query['cityId'] = $id;
@@ -95,9 +74,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withCountryCode(string $code): self
     {
         $this->query['countryCode'] = $code;
@@ -105,9 +81,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withDate(DateTime $date): self
     {
         $this->query['date'] = $date->format('d-m-Y');
@@ -115,9 +88,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withYear(int $year): self
     {
         $this->query['year'] = $year;
@@ -125,9 +95,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withLastUpdated(DateTime $date): self
     {
         $this->query['lastUpdated'] = $date->format('YmdHis');
@@ -135,9 +102,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withState(string $name): self
     {
         $this->query['state'] = $name;
@@ -145,9 +109,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withStateCode(string $code): self
     {
         $this->query['stateCode'] = $code;
@@ -155,9 +116,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withTourName(string $name): self
     {
         $this->query['tourName'] = $name;
@@ -165,9 +123,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withVenueName(string $name): self
     {
         $this->query['venueName'] = $name;
@@ -175,9 +130,6 @@ final class SetlistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return SetlistSearchBuilder
-     */
     public function withVenueId(string $venueId): self
     {
         $this->query['venueId'] = $venueId;

@@ -27,17 +27,11 @@ final class ArtistSearchBuilder
         $this->page(1);
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public static function create(): self
     {
         return new static();
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public function page(int $page): self
     {
         $this->query['p'] = $page;
@@ -45,9 +39,6 @@ final class ArtistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public function sort(string $mode): self
     {
         if (!\in_array($mode, ['sortName', 'relevance'], true)) {
@@ -59,9 +50,6 @@ final class ArtistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public function withName(string $name): self
     {
         $this->query['artistName'] = $name;
@@ -69,9 +57,6 @@ final class ArtistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public function withMbid(string $mbid): self
     {
         $this->query['artistMbid'] = $mbid;
@@ -79,9 +64,6 @@ final class ArtistSearchBuilder
         return $this;
     }
 
-    /**
-     * @return ArtistSearchBuilder
-     */
     public function withTmbid(int $tmid): self
     {
         $this->query['artistTmid'] = $tmid;

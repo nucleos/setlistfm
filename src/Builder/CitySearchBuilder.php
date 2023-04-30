@@ -25,17 +25,11 @@ final class CitySearchBuilder
         $this->page(1);
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public static function create(): self
     {
         return new static();
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public function page(int $page): self
     {
         $this->query['p'] = $page;
@@ -43,9 +37,6 @@ final class CitySearchBuilder
         return $this;
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public function withName(string $name): self
     {
         $this->query['name'] = $name;
@@ -53,9 +44,6 @@ final class CitySearchBuilder
         return $this;
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public function withCountry(string $country): self
     {
         $this->query['country'] = $country;
@@ -63,9 +51,6 @@ final class CitySearchBuilder
         return $this;
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public function withState(string $name): self
     {
         $this->query['state'] = $name;
@@ -73,9 +58,6 @@ final class CitySearchBuilder
         return $this;
     }
 
-    /**
-     * @return CitySearchBuilder
-     */
     public function withStateCode(string $code): self
     {
         $this->query['stateCode'] = $code;

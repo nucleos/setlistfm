@@ -75,17 +75,11 @@ final class CitySearchResult
         return (int) ceil($this->totalSize / $this->pageSize);
     }
 
-    /**
-     * @return CitySearchResult
-     */
     public static function createEmpty(): self
     {
         return new self([], 0, 0, 0);
     }
 
-    /**
-     * @return CitySearchResult
-     */
     public static function fromApi(array $response): self
     {
         return new self(

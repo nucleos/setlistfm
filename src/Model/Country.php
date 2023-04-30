@@ -42,9 +42,6 @@ final class Country
         return $this->name;
     }
 
-    /**
-     * @return Country
-     */
     public static function fromApi(array $data): self
     {
         return new self(

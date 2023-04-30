@@ -25,17 +25,11 @@ final class VenueSearchBuilder
         $this->page(1);
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public static function create(): self
     {
         return new static();
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function page(int $page): self
     {
         $this->query['p'] = $page;
@@ -43,9 +37,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withName(string $name): self
     {
         $this->query['name'] = $name;
@@ -53,9 +44,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withCity(string $name): self
     {
         $this->query['cityName'] = $name;
@@ -63,9 +51,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withCityId(int $id): self
     {
         $this->query['cityId'] = $id;
@@ -73,9 +58,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withCountry(string $country): self
     {
         $this->query['country'] = $country;
@@ -83,9 +65,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withState(string $name): self
     {
         $this->query['state'] = $name;
@@ -93,9 +72,6 @@ final class VenueSearchBuilder
         return $this;
     }
 
-    /**
-     * @return VenueSearchBuilder
-     */
     public function withStateCode(string $code): self
     {
         $this->query['stateCode'] = $code;

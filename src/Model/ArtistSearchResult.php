@@ -75,17 +75,11 @@ final class ArtistSearchResult
         return (int) ceil($this->totalSize / $this->pageSize);
     }
 
-    /**
-     * @return ArtistSearchResult
-     */
     public static function createEmpty(): self
     {
         return new self([], 0, 0, 0);
     }
 
-    /**
-     * @return ArtistSearchResult
-     */
     public static function fromApi(array $response): self
     {
         return new self(
