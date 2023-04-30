@@ -2,27 +2,32 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.3.0 - TBD
+## 3.3.0 - 2023-04-30
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [3.3.0](https://github.com/nucleos/setlistfm/milestone/3)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 3.3.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **6**
+- Total contributors: **2**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [401: Update build tools](https://github.com/nucleos/setlistfm/pull/401) thanks to @core23
+ - [400: Drop prophecy](https://github.com/nucleos/setlistfm/pull/400) thanks to @core23
+ - [332: Use shared pipelines](https://github.com/nucleos/setlistfm/pull/332) thanks to @core23
+ - [322: Remove composer-bin plugin](https://github.com/nucleos/setlistfm/pull/322) thanks to @core23
 
-### Fixed
+#### dependency
 
-- Nothing.
+ - [399: Update dependency psr/http-message to ^1.0 || ^2.0](https://github.com/nucleos/setlistfm/pull/399) thanks to @renovate[bot]
+ - [397: Drop support for PHP 8.0](https://github.com/nucleos/setlistfm/pull/397) thanks to @core23
 
 ## 3.2.0 - 2021-12-06
 
