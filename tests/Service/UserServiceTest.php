@@ -13,22 +13,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\UserService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class UserServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testGetUser(): void
@@ -43,11 +40,11 @@ final class UserServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->call('user/Metal-42')
+        $this->connection->method('call')->with('user/Metal-42')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new UserService($this->connection->reveal());
+        $service = new UserService($this->connection);
         $result  = $service->getUser('Metal-42');
 
         static::assertSame('Metal-42', $result->getId());
@@ -88,11 +85,11 @@ EOD;
                         }
 EOD;
 
-        $this->connection->call('user/42/edited', ['p' => 1])
+        $this->connection->method('call')->with('user/42/edited', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new UserService($this->connection->reveal());
+        $service = new UserService($this->connection);
         $result  = $service->getEdits('42');
 
         static::assertCount(1, $result);
@@ -133,11 +130,11 @@ EOD;
                         }
 EOD;
 
-        $this->connection->call('user/42/attended', ['p' => 1])
+        $this->connection->method('call')->with('user/42/attended', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new UserService($this->connection->reveal());
+        $service = new UserService($this->connection);
         $result  = $service->getAttends('42');
 
         static::assertCount(1, $result);

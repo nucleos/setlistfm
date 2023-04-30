@@ -56,7 +56,7 @@ final class CitySearchBuilderTest extends TestCase
     {
         $builder = CitySearchBuilder::create()
                 ->withCountry('DE')
-            ;
+        ;
 
         $expected = [
             'p'       => 1,

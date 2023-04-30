@@ -14,22 +14,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 use Nucleos\SetlistFm\Builder\SetlistSearchBuilder;
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\SetlistService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class SetlistServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testGetSetlist(): void
@@ -69,11 +66,11 @@ final class SetlistServiceTest extends TestCase
                        }
 EOD;
 
-        $this->connection->call('setlist/63de4613')
+        $this->connection->method('call')->with('setlist/63de4613')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new SetlistService($this->connection->reveal());
+        $service = new SetlistService($this->connection);
         $result  = $service->getSetlist('63de4613');
 
         static::assertSame('63de4613', $result->getId());
@@ -114,11 +111,11 @@ EOD;
                        }
 EOD;
 
-        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
+        $this->connection->method('call')->with('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new SetlistService($this->connection->reveal());
+        $service = new SetlistService($this->connection);
         $result  = $service->getArtistSetlists('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
         static::assertCount(1, $result);
@@ -159,11 +156,11 @@ EOD;
                        }
 EOD;
 
-        $this->connection->call('venue/6bd6ca6e/setlists', ['p' => 1])
+        $this->connection->method('call')->with('venue/6bd6ca6e/setlists', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new SetlistService($this->connection->reveal());
+        $service = new SetlistService($this->connection);
         $result  = $service->getVenueSetlists('6bd6ca6e');
 
         static::assertCount(1, $result);
@@ -206,11 +203,11 @@ EOD;
                        }
 EOD;
 
-        $this->connection->call('setlist/version/7be1aaa0')
+        $this->connection->method('call')->with('setlist/version/7be1aaa0')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new SetlistService($this->connection->reveal());
+        $service = new SetlistService($this->connection);
         $result  = $service->getSetlistByVersion('7be1aaa0');
 
         static::assertSame('7be1aaa0', $result->getVersionId());
@@ -251,11 +248,11 @@ EOD;
                        }
 EOD;
 
-        $this->connection->call('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
+        $this->connection->method('call')->with('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new SetlistService($this->connection->reveal());
+        $service = new SetlistService($this->connection);
         $result  = $service->search(SetlistSearchBuilder::create()
             ->withArtistName('The Beatles'));
 

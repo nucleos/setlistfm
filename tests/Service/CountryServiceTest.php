@@ -13,22 +13,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\CountryService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class CountryServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testSearch(): void
@@ -45,11 +42,11 @@ final class CountryServiceTest extends TestCase
                     }
 EOD;
 
-        $this->connection->call('search/countries')
+        $this->connection->method('call')->with('search/countries')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new CountryService($this->connection->reveal());
+        $service = new CountryService($this->connection);
         $result  = $service->search();
 
         static::assertCount(1, $result->getResult());
