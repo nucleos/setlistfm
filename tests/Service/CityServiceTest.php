@@ -14,22 +14,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 use Nucleos\SetlistFm\Builder\CitySearchBuilder;
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\CityService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class CityServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testGetCity(): void
@@ -51,11 +48,11 @@ final class CityServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->call('city/5357527')
+        $this->connection->method('call')->with('city/5357527')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new CityService($this->connection->reveal());
+        $service = new CityService($this->connection);
         $result  = $service->getCity(5357527);
 
         static::assertSame('Hollywood', $result->getName());
@@ -85,11 +82,11 @@ EOD;
                    }
 EOD;
 
-        $this->connection->call('search/cities', ['p' => 1, 'name' => 'Hollywood'])
+        $this->connection->method('call')->with('search/cities', ['p' => 1, 'name' => 'Hollywood'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new CityService($this->connection->reveal());
+        $service = new CityService($this->connection);
         $result  = $service->search(CitySearchBuilder::create()
             ->withName('Hollywood'));
 

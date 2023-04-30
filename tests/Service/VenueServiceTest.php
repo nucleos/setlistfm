@@ -14,22 +14,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 use Nucleos\SetlistFm\Builder\VenueSearchBuilder;
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\VenueService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class VenueServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testGetVenue(): void
@@ -56,11 +53,11 @@ final class VenueServiceTest extends TestCase
                     }
 EOD;
 
-        $this->connection->call('venue/6bd6ca6e')
+        $this->connection->method('call')->with('venue/6bd6ca6e')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new VenueService($this->connection->reveal());
+        $service = new VenueService($this->connection);
         $result  = $service->getVenue('6bd6ca6e');
 
         static::assertSame('6bd6ca6e', $result->getId());
@@ -89,11 +86,11 @@ EOD;
                    }
 EOD;
 
-        $this->connection->call('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
+        $this->connection->method('call')->with('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new VenueService($this->connection->reveal());
+        $service = new VenueService($this->connection);
         $result  = $service->search(VenueSearchBuilder::create()
             ->withName('Compaq Center'));
 

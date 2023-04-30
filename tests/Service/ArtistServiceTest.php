@@ -14,22 +14,19 @@ namespace Nucleos\SetlistFm\Tests\Service;
 use Nucleos\SetlistFm\Builder\ArtistSearchBuilder;
 use Nucleos\SetlistFm\Connection\ConnectionInterface;
 use Nucleos\SetlistFm\Service\ArtistService;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class ArtistServiceTest extends TestCase
 {
-    use ProphecyTrait;
-
     /**
-     * @var ObjectProphecy<ConnectionInterface>
+     * @var ConnectionInterface&MockObject
      */
-    private $connection;
+    private ConnectionInterface $connection;
 
     protected function setUp(): void
     {
-        $this->connection =  $this->prophesize(ConnectionInterface::class);
+        $this->connection =  $this->createMock(ConnectionInterface::class);
     }
 
     public function testGetArtist(): void
@@ -45,11 +42,11 @@ final class ArtistServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->call('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d')
+        $this->connection->method('call')->with('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new ArtistService($this->connection->reveal());
+        $service = new ArtistService($this->connection);
         $result  = $service->getArtist('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
         static::assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $result->getMbid());
@@ -73,11 +70,11 @@ EOD;
                     }
 EOD;
 
-        $this->connection->call('search/artists', ['p' => 1, 'artistName' => 'The Beatles'])
+        $this->connection->method('call')->with('search/artists', ['p' => 1, 'artistName' => 'The Beatles'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
-        $service = new ArtistService($this->connection->reveal());
+        $service = new ArtistService($this->connection);
         $result  = $service->search(ArtistSearchBuilder::create()
             ->withName('The Beatles'));
 
