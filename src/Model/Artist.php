@@ -92,18 +92,15 @@ final class Artist
         return $this->url;
     }
 
-    /**
-     * @return Artist
-     */
     public static function fromApi(array $data): self
     {
         return new self(
             $data['name'],
-            $data['mbid'] ?? null,
-            $data['tmid'] ?? null,
-            $data['sortName'] ?? null,
+            $data['mbid']           ?? null,
+            $data['tmid']           ?? null,
+            $data['sortName']       ?? null,
             $data['disambiguation'] ?? null,
-            $data['url'] ?? null
+            $data['url']            ?? null
         );
     }
 }

@@ -31,9 +31,6 @@ final class Tour
         return $this->name;
     }
 
-    /**
-     * @return Tour
-     */
     public static function fromApi(array $data): self
     {
         return new self(

@@ -81,9 +81,6 @@ final class Song
         return $this->featurings;
     }
 
-    /**
-     * @return Song
-     */
     public static function fromApi(array $data): self
     {
         $featuring = [];

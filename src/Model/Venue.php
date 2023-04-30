@@ -64,9 +64,6 @@ final class Venue
         return $this->city;
     }
 
-    /**
-     * @return Venue
-     */
     public static function fromApi(array $data): self
     {
         $city = null;

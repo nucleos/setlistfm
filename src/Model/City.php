@@ -92,9 +92,6 @@ final class City
         return $this->geo;
     }
 
-    /**
-     * @return City
-     */
     public static function fromApi(array $data): self
     {
         $geo     = null;
@@ -111,7 +108,7 @@ final class City
         return new self(
             (int) $data['id'],
             $data['name'],
-            $data['state'] ?? null,
+            $data['state']     ?? null,
             $data['stateCode'] ?? null,
             $country,
             $geo

@@ -42,9 +42,6 @@ final class Geo
         return $this->latitude;
     }
 
-    /**
-     * @return Geo
-     */
     public static function fromApi(array $data): self
     {
         return new self(

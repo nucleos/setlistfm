@@ -75,17 +75,11 @@ final class VenueSearchResult
         return (int) ceil($this->totalSize / $this->pageSize);
     }
 
-    /**
-     * @return VenueSearchResult
-     */
     public static function createEmpty(): self
     {
         return new self([], 0, 0, 0);
     }
 
-    /**
-     * @return VenueSearchResult
-     */
     public static function fromApi(array $response): self
     {
         return new self(

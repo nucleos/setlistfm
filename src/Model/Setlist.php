@@ -151,8 +151,6 @@ final class Setlist
     }
 
     /**
-     * @return Setlist
-     *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public static function fromApi(array $data): self
@@ -179,8 +177,8 @@ final class Setlist
             $venue,
             $tour,
             $sets,
-            $data['info'] ?? null,
-            $data['url'] ?? null,
+            $data['info']      ?? null,
+            $data['url']       ?? null,
             $data['versionId'] ?? null,
             new DateTimeImmutable($data['eventDate']),
             $data['lastUpdated'] ? new DateTimeImmutable($data['lastUpdated']) : null

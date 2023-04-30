@@ -75,17 +75,11 @@ final class SetlistSearchResult
         return (int) ceil($this->totalSize / $this->pageSize);
     }
 
-    /**
-     * @return SetlistSearchResult
-     */
     public static function createEmpty(): self
     {
         return new self([], 0, 0, 0);
     }
 
-    /**
-     * @return SetlistSearchResult
-     */
     public static function fromApi(array $response): self
     {
         return new self(
