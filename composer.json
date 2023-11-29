@@ -45,7 +45,7 @@
     "require-dev": {
         "ergebnis/composer-normalize": "^2.0.1",
         "nyholm/psr7": "^1.0",
-        "symfony/http-client": "^5.4 || ^6.0"
+        "symfony/http-client": "^7.0"
     },
     "suggest": {
         "symfony/http-client": "Symfony HTTP client implementation"
