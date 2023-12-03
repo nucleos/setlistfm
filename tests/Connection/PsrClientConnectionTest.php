@@ -48,7 +48,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],
@@ -66,7 +66,7 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        static::assertSame(['data' => 'test'], $client->call('method', ['foo' => 'bar']));
+        self::assertSame(['data' => 'test'], $client->call('method', ['foo' => 'bar']));
     }
 
     public function testSendWithBooleanParameter(): void
@@ -74,7 +74,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],
@@ -92,7 +92,7 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        static::assertSame(['data' => 'test'], $client->call('method', ['active' => true, 'inactive' => false]));
+        self::assertSame(['data' => 'test'], $client->call('method', ['active' => true, 'inactive' => false]));
     }
 
     public function testSendWithArrayParameter(): void
@@ -100,7 +100,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],
@@ -118,7 +118,7 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($response)
         ;
 
-        static::assertSame(['data' => 'test'], $client->call('method', ['foo' => ['bar', 'baz']]));
+        self::assertSame(['data' => 'test'], $client->call('method', ['foo' => ['bar', 'baz']]));
     }
 
     public function testSendWithException(): void
@@ -129,7 +129,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],
@@ -156,7 +156,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],
@@ -183,7 +183,7 @@ final class PsrClientConnectionTest extends TestCase
         $client = new PsrClientConnection($this->client, $this->requestFactory, 'my-key', 'http://api.url/');
 
         $request =  $this->createMock(RequestInterface::class);
-        $request->expects($matcher = static::exactly(2))->method('withHeader')
+        $request->expects($matcher = self::exactly(2))->method('withHeader')
             ->willReturnCallback($this->withParameter($matcher, [
                 ['Accept', 'application/json'],
                 ['x-api-key', 'my-key'],

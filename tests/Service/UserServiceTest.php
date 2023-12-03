@@ -47,7 +47,7 @@ EOD;
         $service = new UserService($this->connection);
         $result  = $service->getUser('Metal-42');
 
-        static::assertSame('Metal-42', $result->getId());
+        self::assertSame('Metal-42', $result->getId());
     }
 
     public function testGetEdits(): void
@@ -92,7 +92,7 @@ EOD;
         $service = new UserService($this->connection);
         $result  = $service->getEdits('42');
 
-        static::assertCount(1, $result);
+        self::assertCount(1, $result);
     }
 
     public function testGetAttends(): void
@@ -137,6 +137,6 @@ EOD;
         $service = new UserService($this->connection);
         $result  = $service->getAttends('42');
 
-        static::assertCount(1, $result);
+        self::assertCount(1, $result);
     }
 }

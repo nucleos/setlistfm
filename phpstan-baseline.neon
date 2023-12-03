@@ -1,19 +1,14 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\ArtistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Builder/ArtistSearchBuilder.php
-
-		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Builder\\\\ArtistSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Builder/ArtistSearchBuilder.php
 
 		-
-			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\CitySearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\ArtistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Builder/CitySearchBuilder.php
+			path: src/Builder/ArtistSearchBuilder.php
 
 		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Builder\\\\CitySearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -21,9 +16,9 @@ parameters:
 			path: src/Builder/CitySearchBuilder.php
 
 		-
-			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\SetlistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\CitySearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Builder/SetlistSearchBuilder.php
+			path: src/Builder/CitySearchBuilder.php
 
 		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Builder\\\\SetlistSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -31,12 +26,17 @@ parameters:
 			path: src/Builder/SetlistSearchBuilder.php
 
 		-
-			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\SetlistSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Builder/SetlistSearchBuilder.php
+
+		-
+			message: "#^Method Nucleos\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Builder/VenueSearchBuilder.php
 
 		-
-			message: "#^Method Nucleos\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:getQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\SetlistFm\\\\Builder\\\\VenueSearchBuilder\\:\\:\\$query type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Builder/VenueSearchBuilder.php
 
@@ -51,6 +51,11 @@ parameters:
 			path: src/Connection/ConnectionInterface.php
 
 		-
+			message: "#^Method Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:buildRequest\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Connection/PsrClientConnection.php
+
+		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:call\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Connection/PsrClientConnection.php
@@ -62,11 +67,6 @@ parameters:
 
 		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:parseResponse\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Connection/PsrClientConnection.php
-
-		-
-			message: "#^Method Nucleos\\\\SetlistFm\\\\Connection\\\\PsrClientConnection\\:\\:buildRequest\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Connection/PsrClientConnection.php
 
@@ -111,17 +111,17 @@ parameters:
 			path: src/Model/Set.php
 
 		-
-			message: "#^Method Nucleos\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Model/Setlist.php
-
-		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:createSetsFromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Model/Setlist.php
 
 		-
 			message: "#^Method Nucleos\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:createSetsFromApi\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Model/Setlist.php
+
+		-
+			message: "#^Method Nucleos\\\\SetlistFm\\\\Model\\\\Setlist\\:\\:fromApi\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Model/Setlist.php
 

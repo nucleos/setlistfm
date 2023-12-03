@@ -49,6 +49,6 @@ EOD;
         $service = new CountryService($this->connection);
         $result  = $service->search();
 
-        static::assertCount(1, $result->getResult());
+        self::assertCount(1, $result->getResult());
     }
 }

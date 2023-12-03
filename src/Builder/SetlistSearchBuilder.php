@@ -29,7 +29,7 @@ final class SetlistSearchBuilder
 
     public static function create(): self
     {
-        return new static();
+        return new self();
     }
 
     public function page(int $page): self

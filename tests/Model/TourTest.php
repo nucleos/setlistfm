@@ -25,6 +25,6 @@ final class TourTest extends TestCase
 EOD;
 
         $tour = Tour::fromApi(json_decode($data, true));
-        static::assertSame('North American Tour 1964', $tour->getName());
+        self::assertSame('North American Tour 1964', $tour->getName());
     }
 }

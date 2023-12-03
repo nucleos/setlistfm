@@ -55,7 +55,7 @@ EOD;
         $service = new CityService($this->connection);
         $result  = $service->getCity(5357527);
 
-        static::assertSame('Hollywood', $result->getName());
+        self::assertSame('Hollywood', $result->getName());
     }
 
     public function testSearch(): void
@@ -90,6 +90,6 @@ EOD;
         $result  = $service->search(CitySearchBuilder::create()
             ->withName('Hollywood'));
 
-        static::assertCount(1, $result->getResult());
+        self::assertCount(1, $result->getResult());
     }
 }
