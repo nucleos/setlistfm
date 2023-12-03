@@ -36,11 +36,11 @@ final class CityTest extends TestCase
 EOD;
 
         $city = City::fromApi(json_decode($data, true));
-        static::assertSame(5357527, $city->getId());
-        static::assertSame('Hollywood', $city->getName());
-        static::assertSame('California', $city->getState());
-        static::assertNotNull($city->getCountry());
-        static::assertNotNull($city->getGeo());
-        static::assertSame('CA', $city->getStateCode());
+        self::assertSame(5357527, $city->getId());
+        self::assertSame('Hollywood', $city->getName());
+        self::assertSame('California', $city->getState());
+        self::assertNotNull($city->getCountry());
+        self::assertNotNull($city->getGeo());
+        self::assertSame('CA', $city->getStateCode());
     }
 }

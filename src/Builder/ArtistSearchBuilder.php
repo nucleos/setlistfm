@@ -29,7 +29,7 @@ final class ArtistSearchBuilder
 
     public static function create(): self
     {
-        return new static();
+        return new self();
     }
 
     public function page(int $page): self

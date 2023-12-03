@@ -83,8 +83,8 @@ final class SetTest extends TestCase
 EOD;
 
         $set = Set::fromApi(json_decode($data, true));
-        static::assertSame('First set', $set->getName());
-        static::assertCount(12, $set->getSongs());
-        static::assertSame(3, $set->getEncore());
+        self::assertSame('First set', $set->getName());
+        self::assertCount(12, $set->getSongs());
+        self::assertSame(3, $set->getEncore());
     }
 }

@@ -73,7 +73,7 @@ EOD;
         $service = new SetlistService($this->connection);
         $result  = $service->getSetlist('63de4613');
 
-        static::assertSame('63de4613', $result->getId());
+        self::assertSame('63de4613', $result->getId());
     }
 
     public function testGetArtistSetlists(): void
@@ -118,7 +118,7 @@ EOD;
         $service = new SetlistService($this->connection);
         $result  = $service->getArtistSetlists('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        static::assertCount(1, $result);
+        self::assertCount(1, $result);
     }
 
     public function testGetVenueSetlists(): void
@@ -163,7 +163,7 @@ EOD;
         $service = new SetlistService($this->connection);
         $result  = $service->getVenueSetlists('6bd6ca6e');
 
-        static::assertCount(1, $result);
+        self::assertCount(1, $result);
     }
 
     public function testGetSetlistByVersion(): void
@@ -210,7 +210,7 @@ EOD;
         $service = new SetlistService($this->connection);
         $result  = $service->getSetlistByVersion('7be1aaa0');
 
-        static::assertSame('7be1aaa0', $result->getVersionId());
+        self::assertSame('7be1aaa0', $result->getVersionId());
     }
 
     public function testSearch(): void
@@ -256,6 +256,6 @@ EOD;
         $result  = $service->search(SetlistSearchBuilder::create()
             ->withArtistName('The Beatles'));
 
-        static::assertCount(1, $result->getResult());
+        self::assertCount(1, $result->getResult());
     }
 }

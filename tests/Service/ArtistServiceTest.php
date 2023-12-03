@@ -49,7 +49,7 @@ EOD;
         $service = new ArtistService($this->connection);
         $result  = $service->getArtist('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d');
 
-        static::assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $result->getMbid());
+        self::assertSame('b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', $result->getMbid());
     }
 
     public function testSearch(): void
@@ -78,6 +78,6 @@ EOD;
         $result  = $service->search(ArtistSearchBuilder::create()
             ->withName('The Beatles'));
 
-        static::assertCount(1, $result->getResult());
+        self::assertCount(1, $result->getResult());
     }
 }

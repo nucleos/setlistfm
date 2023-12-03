@@ -28,9 +28,6 @@ abstract class AbstractConnection implements ConnectionInterface
      */
     private $uri;
 
-    /**
-     * @param string $uri
-     */
     public function __construct(string $apikey, string $uri = null)
     {
         if (null === $uri) {

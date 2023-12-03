@@ -34,8 +34,6 @@ final class PsrClientConnection extends AbstractConnection
 
     /**
      * Initialize client.
-     *
-     * @param string $uri
      */
     public function __construct(ClientInterface $client, RequestFactoryInterface $requestFactory, string $apiKey, string $uri = null)
     {

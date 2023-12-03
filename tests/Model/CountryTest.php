@@ -26,7 +26,7 @@ final class CountryTest extends TestCase
 EOD;
 
         $country = Country::fromApi(json_decode($data, true));
-        static::assertSame('US', $country->getCode());
-        static::assertSame('United States', $country->getName());
+        self::assertSame('US', $country->getCode());
+        self::assertSame('United States', $country->getName());
     }
 }

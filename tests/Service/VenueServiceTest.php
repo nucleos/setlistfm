@@ -60,7 +60,7 @@ EOD;
         $service = new VenueService($this->connection);
         $result  = $service->getVenue('6bd6ca6e');
 
-        static::assertSame('6bd6ca6e', $result->getId());
+        self::assertSame('6bd6ca6e', $result->getId());
     }
 
     public function testSearch(): void
@@ -94,6 +94,6 @@ EOD;
         $result  = $service->search(VenueSearchBuilder::create()
             ->withName('Compaq Center'));
 
-        static::assertCount(1, $result->getResult());
+        self::assertCount(1, $result->getResult());
     }
 }

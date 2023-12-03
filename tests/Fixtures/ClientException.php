@@ -14,6 +14,4 @@ namespace Nucleos\SetlistFm\Tests\Fixtures;
 use Exception;
 use Psr\Http\Client\ClientExceptionInterface;
 
-final class ClientException extends Exception implements ClientExceptionInterface
-{
-}
+final class ClientException extends Exception implements ClientExceptionInterface {}
