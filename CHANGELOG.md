@@ -2,27 +2,33 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.5.0 - TBD
+## 3.5.0 - 2025-10-12
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [3.5.0](https://github.com/nucleos/setlistfm/milestone/8)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 3.5.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **7**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [415: Update to phpunit v12](https://github.com/nucleos/setlistfm/pull/415) thanks to @core23
+ - [414: Drop support for PHP 8.2](https://github.com/nucleos/setlistfm/pull/414) thanks to @core23
+ - [408: Update PHPStan packages to v2 (major)](https://github.com/nucleos/setlistfm/pull/408) thanks to @renovate[bot]
+ - [406: Update dependency psalm/plugin-phpunit to ^0.19.0](https://github.com/nucleos/setlistfm/pull/406) thanks to @renovate[bot]
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [413: Sync tool config ](https://github.com/nucleos/setlistfm/pull/413) thanks to @core23
+ - [412: Remove infection testing ](https://github.com/nucleos/setlistfm/pull/412) thanks to @core23
+ - [410: Remove psalm in favor of phpstan ](https://github.com/nucleos/setlistfm/pull/410) thanks to @core23
 
 ## 3.4.0 - 2023-12-21
 
