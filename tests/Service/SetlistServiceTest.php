@@ -66,7 +66,8 @@ final class SetlistServiceTest extends TestCase
                        }
 EOD;
 
-        $this->connection->method('call')->with('setlist/63de4613')
+        $this->connection->expects(self::once())->method('call')
+            ->with('setlist/63de4613')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -111,7 +112,8 @@ EOD;
                        }
 EOD;
 
-        $this->connection->method('call')->with('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
+        $this->connection->expects(self::once())->method('call')
+            ->with('artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d/setlists', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -156,7 +158,8 @@ EOD;
                        }
 EOD;
 
-        $this->connection->method('call')->with('venue/6bd6ca6e/setlists', ['p' => 1])
+        $this->connection->expects(self::once())->method('call')
+            ->with('venue/6bd6ca6e/setlists', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -203,7 +206,8 @@ EOD;
                        }
 EOD;
 
-        $this->connection->method('call')->with('setlist/version/7be1aaa0')
+        $this->connection->expects(self::once())->method('call')
+            ->with('setlist/version/7be1aaa0')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -248,7 +252,8 @@ EOD;
                        }
 EOD;
 
-        $this->connection->method('call')->with('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
+        $this->connection->expects(self::once())->method('call')
+            ->with('search/setlists', ['p' => 1, 'artistName' => 'The Beatles'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 

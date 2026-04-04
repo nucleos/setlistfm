@@ -42,7 +42,8 @@ final class CountryServiceTest extends TestCase
                     }
 EOD;
 
-        $this->connection->method('call')->with('search/countries')
+        $this->connection->expects(self::once())->method('call')
+            ->with('search/countries')
             ->willReturn(json_decode($rawResponse, true))
         ;
 

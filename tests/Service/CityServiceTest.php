@@ -48,7 +48,8 @@ final class CityServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->method('call')->with('city/5357527')
+        $this->connection->expects(self::once())->method('call')
+            ->with('city/5357527')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -82,7 +83,8 @@ EOD;
                    }
 EOD;
 
-        $this->connection->method('call')->with('search/cities', ['p' => 1, 'name' => 'Hollywood'])
+        $this->connection->expects(self::once())->method('call')
+            ->with('search/cities', ['p' => 1, 'name' => 'Hollywood'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
