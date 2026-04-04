@@ -53,7 +53,8 @@ final class VenueServiceTest extends TestCase
                     }
 EOD;
 
-        $this->connection->method('call')->with('venue/6bd6ca6e')
+        $this->connection->expects(self::once())->method('call')
+            ->with('venue/6bd6ca6e')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -86,7 +87,8 @@ EOD;
                    }
 EOD;
 
-        $this->connection->method('call')->with('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
+        $this->connection->expects(self::once())->method('call')
+            ->with('search/venues', ['p' => 1, 'name' => 'Compaq Center'])
             ->willReturn(json_decode($rawResponse, true))
         ;
 

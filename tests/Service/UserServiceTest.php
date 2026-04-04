@@ -40,7 +40,8 @@ final class UserServiceTest extends TestCase
                         }
 EOD;
 
-        $this->connection->method('call')->with('user/Metal-42')
+        $this->connection->expects(self::once())->method('call')
+            ->with('user/Metal-42')
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -85,7 +86,8 @@ EOD;
                         }
 EOD;
 
-        $this->connection->method('call')->with('user/42/edited', ['p' => 1])
+        $this->connection->expects(self::once())->method('call')
+            ->with('user/42/edited', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 
@@ -130,7 +132,8 @@ EOD;
                         }
 EOD;
 
-        $this->connection->method('call')->with('user/42/attended', ['p' => 1])
+        $this->connection->expects(self::once())->method('call')
+            ->with('user/42/attended', ['p' => 1])
             ->willReturn(json_decode($rawResponse, true))
         ;
 

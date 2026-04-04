@@ -56,13 +56,15 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?foo=bar')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
         $response =$this->prepareResponse('{"data": "test"}');
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willReturn($response)
         ;
 
@@ -82,13 +84,15 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?active=1&inactive=0')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?active=1&inactive=0')
             ->willReturn($request)
         ;
 
         $response = $this->prepareResponse('{"data": "test"}');
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willReturn($response)
         ;
 
@@ -108,13 +112,15 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?foo%5B0%5D=bar&foo%5B1%5D=baz')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?foo%5B0%5D=bar&foo%5B1%5D=baz')
             ->willReturn($request)
         ;
 
         $response = $this->prepareResponse('{"data": "test"}');
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willReturn($response)
         ;
 
@@ -137,11 +143,13 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?foo=bar')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willThrowException(new Exception())
         ;
 
@@ -164,11 +172,13 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?foo=bar')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willThrowException(new ClientException())
         ;
 
@@ -191,13 +201,15 @@ final class PsrClientConnectionTest extends TestCase
             ->willReturn($request)
         ;
 
-        $this->requestFactory->method('createRequest')->with('GET', 'http://api.url/method?foo=bar')
+        $this->requestFactory->expects(self::once())->method('createRequest')
+            ->with('GET', 'http://api.url/method?foo=bar')
             ->willReturn($request)
         ;
 
         $response = $this->prepareResponse('', 500);
 
-        $this->client->method('sendRequest')->with($request)
+        $this->client->expects(self::once())->method('sendRequest')
+            ->with($request)
             ->willReturn($response)
         ;
 
